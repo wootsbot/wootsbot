@@ -25,6 +25,7 @@
 .figure-img {
   width: 100%;
   margin: 0;
+  border-radius: 0.125rem;
 }
 
 .content {
@@ -34,10 +35,12 @@
 .content-title {
   font-weight: 600;
   font-size: 36px;
+  color: var(--color-text-primary);
 }
 
 .content-description {
   font-size: 24px;
   font-weight: 300;
+  color: var(--color-text-primary);
   margin: 0;
 }

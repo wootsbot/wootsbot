@@ -1,13 +1,13 @@
 @import 'theme';
 
 :root {
-  --color-white: #FFFFFF;
+  --color-white: #ffffff;
   --color-black: #000000;
-  --color-gray: #AFAFAF;
-  --color-blue-royal: #276EE5;
-  --color-red-radical: #FF3366;
-  --color-green-Caribbean: #09BAA6;
-  --color-red-alizarin: #E53123;
+  --color-gray: #afafaf;
+  --color-blue-royal: #276ee5;
+  --color-red-radical: #ff3366;
+  --color-green-Caribbean: #09baa6;
+  --color-red-alizarin: #e53123;
   --color-background: var(--color-white);
   --color-primary: var(--color-black);
   --color-secondary: var(--color-red-alizarin);
@@ -16,7 +16,8 @@
 }
 
 .theme-dark:root {
-  --color-background: #000000;
+  --color-background: #333333;
+  --color-text-primary: #eeeeee;
 }
 
 body {

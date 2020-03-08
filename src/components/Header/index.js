@@ -6,6 +6,7 @@ import { Link } from 'gatsby';
 import { Sun, Moon } from 'react-feather';
 
 import IconWootsbot from 'images/logo.svg';
+import IconWootsbotDark from 'images/logoDark.svg';
 
 import styles from './styles.module.scss';
 
@@ -14,7 +15,12 @@ function Header({ isThemeDark, onThemeDark }) {
     <header className={styles.header}>
       <nav className={styles.headerNav}>
         <Link to="/">
-          <img className={styles.logo} aria-label="React Next Boilerplate Logo" alt="logo" src={IconWootsbot} />
+          <img
+            className={styles.logo}
+            aria-label="React Next Boilerplate Logo"
+            alt="logo"
+            src={isThemeDark ? IconWootsbotDark : IconWootsbot}
+          />
         </Link>
 
         <div className={styles.spacer} />

@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 import { Sun, Moon } from 'react-feather';
 
 import IconWootsbot from 'images/logo.svg';
-import IconWootsbotDark from 'images/logoDark.svg';
+import IconWootsbotDark from 'images/logodark.svg';
 
 import styles from './styles.module.scss';
 
@@ -45,7 +45,7 @@ function Header({ isThemeDark, onThemeDark }) {
           </li>
 
           <li className={styles.liLink}>
-            <button type="button" className={styles.switchDarkMode} onClick={onThemeDark}>
+            <button type="button" aria-label="Dark Mode" className={styles.switchDarkMode} onClick={onThemeDark}>
               {isThemeDark ? <Sun size={20} color="#f7df1e" /> : <Moon size={20} />}
             </button>
           </li>

@@ -76,6 +76,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  title: 'wootsbot.dev',
 };
 
 SEO.propTypes = {

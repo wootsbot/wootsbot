@@ -5,5 +5,5 @@
  */
 
 // You can delete this file if you're not using it
-
+import '@typefaces-pack/typeface-inter';
 import './src/styles/global.scss';

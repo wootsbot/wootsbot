@@ -5,21 +5,45 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@typefaces-pack/typeface-inter": "^1.0.3",
+    "clsx": "^1.1.0",
     "gatsby": "^2.19.7",
-    "gatsby-image": "^2.2.39",
+    "gatsby-image": "^2.2.43",
+    "gatsby-plugin-jss": "^2.1.19",
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sass": "^2.1.30",
     "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-plugin-typography": "^2.3.22",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.13",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-feather": "^2.0.3",
+    "react-helmet": "^5.2.1",
+    "react-jss": "^10.0.4",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-babel-module": "^5.1.2",
+    "eslint-import-resolver-webpack": "^0.12.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "husky": "^4.2.3",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "stylelint": "^13.2.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "keywords": [
     "gatsby"
@@ -32,7 +56,25 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "prettier": "prettier --config .prettierrc \"./**/*.+(js|json|jsx)\" --write",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css": "stylelint '**/*.scss'",
+    "lint:css:fix": "npm run lint:css -- --fix",
+    "lint:js": "npm run lint:eslint -- src/",
+    "lint:eslint": "eslint --fix ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ],
+    "./**/*.+(js|json|jsx)": [
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",

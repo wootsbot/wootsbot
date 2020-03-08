@@ -1,0 +1,61 @@
+@import "styles/theme";
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.header-nav {
+  display: flex;
+  width: 100%;
+  max-width: 1024px;
+  height: 4rem;
+  align-items: center;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  margin: 0;
+  font-size: 1rem;
+  list-style: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.logo {
+  margin: 0;
+}
+
+.li-link {
+  margin: 0;
+}
+
+.link {
+  padding: 0.3rem 1rem;
+  margin: 1rem;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.link:hover {
+  margin: 1rem;
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.switch-dark-mode {
+  display: flex;
+  padding: 0.3rem 1rem;
+  border: none;
+  margin: 0 1rem;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}

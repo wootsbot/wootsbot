@@ -2,13 +2,13 @@
 
 I am a developer JavaScript who loves to design!, i live in Mexico :mexico:. I am a co-author of [React Next Boilerplate](https://github.com/react-next-boilerplate/react-next-boilerplate) and a builder of things. open source enthusiast. I am a passionate photographer. 
 
-- :link: Things happen when you collaborate as a team.
+- [x] Things happen when you collaborate as a team.
 
-- :hearts: The more you share the more you learn.
+- [x] The more you share the more you learn.
 
-- :rocket: I attend my old university to give motivational talks and short courses on [gatsbyjs](https://www.gatsbyjs.org/) and [nextjs](https://nextjs.org/)
+- [x] I attend my old university to give motivational talks and short courses on [gatsbyjs](https://www.gatsbyjs.org/) and [nextjs](https://nextjs.org/)
 
-- :wrench: I would like you to take a look at the projects that I currently focus on 👇.
+- [x] I would like you to take a look at the projects that I currently focus on 👇.
 
 <!--
 **wootsbot/wootsbot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

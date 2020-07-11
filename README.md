@@ -2,7 +2,7 @@
 
 I am a JavaScript software developer living in Mexico :mexico:. I am a co-author of [React Next Boilerplate](https://github.com/react-next-boilerplate/react-next-boilerplate) and a builder of things. open source enthusiast. I am a passionate photographer.
 
-- :link Things happen when you collaborate as a team.
+- :link: Things happen when you collaborate as a team.
 
 - :hearts: The more you share the more you learn.
 

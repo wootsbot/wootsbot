@@ -1,14 +1,14 @@
 # Doing this 'n' that
 
-I am a JavaScript software developer living in Mexico. I am a co-author of [React Next Boilerplate](https://github.com/react-next-boilerplate/react-next-boilerplate) and a builder of things. open source enthusiast. I am a passionate photographer.
+I am a JavaScript software developer living in Mexico :mexico:. I am a co-author of [React Next Boilerplate](https://github.com/react-next-boilerplate/react-next-boilerplate) and a builder of things. open source enthusiast. I am a passionate photographer.
 
-Things happen when you collaborate as a team.
+- :link Things happen when you collaborate as a team.
 
-The more you share the more you learn.
+- :hearts: The more you share the more you learn.
 
-I attend my old university to give motivational talks and short courses on [gatsbyjs](https://www.gatsbyjs.org/) and [nextjs](https://nextjs.org/)
+- :rocket: I attend my old university to give motivational talks and short courses on [gatsbyjs](https://www.gatsbyjs.org/) and [nextjs](https://nextjs.org/)
 
-I would like you to take a look at the projects that I currently focus on.
+- :wrench: I would like you to take a look at the projects that I currently focus on 👇.
 
 <!--
 **wootsbot/wootsbot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

@@ -6,14 +6,20 @@ const Container = styled(Box, {
   flexShrink: 0,
 
   // Custom
-  ml: 'auto',
-  mr: 'auto',
-  px: '$3',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  marginTop: '$3',
+  marginBottom: '$3',
+  px: '$2',
+
+  '@phone': {
+    px: '$5',
+  },
 
   variants: {
     size: {
       1: {
-        maxWidth: '896px',
+        maxWidth: '720px',
       },
       2: {
         maxWidth: '1024px',

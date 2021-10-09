@@ -11,6 +11,9 @@ import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
 
+import rehypeMetaAttribute from '@/libs/rehype-meta-attribute';
+// import rehypeHighlightCode from '@/libs/rehype-highlight-code';
+
 const sdirData = 'src/data';
 
 export async function getFiles(type) {
@@ -27,17 +30,19 @@ export async function getFileBySlug(type, slug) {
       options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
       options.rehypePlugins = [
         ...(options?.rehypePlugins ?? []),
-        rehypeSlug,
         rehypeCodeTitles,
         rehypePrism,
-        [
-          rehypeAutolinkHeadings,
-          {
-            properties: {
-              className: ['anchor'],
-            },
-          },
-        ],
+        rehypeMetaAttribute,
+        // rehypeHighlightCode,
+        rehypeSlug,
+        // [
+        //   rehypeAutolinkHeadings,
+        //   {
+        //     properties: {
+        //       className: ['anchor'],
+        //     },
+        //   },
+        // ],
       ];
       return options;
     },

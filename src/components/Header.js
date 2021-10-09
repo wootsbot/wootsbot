@@ -1,54 +1,175 @@
 /* eslint-disable @next/next/link-passhref */
 /* eslint-disable @next/next/no-html-link-for-pages */
+import { useState } from 'react';
 import Link from 'next/link';
+
+import { useTheme } from 'next-themes';
+import { SunIcon, MoonIcon, HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons';
 
 import { styled } from '@/stitches';
 
-import Container from '@/design-system/Container';
-import Flex from '@/design-system/Flex';
-import Spacer from '@/design-system/Spacer';
 import Box from '@/design-system/Box';
+import Flex from '@/design-system/Flex';
 import NavLink from '@/components/NavLink';
+import Spacer from '@/design-system/Spacer';
+import IconButton from '@/design-system/IconButton';
 import Wootsbot from '@/design-system/icons/Wootsbot';
+
+const Container = styled(Box, {
+  flexShrink: 0,
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  marginTop: '$3',
+  marginBottom: '$3',
+  width: '100%',
+  maxWidth: '720px',
+  px: '$2',
+  '@phone': {
+    px: '$5',
+  },
+});
 
 const StyledLink = styled('a', {
   textDecoration: 'none',
-  fontSize: '$4',
+  fontSize: '$xl',
   color: '$gray12',
 });
 
+const DrawerMobile = styled(Box, {
+  position: 'fixed',
+  backgroundColor: '$mauve1',
+  height: '100%',
+  width: '100%',
+  zIndex: '$max',
+  marginTop: -48,
+  px: '$2',
+  '@phone': {
+    px: '$5',
+  },
+});
+
 function Header() {
+  const { theme, setTheme } = useTheme();
+  const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+
+  const renderLinks = () => (
+    <>
+      <NavLink href="/">Sobre mi</NavLink>
+      <NavLink href="/blog">Articulos</NavLink>
+    </>
+  );
+
   return (
-    <Container size={1}>
-      <Flex as="header" css={{ backgroundColor: '#fff' }} flexDirection="row" alignItems="center">
-        <Flex as="nav" css={{ height: 64, width: '100%' }} flexDirection="row" alignItems="center">
-          <Link href="/" passHref>
-            <StyledLink>
-              <Flex alignItems="center" gap="1">
-                <Wootsbot size={40} />
-                <Box as="span">wootsbot</Box>
-              </Flex>
-            </StyledLink>
-          </Link>
-          <Spacer />
+    <>
+      {!isOpenDrawer && (
+        <Container>
           <Flex
+            as="header"
+            css={{
+              width: '100%',
+              backgroundColor: '$mauve1',
+            }}
             flexDirection="row"
             alignItems="center"
-            css={{
-              listStyle: 'none',
-              padding: 0,
-              margin: 0,
-            }}
-            gap={5}
           >
-            <NavLink href="/">Sobre mi</NavLink>
+            <Flex as="nav" css={{ height: 64, width: '100%' }} flexDirection="row" alignItems="center">
+              <Link href="/" passHref>
+                <StyledLink>
+                  <Flex alignItems="center" gap="1">
+                    <Wootsbot size={40} />
+                    <Box as="span" css={{ '@initial': { display: 'block' }, '@phone': { display: 'none' } }}>
+                      wootsbot
+                    </Box>
+                  </Flex>
+                </StyledLink>
+              </Link>
+              <Spacer />
 
-            <NavLink href="/blog">Articulos</NavLink>
-            <NavLink href="/3">Charlemos</NavLink>
+              <Flex
+                flexDirection="row"
+                alignItems="center"
+                gap={5}
+                css={{ '@initial': { display: 'block' }, '@phone': { display: 'none' } }}
+              >
+                {renderLinks()}
+                <IconButton
+                  onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                  size="lg"
+                  variant="raised"
+                  name="theme"
+                  aria-label="change mode theme"
+                >
+                  {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+                </IconButton>
+              </Flex>
+
+              <IconButton
+                size="lg"
+                variant="raised"
+                name="theme"
+                aria-label="show navigation"
+                css={{ display: 'none', '@phone': { display: 'block' } }}
+                onClick={() => setIsOpenDrawer(!isOpenDrawer)}
+              >
+                <HamburgerMenuIcon />
+              </IconButton>
+            </Flex>
           </Flex>
-        </Flex>
-      </Flex>
-    </Container>
+        </Container>
+      )}
+
+      {isOpenDrawer && (
+        <DrawerMobile>
+          <Flex
+            as="header"
+            css={{
+              width: '100%',
+              backgroundColor: '$mauve1',
+              marginTop: '$3',
+              marginBottom: '$3',
+            }}
+            flexDirection="row"
+            alignItems="center"
+          >
+            <Flex as="nav" css={{ height: 64, width: '100%' }} flexDirection="row" alignItems="center">
+              <Link href="/" passHref>
+                <StyledLink>
+                  <Flex alignItems="center" gap="1">
+                    <Wootsbot size={40} />
+                  </Flex>
+                </StyledLink>
+              </Link>
+
+              <Spacer />
+
+              <IconButton
+                size="lg"
+                variant="raised"
+                name="theme"
+                aria-label="show navigation"
+                css={{ display: 'none', '@phone': { display: 'block' } }}
+                onClick={() => setIsOpenDrawer(!isOpenDrawer)}
+              >
+                <Cross1Icon />
+              </IconButton>
+            </Flex>
+          </Flex>
+
+          <Flex flexDirection="column" alignItems="center" gap={5}>
+            {renderLinks()}
+            <IconButton
+              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              size="lg"
+              variant="raised"
+              name="theme"
+              aria-label="change mode theme"
+            >
+              {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+            </IconButton>
+          </Flex>
+        </DrawerMobile>
+      )}
+    </>
   );
 }
 

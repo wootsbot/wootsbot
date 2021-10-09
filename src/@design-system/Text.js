@@ -1,8 +1,8 @@
 import { styled } from '@/stitches';
 
-const Text = styled('span', {
+const Text = styled('p', {
   // Reset
-  lineHeight: '1',
+  lineHeight: '$base',
   margin: '0',
   fontWeight: 400,
   fontVariantNumeric: 'tabular-nums',
@@ -10,47 +10,63 @@ const Text = styled('span', {
 
   variants: {
     size: {
-      1: {
-        fontSize: '$1',
-        fontWeight: 100,
+      xs: {
+        fontSize: '$xs',
       },
-      2: {
-        fontSize: '$2',
-        fontWeight: 200,
+      sm: {
+        fontSize: '$sm',
       },
-      3: {
-        fontSize: '$3',
-        fontWeight: 300,
+      md: {
+        fontSize: '$md',
       },
-      4: {
-        fontSize: '$4',
-        fontWeight: 400,
+      lg: {
+        fontSize: '$lg',
       },
-      5: {
-        fontSize: '$5',
+      xl: {
+        fontSize: '$xl',
         letterSpacing: '-.015em',
       },
-      6: {
-        fontSize: '$6',
+      '2xl': {
+        fontSize: '$2xl',
         letterSpacing: '-.016em',
       },
-      7: {
-        fontSize: '$7',
+      '3xl': {
+        fontSize: '$3xl',
         letterSpacing: '-.031em',
         textIndent: '-.005em',
       },
-      8: {
-        fontSize: '$8',
+      '4xl': {
+        fontSize: '$4xl',
         letterSpacing: '-.034em',
         textIndent: '-.018em',
       },
-      9: {
-        fontSize: '$9',
+      '5xl': {
+        fontSize: '$5xl',
+        letterSpacing: '-.055em',
+        textIndent: '-.025em',
+      },
+      '6xl': {
+        fontSize: '$6xl',
+        letterSpacing: '-.055em',
+        textIndent: '-.025em',
+      },
+      '7xl': {
+        fontSize: '$7xl',
+        letterSpacing: '-.055em',
+        textIndent: '-.025em',
+      },
+      '8xl': {
+        fontSize: '$8xl',
+        letterSpacing: '-.055em',
+        textIndent: '-.025em',
+      },
+      '9xl': {
+        fontSize: '$9xl',
         letterSpacing: '-.055em',
         textIndent: '-.025em',
       },
     },
-    variant: {
+    color: {
       red: {
         color: '$red11',
       },
@@ -96,9 +112,11 @@ const Text = styled('span', {
       bronze: {
         color: '$bronze11',
       },
+
       gray: {
-        color: '$slate11',
+        color: '$gray11',
       },
+
       contrast: {
         color: '$hiContrast',
       },
@@ -112,119 +130,63 @@ const Text = styled('span', {
   },
   compoundVariants: [
     {
-      variant: 'red',
+      color: 'red',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $red11, $crimson11)',
       },
     },
     {
-      variant: 'crimson',
+      color: 'crimson',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $crimson11, $pink11)',
       },
     },
     {
-      variant: 'pink',
+      color: 'pink',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $pink11, $purple11)',
       },
     },
     {
-      variant: 'purple',
+      color: 'purple',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $purple11, $violet11)',
       },
     },
     {
-      variant: 'violet',
+      color: 'violet',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $violet11, $indigo11)',
       },
     },
     {
-      variant: 'indigo',
+      color: 'indigo',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $indigo11, $blue11)',
       },
     },
     {
-      variant: 'blue',
+      color: 'blue',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $blue11, $cyan11)',
       },
     },
     {
-      variant: 'cyan',
-      gradient: 'true',
-      css: {
-        background: 'linear-gradient(to right, $cyan11, $teal11)',
-      },
-    },
-    {
-      variant: 'teal',
-      gradient: 'true',
-      css: {
-        background: 'linear-gradient(to right, $teal11, $green11)',
-      },
-    },
-    {
-      variant: 'green',
-      gradient: 'true',
-      css: {
-        background: 'linear-gradient(to right, $green11, $lime11)',
-      },
-    },
-    {
-      variant: 'lime',
-      gradient: 'true',
-      css: {
-        background: 'linear-gradient(to right, $lime11, $yellow11)',
-      },
-    },
-    {
-      variant: 'yellow',
-      gradient: 'true',
-      css: {
-        background: 'linear-gradient(to right, $yellow11, $orange11)',
-      },
-    },
-    {
-      variant: 'orange',
-      gradient: 'true',
-      css: {
-        background: 'linear-gradient(to right, $orange11, $red11)',
-      },
-    },
-    {
-      variant: 'gold',
-      gradient: 'true',
-      css: {
-        background: 'linear-gradient(to right, $gold11, $gold9)',
-      },
-    },
-    {
-      variant: 'bronze',
-      gradient: 'true',
-      css: {
-        background: 'linear-gradient(to right, $bronze11, $bronze9)',
-      },
-    },
-    {
-      variant: 'gray',
+      color: 'gray',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $gray11, $gray12)',
       },
     },
     {
-      variant: 'contrast',
+      color: 'contrast',
       gradient: 'true',
       css: {
         background: 'linear-gradient(to right, $hiContrast, $gray12)',
@@ -232,8 +194,8 @@ const Text = styled('span', {
     },
   ],
   defaultVariants: {
-    size: '3',
-    variant: 'contrast',
+    size: 'md',
+    color: 'contrast',
   },
 });
 

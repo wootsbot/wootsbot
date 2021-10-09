@@ -1,0 +1,29 @@
+---
+title: 'Marco de pruebas con jestjs en nextjs.'
+publishedAt: '2021-01-04'
+summary: 'Marco de pruebas con jestjs en nextjs'
+image: '/static/images/10-days-in-norway/espace.jpeg'
+---
+
+You can use this guide to help with the migration from Stitches alpha to beta (`v0.1.0`).
+
+---
+
+#### Renamed import
+
+The <H id="one" index="1">createStyled</H> function in `@stitches/react` has been renamed to <H id="one" index="2">createCss</H>.
+
+```diff id=one
+- import { __createStyled__ } from '@stitches/react';
++ import { __createCss__ } from '@stitches/react';
+```
+
+<Codeblock>
+  {`
+<Flex flexDirection="column" gap={2}>
+  <Heading>Heading</Heading>
+  <Heading>Heading</Heading>
+</Flex>
+  
+`}
+</Codeblock>

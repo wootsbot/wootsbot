@@ -1,15 +1,28 @@
+import dayjs from 'dayjs';
+
+import { styled } from '@/stitches';
+
 import Link from '@/components/Link';
 import Text from '@/design-system/Text';
 import Flex from '@/design-system/Flex';
 import Heading from '@/design-system/Heading';
 
-export default function BlogPreview({ title, summary, slug }) {
+const StyledLink = styled(Link, {});
+
+export default function BlogPreview({ title, summary, slug, publishedAt }) {
   return (
-    <Link href={`/blog/${slug}`}>
-      <Flex flexDirection="column" gap={2}>
-        <Heading size={1}>{title}</Heading>
-        <Text as="p">{summary}</Text>
-      </Flex>
-    </Link>
+    <Flex flexDirection="column" gap={1}>
+      <StyledLink href={`/blog/${slug}`}>
+        <Heading as="h4" size="md">
+          {title}
+        </Heading>
+      </StyledLink>
+
+      <Text as="time" size="sm" color="gray">
+        {dayjs(publishedAt).format('MMMM D, YYYY')}
+      </Text>
+
+      <Text color="gray">{summary}</Text>
+    </Flex>
   );
 }

@@ -1,6 +1,6 @@
 import { styled } from '@/stitches';
 
-const ButtonRoot = styled('button', {
+const StyledButton = styled('button', {
   backgroundColor: '$blue4',
   borderRadius: '9999px',
   color: '$blue11',
@@ -12,7 +12,7 @@ const ButtonRoot = styled('button', {
 });
 
 function Button({ ...props }) {
-  return <ButtonRoot {...props} />;
+  return <StyledButton {...props} />;
 }
 
 export default Button;

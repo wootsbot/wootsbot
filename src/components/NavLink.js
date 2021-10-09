@@ -21,13 +21,13 @@ const StyledLink = styled('a', {
   },
 });
 
-function NavLink({ href, name, ...props }) {
+function NavLink({ href, name, isDisableActive, ...props }) {
   const { pathname } = useRouter();
   const isActive = pathname === href || pathname === href.pathname;
 
   return (
     <Link href={href} passHref>
-      <StyledLink isActive={isActive} {...props} />
+      <StyledLink isActive={isActive && !isDisableActive} {...props} />
     </Link>
   );
 }

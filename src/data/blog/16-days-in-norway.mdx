@@ -1,9 +1,65 @@
 ---
 title: '10 Days in Norway'
-publishedAt: '2017-07-15'
+publishedAt: '2020-01-16'
 summary: 'Visualize my journey through the scenic lands of Norway with rich, stunning pictures and daily travel logs.'
 image: '/static/images/10-days-in-norway/espace.jpeg'
 ---
+
+Last year, I joined [Vercel](https://vercel.com) on a mission to grow the Next.js community. Today, I'm excited to announce **I've been** **promoted to Head of Developer Relations at Vercel**. I want to share how I got here, my plans for the future, and invite you to [join the team](https://vercel.com/careers).
+
+# h1 Holllllla
+
+## h2 Holllllla
+
+### h3 Holllllla
+
+#### h4 Holllllla
+
+##### h5 Holllllla
+
+###### h6 Holllllla
+
+<Stack flexDirection="column" spacing={2}>
+<DisplayListInfoCard
+  title="You might use a monorepo if..."
+  color="success"
+  items={[
+    'Small bundle sizes by decreasing the scope of components included in one package.',
+    'Shared built, lint, test, and release process for multiple packages versus separate repositories with duplicated code.',
+    'More granular control of semver on a package-by-package basis.',
+  ]}
+/>
+
+<DisplayListInfoCard
+  title="You might use a monorepo if..."
+  color="error"
+  items={[
+    'Small bundle sizes by decreasing the scope of components included in one package.',
+    'Shared built, lint, test, and release process for multiple packages versus separate repositories with duplicated code.',
+    'More granular control of semver on a package-by-package basis.',
+  ]}
+/>
+
+<DisplayListInfoCard
+  title="You might use a monorepo if..."
+  color="info"
+  items={[
+    'Small bundle sizes by decreasing the scope of components included in one package.',
+    'Shared built, lint, test, and release process for multiple packages versus separate repositories with duplicated code.',
+    'More granular control of semver on a package-by-package basis.',
+  ]}
+/>
+
+<DisplayListInfoCard
+  title="You might use a monorepo if..."
+  color="warning"
+  items={[
+    'Small bundle sizes by decreasing the scope of components included in one package.',
+    'Shared built, lint, test, and release process for multiple packages versus separate repositories with duplicated code.',
+    'More granular control of semver on a package-by-package basis.',
+  ]}
+/>
+</Stack>
 
 ### Why Norway?
 
@@ -16,6 +72,8 @@ A few years ago I stumbled onto a picture of the legendary [Trolltunga](https://
 I could hardly sleep the night before we departed for Chicago. I kept envisioning what things might look like based on pictures I’d seen and mentally walking through all the places we’d soon visit. That afternoon we left for Chicago and caught a late flight to Stockholm allowing us to sleep throughout the night. As we arrived in Stockholm, we noticed some extremely long lines at customs which were holding all passengers of our connecting flight to Oslo up. Our flight ended up getting delayed a tad to allow everyone to make it through customs in time. Nevertheless, we boarded our small puddle jumper plane for the one-hour flight to Oslo. From the Oslo airport, we took another flight up to Bodø. In the airport, we realized that Andrew had apparently lost his wallet somewhere between airport transfers. After about an hour of searching and contacting the airports, we declared it a loss and moved on – the first bump in the road on this trip. We had about 5 hours to kill until our ferry to the [Lofoten Islands](https://www.visitnorway.com/places-to-go/northern-norway/the-lofoten-islands/), so we ventured out into the city and explored the downtown area as well as the pier. Shortly after, we (attempted) to find the ferry which turned into a long process. We eventually found the ferry boarding room - a small, almost empty building out by the water. There was only one other person inside, which made sense because our ferry was at 12:15 am – not exactly ideal. The next ferry wasn’t until 7 pm the next day, so it was really our only option. As our boarding time finally rolled around, we walked outside to find a massive ferry. The ferry’s main purpose was to transport cars out to the islands and wasn't necessarily intended for passengers. We watched a variety of semis and smaller cars drive up into the bay of the ship. There were only about five total passengers on the ferry. Finally, we embarked on the three and a half hour trip out to Moskenes.
 
 <Image alt={`Moskenes Ferry`} src={`/static/images/10-days-in-norway/espace.jpeg`} width={5421 / 6} height={3614 / 6} />
+
+`code.dev`
 
 - **Style Guide**
 - **Component Library**
@@ -42,6 +100,51 @@ Depending on the state of your company/product, you might have a different start
 - Create a component library.
 - Choose a documentation platform.
 - Write design system documentation.
+
+```jsx
+import * as Dialog from '@radix-ui/react-dialog';
+
+export default () => (
+  <Dialog.Root>
+    <Dialog.Trigger />
+    <Dialog.Overlay />
+    <Dialog.Content>
+      <Dialog.Title />
+      <Dialog.Description />
+      <Dialog.Close />
+    </Dialog.Content>
+  </Dialog.Root>
+);
+```
+
+```jsx
+// your-dialog.js
+
+import React from 'react';
+
+import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { Cross1Icon } from '@radix-ui/react-icons';
+
+export function Dialog({ children, ...props }) {
+  return (
+    <DialogPrimitive.Root {...props}>
+      <DialogPrimitive.Overlay />
+      {children}
+    </DialogPrimitive.Root>
+  );
+}
+export const DialogContent = React.forwardRef(({ children, ...props }, forwardedRef) => (
+  <DialogPrimitive.Content {...props} ref={forwardedRef}>
+    {children}
+    <DialogPrimitive.Close>
+      <Cross1Icon />
+    </DialogPrimitive.Close>
+  </DialogPrimitive.Content>
+));
+export const DialogTrigger = DialogPrimitive.Trigger;
+
+export const DialogClose = DialogPrimitive.Close;
+```
 
 ### Establish design principles and begin a style guide.
 
@@ -126,6 +229,15 @@ or should you use a prop?
 <Button>Hello World!</Button>
 <Button variant="secondary">Hello World!</Button>
 ```
+
+<Codeblock>
+  {`
+    <Flex flexDirection="column" gap={2}>
+        <Heading>Heading</Heading>
+        <Heading>Heading</Heading>
+    </Flex>
+`}
+</Codeblock>
 
 ```js
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';

@@ -6,6 +6,13 @@ import { styled } from '@/stitches';
 // This creates a custom component that wraps an <a> tag
 const StyledLink = styled('a', {
   textDecoration: 'none',
+  fontWeight: '$medium',
+
+  '&:hover': {
+    color: '$mauve12',
+    textDecoration: 'underline',
+    textDecorationColor: '$mauve9',
+  },
 
   variants: {
     isActive: {
@@ -15,13 +22,10 @@ const StyledLink = styled('a', {
     },
     color: {
       primary: {
-        color: '$violet11',
-        '&:hover': {
-          color: '$red11',
-        },
+        color: '$mauve11',
       },
       secondary: {
-        color: '$gray11',
+        color: '$violet11',
       },
     },
   },

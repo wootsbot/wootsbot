@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image';
-
-import { ExternalLink } from 'react-feather';
+import dayjs from 'dayjs';
 
 import { styled } from '@/stitches';
 
@@ -12,7 +11,23 @@ import Heading from '@/design-system/Heading';
 import GridItem from '@/design-system/GridItem';
 import Container from '@/design-system/Container';
 import Box from '@/design-system/Box';
+import Stack from '@/design-system/Stack';
 import Layout from '@/components/Layout';
+import Link from '@/components/Link';
+
+import { getAllFilesFrontMatter } from '@/libs/mdx';
+
+const StyledAvatarWrapper = styled(Box, {
+  width: '100%',
+  maxWidth: 120,
+  height: '100%',
+  maxHeight: 120,
+
+  '@phone': {
+    width: 90,
+    height: 90,
+  },
+});
 
 const Avatar = styled(Image, {
   borderRadius: '$full',
@@ -26,166 +41,157 @@ const LinkTab = styled('a', {
   color: '$gray12',
 });
 
-const StyledCardProject = styled(Box, {
-  py: '$1',
-  px: '$2',
-  borderRadius: '$2',
-  variants: {
-    bgcolor: {
-      blue: {
-        backgroundColor: '$blue3',
-      },
-      tomato: {
-        backgroundColor: '$tomato3',
-      },
-      gray: {
-        backgroundColor: '$gray3',
-      },
-      red: {
-        backgroundColor: '$red3',
-      },
-    },
-  },
+const CardPost = styled(Link, {
+  height: '100%',
+  p: '$2',
 });
 
-const StyledExternalLink = styled(ExternalLink, {
-  variants: {
-    color: {
-      blue: {
-        color: '$blue11',
-      },
-      tomato: {
-        color: '$tomato11',
-      },
-      gray: {
-        color: '$gray11',
-      },
-      red: {
-        color: '$red11',
-      },
-    },
-  },
-});
+function HomePage({ posts }) {
+  const lastPosts = posts?.sort((a, b) => dayjs(b.publishedAt).valueOf() - dayjs(a.publishedAt).valueOf())?.slice(0, 3);
 
-function HomePage() {
   return (
     <Layout>
       <Container size={1} css={{ mt: '$6' }}>
-        <Grid columns={5} gap={4}>
-          <GridItem colSpan={3}>
+        <Flex
+          alignItems={{ '@initial': 'center', '@phone': 'start' }}
+          flexDirection={{ '@initial': 'row', '@phone': 'columnReverse' }}
+          gap={5}
+        >
+          <Box>
             <Flex gap={2}>
               <Flex flexDirection="column" gap={2}>
-                <Heading size={3}>Hola, soy Jorge.</Heading>
-                <Heading size={1}>"Haciendo esto y aquello"</Heading>
+                <Heading size="2xl">Hola, soy Jorge.</Heading>
+                <Heading
+                  as="h2"
+                  size="md"
+                  css={{
+                    backgroundImage: 'linear-gradient(to left, $blue11, $violet11)',
+                    color: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
+                  "Haciendo esto y aquello"
+                </Heading>
               </Flex>
-
-              <Avatar
-                src="/static/images/avatar.jpg"
-                alt="Picture of the author"
-                width={75}
-                height={75}
-                layout="fixed"
-                quality="100"
-              />
             </Flex>
 
-            <Text as="p" size="3" css={{ mt: '$3', lineHeight: '20px' }}>
-              Desarrollador JavaScript al que le apaciona diseñar!, vivo en México🇲🇽, coautor de{` `}
+            <Text css={{ mt: '$3' }}>
+              Desarrollador JavaScript al que le apaciona diseñar y gran admirador de UX!, coautor de{` `}
               <LinkTab target="_blank" href="https://www.reactnextboilerplate.com/" rel="noopener noreferrer">
                 React Next Boilerplate
               </LinkTab>
             </Text>
 
-            <Text as="p" css={{ mt: '$1', lineHeight: '20px' }}>
+            <Text css={{ mt: '$1' }}>
               Constructor de cosas, Entusiasta del código abierto y un fotógrafo apasionado.
             </Text>
-          </GridItem>
+          </Box>
 
-          <GridItem colSpan={{ '@initial': 2 }}>
-            <Flex flexDirection="column" gap={2}>
-              <StyledCardProject bgcolor="gray">
-                <Flex alignItems="center" justifyContent="between">
-                  <Text css={{ color: '$gray11' }}>React Next Boilerplate</Text>
-                  <a target="_blank" href="https://www.reactnextboilerplate.com/" rel="noopener noreferrer">
-                    <ExternalLink size={16} color="gray" />
-                  </a>
-                </Flex>
-              </StyledCardProject>
-
-              <StyledCardProject bgcolor="blue">
-                <Flex alignItems="center" justifyContent="between">
-                  <Text css={{ color: '$blue11' }}>@icons-pack/react-simple-icons</Text>
-                  <a target="_blank" href="https://github.com/icons-pack/react-simple-icons" rel="noopener noreferrer">
-                    <StyledExternalLink size={16} color="blue" />
-                  </a>
-                </Flex>
-              </StyledCardProject>
-
-              <StyledCardProject bgcolor="red">
-                <Flex alignItems="center" justifyContent="between">
-                  <Text css={{ color: '$red11' }}>@icons-pack/svelte-simple-icons</Text>
-                  <a target="_blank" href="https://github.com/icons-pack/svelte-simple-icons" rel="noopener noreferrer">
-                    <StyledExternalLink size={16} color="red" />
-                  </a>
-                </Flex>
-              </StyledCardProject>
-            </Flex>
-          </GridItem>
-        </Grid>
+          <StyledAvatarWrapper>
+            <Avatar
+              src="/static/images/avatar.jpg"
+              alt="Picture of the author"
+              width={120}
+              height={120}
+              layout="responsive"
+              quality="100"
+            />
+          </StyledAvatarWrapper>
+        </Flex>
 
         <Box css={{ mt: '$10' }}>
-          <Heading size="1" css={{ lineHeight: '32px', fontWeight: '$bold', mb: '$3' }}>
-            Mi lugar
-          </Heading>
-          <Flex flexDirection="column" gap={8}>
-            <Grid columns={2} gap={4}>
+          <Flex flexDirection="column" gap={2}>
+            <Grid columns={{ '@initial': 2, '@phone': 1 }} gap={4}>
               <GridItem colSpan={1}>
                 <Banner
                   src="/static/images/espace.jpeg"
                   alt="Picture of the author"
                   width={500}
-                  height={300}
+                  height={400}
                   layout="intrinsic"
                   quality="100"
                 />
               </GridItem>
 
               <GridItem colSpan={1}>
-                <Flex flexDirection="column" gap={2}>
-                  <Heading size="1" css={{ lineHeight: '32px', fontWeight: '$semibold' }}>
-                    Un lugar donde materializo las ideas
+                <Stack flexDirection="column" spacing={1}>
+                  <Heading as="h3" size="lg">
+                    Que usa wootsbot
                   </Heading>
-                  <Text size="4" css={{ lineHeight: '24px' }}>
-                    Connect the keyboard with up to 3 devices via Bluetooth or to a single device with the USB Type-C
-                    wired option. Pair it up with your smartphone, laptop and iPad, and switch amongst the devices
-                    swiftly, that is best for home, office and light gaming uses.
+                  <Text size="lg">
+                    Lo que más utilizo para codificación y video. Esto son algunas de las cosas que he acumulado en los
+                    últimos años.
                   </Text>
-                </Flex>
+                </Stack>
               </GridItem>
             </Grid>
 
-            <Grid columns={2} gap={4}>
-              <GridItem colSpan={1}>
-                <Flex flexDirection="column" gap={2}>
-                  <Heading size="1" css={{ lineHeight: '32px', fontWeight: '$semibold' }}>
-                    Keychron Keyboard Keychron Q1 Article Review - August 2021
-                  </Heading>
-                  <Text size="4" css={{ lineHeight: '24px' }}>
-                    Keychron is one of the few mechanical keyboards that features macOS media keys (F1 to F12) in a Mac
-                    layout with the same as conventional Mac systems.
-                  </Text>
-                </Flex>
-              </GridItem>
+            <Link href="/uses" color="primary">
+              Ver todo mi equipo
+            </Link>
+          </Flex>
+        </Box>
 
+        <Box css={{ mt: '$10' }}>
+          <Heading as="h3" size="lg" css={{ mb: '$3' }}>
+            Eche un vistazo a mi escritura.
+          </Heading>
+
+          <Flex flexDirection="column" gap={2}>
+            <Flex flexDirection={{ '@initial': 'row', '@phone': 'column' }} gap={2}>
+              {lastPosts?.map((post) => (
+                <Box
+                  key={post?.title}
+                  css={{
+                    display: 'flex',
+                    width: '100%',
+                    height: 'auto',
+                    backgroundColor: '$gray1',
+                    borderRadius: '$md',
+                    boxShadow: '$cardBase',
+
+                    '&:hover': {
+                      boxShadow: '$cardHover',
+                    },
+                  }}
+                >
+                  <CardPost href={`/blog/${post.slug}`}>
+                    <Text size="lg">{post?.title}</Text>
+                  </CardPost>
+                </Box>
+              ))}
+            </Flex>
+
+            <Link href="/blog" color="primary">
+              Ver todas las publicaciones
+            </Link>
+          </Flex>
+        </Box>
+
+        <Box css={{ mt: '$10' }}>
+          <Flex flexDirection="column" gap={2}>
+            <Grid columns={{ '@initial': 2, '@phone': 1 }} gap={4}>
               <GridItem colSpan={1}>
                 <Banner
-                  src="/static/images/teclado.png"
+                  src="/static/images/referencia-drone.jpeg"
                   alt="Picture of the author"
                   width={500}
-                  height={300}
+                  height={350}
                   layout="intrinsic"
                   quality="100"
                 />
+              </GridItem>
+
+              <GridItem colSpan={1}>
+                <Stack flexDirection="column" spacing={1}>
+                  <Heading as="h3" size="lg">
+                    Jugando con mi drone y coche electrico RC Wltoys escala 1:18
+                  </Heading>
+                  <Text size="lg">
+                    Suelo ir a los parques a correr un rato mi Wltoys A959-B. Tomar fotos desde las alturas al campo es
+                    algo que suelo hacer con mi DJI Drone Mavic Mini 2
+                  </Text>
+                </Stack>
               </GridItem>
             </Grid>
           </Flex>
@@ -193,6 +199,12 @@ function HomePage() {
       </Container>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const posts = await getAllFilesFrontMatter('blog');
+
+  return { props: { posts } };
 }
 
 export default HomePage;

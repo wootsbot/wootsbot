@@ -7,21 +7,29 @@ const DEFAULT_TAG = 'h1';
 
 const Heading = forwardRef((props, forwardedRef) => {
   // '2' here is the default heading size variant
-  const { size = '1', ...textProps } = props;
+  const { size = 'xl', ...textProps } = props;
   // This is the mapping of Heading Variants to Text variants
   const textSize = {
-    1: { '@initial': '4', '@desktop': '5' },
-    2: { '@initial': '6', '@desktop': '7' },
-    3: { '@initial': '7', '@desktop': '8' },
-    4: { '@initial': '8', '@desktop': '9' },
+    xs: { '@initial': 'sm', '@phone': 'sm' },
+    sm: { '@initial': 'md', '@phone': 'md' },
+    md: { '@initial': 'xl', '@phone': 'xl' },
+    lg: { '@initial': '3xl', '@phone': '2xl' },
+    xl: { '@initial': '4xl', '@phone': '3xl' },
+    '2xl': { '@initial': '5xl', '@phone': '4xl' },
+    '3xl': { '@initial': '6xl', '@phone': '5xl' },
+    '4xl': { '@initial': '7xl', '@phone': '6xl' },
   };
 
   // This is the mapping of Heading Variants to Text css
   const textCss = {
-    1: { fontWeight: 500, lineHeight: '20px', '@desktop': { lineHeight: '23px' } },
-    2: { fontWeight: 700, lineHeight: '25px', '@desktop': { lineHeight: '30px' } },
-    3: { fontWeight: 500, lineHeight: '33px', '@desktop': { lineHeight: '41px' } },
-    4: { fontWeight: 500, lineHeight: '35px', '@desktop': { lineHeight: '55px' } },
+    xs: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '23px' } },
+    sm: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '30px' } },
+    md: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '41px' } },
+    lg: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '55px' } },
+    xl: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '55px' } },
+    '2xl': { fontWeight: '$bold', lineHeight: 1, '@desktop': { lineHeight: '55px' } },
+    '3xl': { fontWeight: '$bold', lineHeight: 1, '@desktop': { lineHeight: '55px' } },
+    '4xl': { fontWeight: '$bold', lineHeight: 1, '@desktop': { lineHeight: '55px' } },
   };
 
   return (

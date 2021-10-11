@@ -24,6 +24,7 @@
     "lodash.merge": "^4.6.2",
     "mdx-bundler": "^6.0.2",
     "next": "^11.1.2",
+    "next-seo": "^4.28.1",
     "next-themes": "^0.0.15",
     "normalize.css": "^8.0.1",
     "parse-numeric-range": "1.2.0",

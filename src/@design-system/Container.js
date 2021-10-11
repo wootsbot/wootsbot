@@ -18,22 +18,28 @@ const Container = styled(Box, {
 
   variants: {
     size: {
-      1: {
+      xs: {
+        maxWidth: '480px',
+      },
+      sm: {
         maxWidth: '720px',
       },
-      2: {
+      md: {
         maxWidth: '1024px',
       },
-      3: {
-        maxWidth: '10245px',
+      lg: {
+        maxWidth: '1280px',
       },
-      4: {
+      xl: {
+        maxWidth: '1440px',
+      },
+      none: {
         maxWidth: 'none',
       },
     },
   },
   defaultVariants: {
-    size: '4',
+    size: 'none',
   },
 });
 

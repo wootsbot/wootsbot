@@ -36,7 +36,7 @@ const StyledHr = styled('hr', {
 
 function Footer() {
   return (
-    <Container as="footer" size={1} css={{ mb: '$12', mt: '$10' }}>
+    <Container as="footer" size="sm" css={{ mb: '$12', mt: '$10' }}>
       <StyledHr />
       <Flex flexDirection={{ '@initial': 'row', '@phone': 'column' }} gap={9}>
         <Flex flexDirection="column" gap={2}>

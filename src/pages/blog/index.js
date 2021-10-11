@@ -14,7 +14,7 @@ function BlogsPage({ posts }) {
     .filter((frontMatter) => frontMatter?.title?.toLowerCase()?.includes(searchValue?.toLowerCase()));
 
   return (
-    <Container css={{ mt: '$6' }} size={1}>
+    <Container css={{ mt: '$6' }} size="sm">
       <Flex flexDirection="column" gap={6}>
         {filteredBlogPosts?.map((blog) => (
           <BlogPreview key={blog.title} {...blog} />

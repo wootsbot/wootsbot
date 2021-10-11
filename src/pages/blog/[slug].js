@@ -10,7 +10,7 @@ import components from '@/components/MDXComponents';
 function BlogSlugPage({ code, frontMatter }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
   return (
-    <Container css={{ mt: '$6', mb: '$5' }} size={1}>
+    <Container css={{ mt: '$6', mb: '$5' }} size="sm">
       <BlogLayout frontMatter={frontMatter}>
         <Component components={{ ...components }} />
       </BlogLayout>

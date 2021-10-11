@@ -15,6 +15,7 @@ import Stack from '@/design-system/Stack';
 import Layout from '@/components/Layout';
 import Link from '@/components/Link';
 import Banner from '@/components/Banner';
+import SEO from '@/components/SEO';
 
 import { getAllFilesFrontMatter } from '@/libs/mdx';
 
@@ -31,7 +32,12 @@ function HomePage({ posts }) {
   const lastPosts = posts?.sort((a, b) => dayjs(b.publishedAt).valueOf() - dayjs(a.publishedAt).valueOf())?.slice(0, 3);
 
   return (
-    <Container size={1} css={{ mt: '$6' }}>
+    <Container size="sm" css={{ mt: '$6' }}>
+      <SEO
+        title="Hola, soy Jorge."
+        description="Desarrollador JavaScript al que le apaciona diseñar y gran admirador de UX!, coautor de React Next Boilerplate. Constructor de cosas, Entusiasta del código abierto y un fotógrafo apasionado."
+      />
+
       <Banner />
 
       <Box css={{ mt: '$10' }}>

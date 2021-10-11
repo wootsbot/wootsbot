@@ -5,6 +5,8 @@ import App from 'next/app';
 import { IdProvider } from '@radix-ui/react-id';
 import { ThemeProvider } from 'next-themes';
 
+import { DefaultSeo } from 'next-seo';
+
 /**
  * dayjs config
  */
@@ -42,12 +44,14 @@ import '@fontsource/jetbrains-mono/700.css';
 import '@fontsource/jetbrains-mono/800.css';
 
 import { globalStyles, darkTheme } from '@/stitches';
+import { getSeo } from '@/utils/seo';
 
 const Frame = ({ children }) => <>{children}</>;
 
 function WootsbotDevApp(props) {
   const { Component, pageProps } = props;
 
+  const seo = getSeo();
   const Layout = Component.Layout || Frame;
 
   globalStyles();
@@ -63,6 +67,7 @@ function WootsbotDevApp(props) {
             light: 'light',
           }}
         >
+          <DefaultSeo {...seo} />
           <Head>
             <title>Wootsbot.dev</title>
           </Head>

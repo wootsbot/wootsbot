@@ -9,13 +9,12 @@ import { ThemeProvider } from 'next-themes';
  * dayjs config
  */
 import dayjs from 'dayjs';
+import 'dayjs/locale/es';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
 dayjs.extend(localizedFormat);
 dayjs.extend(relativeTime);
-
-import 'dayjs/locale/es';
 
 // when Sunday is the first day of the week
 dayjs.locale('es'); // use Spanish locale globally
@@ -44,30 +43,37 @@ import '@fontsource/jetbrains-mono/800.css';
 
 import { globalStyles, darkTheme } from '@/stitches';
 
-class Srr extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    globalStyles();
-    return (
-      <StrictMode>
-        <IdProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            value={{
-              dark: darkTheme.className,
-              light: 'light',
-            }}
-          >
-            <Head>
-              <title>Wootsbot.dev</title>
-            </Head>
+const Frame = ({ children }) => <>{children}</>;
+
+function WootsbotDevApp(props) {
+  const { Component, pageProps } = props;
+
+  const Layout = Component.Layout || Frame;
+
+  globalStyles();
+
+  return (
+    <StrictMode>
+      <IdProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          value={{
+            dark: darkTheme.className,
+            light: 'light',
+          }}
+        >
+          <Head>
+            <title>Wootsbot.dev</title>
+          </Head>
+
+          <Layout pageProps={pageProps}>
             <Component {...pageProps} />
-          </ThemeProvider>
-        </IdProvider>
-      </StrictMode>
-    );
-  }
+          </Layout>
+        </ThemeProvider>
+      </IdProvider>
+    </StrictMode>
+  );
 }
 
-export default Srr;
+export default WootsbotDevApp;

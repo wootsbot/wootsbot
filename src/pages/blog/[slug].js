@@ -2,21 +2,19 @@ import { useMemo } from 'react';
 import { getMDXComponent } from 'mdx-bundler/client';
 import { getFiles, getFileBySlug } from '@/libs/mdx';
 
+import Layout from '@/components/Layout';
+import BlogLayout from '@/components/BlogLayout';
 import Container from '@/design-system/Container';
 import components from '@/components/MDXComponents';
-import BlogLayout from '@/components/BlogLayout';
-import Layout from '@/components/Layout';
 
-export default function BlogPage({ code, frontMatter }) {
+function BlogSlugPage({ code, frontMatter }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
   return (
-    <Layout>
-      <Container css={{ mt: '$6', mb: '$5' }} size={1}>
-        <BlogLayout frontMatter={frontMatter}>
-          <Component components={{ ...components }} />
-        </BlogLayout>
-      </Container>
-    </Layout>
+    <Container css={{ mt: '$6', mb: '$5' }} size={1}>
+      <BlogLayout frontMatter={frontMatter}>
+        <Component components={{ ...components }} />
+      </BlogLayout>
+    </Container>
   );
 }
 
@@ -38,3 +36,6 @@ export async function getStaticProps({ params }) {
 
   return { props: { ...post } };
 }
+
+BlogSlugPage.Layout = Layout;
+export default BlogSlugPage;

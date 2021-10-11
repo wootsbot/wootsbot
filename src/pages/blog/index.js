@@ -14,15 +14,13 @@ function BlogsPage({ posts }) {
     .filter((frontMatter) => frontMatter?.title?.toLowerCase()?.includes(searchValue?.toLowerCase()));
 
   return (
-    <Layout>
-      <Container css={{ mt: '$6' }} size={1}>
-        <Flex flexDirection="column" gap={6}>
-          {filteredBlogPosts?.map((blog) => (
-            <BlogPreview key={blog.title} {...blog} />
-          ))}
-        </Flex>
-      </Container>
-    </Layout>
+    <Container css={{ mt: '$6' }} size={1}>
+      <Flex flexDirection="column" gap={6}>
+        {filteredBlogPosts?.map((blog) => (
+          <BlogPreview key={blog.title} {...blog} />
+        ))}
+      </Flex>
+    </Container>
   );
 }
 
@@ -32,4 +30,5 @@ export async function getStaticProps() {
   return { props: { posts } };
 }
 
+BlogsPage.Layout = Layout;
 export default BlogsPage;

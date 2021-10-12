@@ -7,15 +7,23 @@ import Container from '@/design-system/Container';
 import { getFiles, getFileBySlug } from '@/libs/mdx';
 import { getMDXComponent } from 'mdx-bundler/client';
 
-import SEO from '@/components/SEO';
+import SEO, { BlogSeo } from '@/components/SEO';
 import components from '@/components/MDXComponents';
 
 function BlogSlugPage({ code, frontMatter }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
 
+  console.log('frontMatter', frontMatter);
+
   return (
     <Container css={{ mt: '$6', mb: '$5' }} size="sm">
       <SEO title={frontMatter?.title} description={frontMatter?.summary} />
+      <BlogSeo
+        title={frontMatter?.title}
+        authorName={frontMatter?.authorName}
+        description={frontMatter?.summary}
+        datePublished={frontMatter?.publishedAt}
+      />
 
       <BlogLayout frontMatter={frontMatter}>
         <Component components={{ ...components }} />

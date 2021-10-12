@@ -1,4 +1,4 @@
-import { NextSeo } from 'next-seo';
+import { NextSeo, BlogJsonLd } from 'next-seo';
 import siteConfig from '@/utils/site-config';
 
 const SEO = ({ title, description }) => (
@@ -10,4 +10,5 @@ const SEO = ({ title, description }) => (
   />
 );
 
+export { BlogJsonLd as BlogSeo };
 export default SEO;

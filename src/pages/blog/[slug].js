@@ -1,16 +1,22 @@
 import { useMemo } from 'react';
-import { getMDXComponent } from 'mdx-bundler/client';
-import { getFiles, getFileBySlug } from '@/libs/mdx';
 
 import Layout from '@/components/Layout';
 import BlogLayout from '@/components/BlogLayout';
 import Container from '@/design-system/Container';
+
+import { getFiles, getFileBySlug } from '@/libs/mdx';
+import { getMDXComponent } from 'mdx-bundler/client';
+
+import SEO from '@/components/SEO';
 import components from '@/components/MDXComponents';
 
 function BlogSlugPage({ code, frontMatter }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
+
   return (
     <Container css={{ mt: '$6', mb: '$5' }} size="sm">
+      <SEO title={frontMatter?.title} description={frontMatter?.summary} />
+
       <BlogLayout frontMatter={frontMatter}>
         <Component components={{ ...components }} />
       </BlogLayout>

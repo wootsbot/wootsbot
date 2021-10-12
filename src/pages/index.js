@@ -34,7 +34,7 @@ function HomePage({ posts }) {
   return (
     <Container size="sm" css={{ mt: '$6' }}>
       <SEO
-        title="Hola, soy Jorge."
+        title="Jorge L. Calleja – Developer"
         description="Desarrollador JavaScript al que le apaciona diseñar y gran admirador de UX!, coautor de React Next Boilerplate. Constructor de cosas, Entusiasta del código abierto y un fotógrafo apasionado."
       />
 

@@ -22,7 +22,7 @@ const siteConfig = {
       type: 'website',
       locale: 'es-MX',
       url: 'https://wootsbot.dev/',
-      title: 'Mercado Libre',
+      title: 'Wootsbot dev',
       description: 'Creo que "entre más compartas, más aprendes".',
       site_name: 'wootsbot.dev',
       images: [

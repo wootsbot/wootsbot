@@ -14,26 +14,6 @@ const StyledImage = styled(Image, {
   borderRadius: '$sm',
 });
 
-const StyledFooterInfo = styled(Box, {
-  position: 'absolute',
-  width: '100%',
-  maxWidth: 290,
-  marginTop: -25,
-  zIndex: '$2',
-  px: '$2',
-  py: '$1',
-  backgroundColor: '$colors$sage12',
-  borderBottomLeftRadius: '$sm',
-  borderTopRightRadius: '$2xl',
-
-  '@phone': {
-    marginTop: -40,
-    maxWidth: 180,
-    px: '$1',
-    borderTopRightRadius: '$none',
-  },
-});
-
 const StyledCover = styled(Box, {
   width: '100%',
   maxWidth: '100%',
@@ -43,10 +23,29 @@ const StyledCover = styled(Box, {
   // maxHeight: 350,
 });
 
+const StyledFooterInfo = styled(Box, {
+  position: 'absolute',
+  width: '100%',
+  maxWidth: 250,
+  marginTop: -25,
+  zIndex: '$2',
+  px: '$2',
+  py: '$1',
+  backgroundColor: '$colors$sage12',
+  borderBottomLeftRadius: '$sm',
+  //  borderTopRightRadius: '$2xl',
+
+  '@phone': {
+    marginTop: -40,
+    maxWidth: 300,
+    px: '$1',
+  },
+});
+
 function GalleryPage() {
   return (
     <Container size="sm" css={{ mt: '$6' }}>
-      <Grid columns={2} gapX={4} gapY={5}>
+      <Grid columns={{ '@initial': 2, '@phone': 1 }} gapX={4} gapY={5}>
         <GridItem colSpan={1}>
           <StyledCover>
             <StyledImage

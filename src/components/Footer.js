@@ -72,11 +72,17 @@ function Footer() {
           <NavLink href="/" isDisableActive>
             Sobre mi
           </NavLink>
+
           <NavLink href="/uses" isDisableActive>
             Uses
           </NavLink>
+
           <NavLink href="/blog" isDisableActive>
             Articulos
+          </NavLink>
+
+          <NavLink href="/gallery" isDisableActive>
+            Galeria
           </NavLink>
         </Flex>
       </Flex>

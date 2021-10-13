@@ -13,7 +13,7 @@ const Container = styled(Box, {
   px: '$2',
 
   '@phone': {
-    px: '$5',
+    px: '$4',
   },
 
   variants: {

@@ -56,6 +56,7 @@ function Header() {
     <>
       <NavLink href="/">Sobre mi</NavLink>
       <NavLink href="/blog">Articulos</NavLink>
+      <NavLink href="/gallery">Galeria</NavLink>
     </>
   );
 

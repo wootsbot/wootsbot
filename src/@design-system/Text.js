@@ -114,7 +114,7 @@ const Text = styled('p', {
       },
 
       gray: {
-        color: '$gray11',
+        color: '$gray12',
       },
 
       contrast: {

@@ -18,11 +18,13 @@ export default function BlogPreview({ title, summary, slug, publishedAt }) {
         </Heading>
       </StyledLink>
 
-      <Text as="time" size="sm" color="gray">
+      <Text as="time" size="xs" color="gray">
         {dayjs(publishedAt).format('MMMM D, YYYY')}
       </Text>
 
-      <Text color="gray">{summary}</Text>
+      <Text color="gray" size="sm">
+        {summary}
+      </Text>
     </Flex>
   );
 }

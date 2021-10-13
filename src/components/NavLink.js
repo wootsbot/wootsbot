@@ -9,13 +9,13 @@ const StyledLink = styled('a', {
   color: '$mauve12',
 
   '&:hover': {
-    color: '$violet11',
+    color: '$violet10',
   },
 
   variants: {
     isActive: {
       true: {
-        color: '$violet11',
+        color: '$violet10',
       },
     },
   },

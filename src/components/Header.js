@@ -54,9 +54,15 @@ function Header() {
 
   const renderLinks = () => (
     <>
-      <NavLink href="/">Sobre mi</NavLink>
-      <NavLink href="/blog">Articulos</NavLink>
-      <NavLink href="/gallery">Galeria</NavLink>
+      <NavLink href="/" onClick={() => setIsOpenDrawer(false)}>
+        Sobre mi
+      </NavLink>
+      <NavLink href="/blog" onClick={() => setIsOpenDrawer(false)}>
+        Articulos
+      </NavLink>
+      <NavLink href="/gallery" onClick={() => setIsOpenDrawer(false)}>
+        Galeria
+      </NavLink>
     </>
   );
 

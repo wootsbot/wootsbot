@@ -17,15 +17,20 @@ const StyledImage = styled(Image, {
 const StyledFooterInfo = styled(Box, {
   position: 'absolute',
   width: '100%',
-  maxWidth: 300,
-  marginTop: -45,
+  maxWidth: 290,
+  marginTop: -25,
   zIndex: '$2',
   px: '$2',
+  py: '$1',
+  backgroundColor: '$colors$sage12',
+  borderBottomLeftRadius: '$sm',
+  borderTopRightRadius: '$2xl',
 
   '@phone': {
-    marginTop: -58,
+    marginTop: -40,
     maxWidth: 180,
     px: '$1',
+    borderTopRightRadius: '$none',
   },
 });
 
@@ -41,7 +46,7 @@ const StyledCover = styled(Box, {
 function GalleryPage() {
   return (
     <Container size="sm" css={{ mt: '$6' }}>
-      <Grid columns={2} gapX={4} gapY={4}>
+      <Grid columns={2} gapX={4} gapY={5}>
         <GridItem colSpan={1}>
           <StyledCover>
             <StyledImage
@@ -54,7 +59,7 @@ function GalleryPage() {
             />
           </StyledCover>
           <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold' }}>
+            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
               Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
             </Text>
           </StyledFooterInfo>
@@ -72,7 +77,7 @@ function GalleryPage() {
             />
           </StyledCover>
           <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold' }}>
+            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
               Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
             </Text>
           </StyledFooterInfo>
@@ -90,7 +95,7 @@ function GalleryPage() {
             />
           </StyledCover>
           <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold' }}>
+            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
               Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
             </Text>
           </StyledFooterInfo>
@@ -109,7 +114,7 @@ function GalleryPage() {
           </StyledCover>
 
           <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold' }}>
+            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
               Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
             </Text>
           </StyledFooterInfo>
@@ -127,7 +132,7 @@ function GalleryPage() {
             />
           </StyledCover>
           <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold' }}>
+            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
               Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
             </Text>
           </StyledFooterInfo>
@@ -145,7 +150,7 @@ function GalleryPage() {
             />
           </StyledCover>
           <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold' }}>
+            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
               Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
             </Text>
           </StyledFooterInfo>
@@ -163,7 +168,7 @@ function GalleryPage() {
             />
           </StyledCover>
           <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold' }}>
+            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
               Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
             </Text>
           </StyledFooterInfo>
@@ -181,7 +186,7 @@ function GalleryPage() {
             />
           </StyledCover>
           <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold' }}>
+            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
               Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
             </Text>
           </StyledFooterInfo>

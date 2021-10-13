@@ -13,8 +13,6 @@ import components from '@/components/MDXComponents';
 function BlogSlugPage({ code, frontMatter }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
 
-  console.log('frontMatter', frontMatter);
-
   return (
     <Container css={{ mt: '$6', mb: '$5' }} size="sm">
       <SEO title={frontMatter?.title} description={frontMatter?.summary} />

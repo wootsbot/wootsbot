@@ -96,7 +96,7 @@ function HomePage({ posts }) {
                   },
                 }}
               >
-                <CardPost href={`/blog/${post.slug}`}>
+                <CardPost href={`/blog/${post.slug}`} isIcon={false}>
                   <Text size="lg">{post?.title}</Text>
                 </CardPost>
               </Box>

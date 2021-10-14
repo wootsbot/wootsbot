@@ -11,6 +11,7 @@ import Flex from '@/design-system/Flex';
 import Container from '@/design-system/Container';
 
 import NavLink from '@/components/NavLink';
+import Subscribe from '@/components/Subscribe';
 
 const StyledLink = styled('a', {
   textDecoration: 'underline',
@@ -38,6 +39,11 @@ function Footer() {
   return (
     <Container as="footer" size="sm" css={{ mb: '$12', mt: '$10' }}>
       <StyledHr />
+
+      <Box css={{ mb: '$6' }}>
+        <Subscribe />
+      </Box>
+
       <Flex flexDirection={{ '@initial': 'row', '@phone': 'column' }} gap={9}>
         <Flex flexDirection="column" gap={2}>
           <Text as="span" size="xl" css={{ fontWeight: '$semibold' }}>

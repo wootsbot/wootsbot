@@ -7,6 +7,7 @@
   "dependencies": {
     "@fontsource/inter": "^4.5.0",
     "@fontsource/jetbrains-mono": "^4.5.0",
+    "@hookform/resolvers": "^2.8.2",
     "@icons-pack/react-simple-icons": "^4.6.1",
     "@radix-ui/colors": "^0.1.7",
     "@radix-ui/react-icons": "^1.0.3",
@@ -34,6 +35,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
+    "react-hook-form": "^7.17.3",
     "react-live": "^2.3.0",
     "reading-time": "^1.5.0",
     "refractor": "3.3.1",
@@ -44,7 +46,8 @@
     "rehype-slug": "^5.0.0",
     "remark-gfm": "^2.0.0",
     "unified": "^10.1.0",
-    "unist-util-visit": "2.0.3"
+    "unist-util-visit": "2.0.3",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "esbuild": "^0.13.3",

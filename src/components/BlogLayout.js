@@ -10,6 +10,8 @@ import Flex from '@/design-system/Flex';
 import Stack from '@/design-system/Stack';
 import Heading from '@/design-system/Heading';
 
+import Subscribe from '@/components/Subscribe';
+
 const Avatar = styled(Image, {
   borderRadius: '$full',
 });
@@ -46,6 +48,10 @@ function BlogLayout({ children, frontMatter }) {
       <Box css={{ mt: '$5' }} className="wootsbot-article">
         {children}
       </Box>
+
+      {/* <Box css={{ mt: '$12' }}>
+        <Subscribe />
+      </Box> */}
     </article>
   );
 }

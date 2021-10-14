@@ -220,6 +220,7 @@ export const { styled, css, globalCss, keyframes, theme, createTheme, getCssText
       cardBase: `0 0 0 1px ${gray.gray5}`,
       cardHover: `0 0 0 1.5px ${gray.gray6}`,
       cardSuccess: `0 0 0 1.5px ${green.green6}`,
+      cardError: `0 0 0 1.5px ${red.red8}`,
       inner: 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
       none: 'none',
       'dark-lg':

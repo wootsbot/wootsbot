@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
 import dayjs from 'dayjs';
 
 import { styled } from '@/stitches';
@@ -14,8 +16,9 @@ import Stack from '@/design-system/Stack';
 
 import Layout from '@/components/Layout';
 import Link from '@/components/Link';
-import Banner from '@/components/Banner';
-import SEO from '@/components/SEO';
+
+const SEO = dynamic(() => import('@/components/SEO'));
+const Banner = dynamic(() => import('@/components/Banner'));
 
 import { getAllFilesFrontMatter } from '@/libs/mdx';
 

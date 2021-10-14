@@ -7,8 +7,9 @@ import Container from '@/design-system/Container';
 import { getFiles, getFileBySlug } from '@/libs/mdx';
 import { getMDXComponent } from 'mdx-bundler/client';
 
-import SEO, { BlogSeo } from '@/components/SEO';
 import components from '@/components/MDXComponents';
+
+import SEO, { BlogSeo } from '@/components/SEO';
 
 function BlogSlugPage({ code, frontMatter }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);

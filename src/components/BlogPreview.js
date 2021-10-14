@@ -7,16 +7,14 @@ import Text from '@/design-system/Text';
 import Flex from '@/design-system/Flex';
 import Heading from '@/design-system/Heading';
 
-const StyledLink = styled(Link, {});
-
 export default function BlogPreview({ title, summary, slug, publishedAt }) {
   return (
     <Flex flexDirection="column" gap={1}>
-      <StyledLink href={`/blog/${slug}`}>
+      <Link href={`/blog/${slug}`}>
         <Heading as="h4" size="md">
           {title}
         </Heading>
-      </StyledLink>
+      </Link>
 
       <Text as="time" size="xs" color="gray">
         {dayjs(publishedAt).format('MMMM D, YYYY')}

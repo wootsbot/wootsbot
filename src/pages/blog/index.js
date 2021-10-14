@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 
 import Flex from '@/design-system/Flex';
 import Container from '@/design-system/Container';
@@ -6,8 +7,9 @@ import BlogPreview from '@/components/BlogPreview';
 
 import { getAllFilesFrontMatter } from '@/libs/mdx';
 
-import SEO from '@/components/SEO';
 import Layout from '@/components/Layout';
+
+const SEO = dynamic(() => import('@/components/SEO'));
 
 function BlogsPage({ posts }) {
   const [searchValue, setSearchValue] = useState('');

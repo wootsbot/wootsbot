@@ -70,6 +70,7 @@ function WootsbotDevApp(props) {
           <DefaultSeo {...seo} />
           <Head>
             <title>Wootsbot.dev</title>
+            <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
           </Head>
 
           <Layout pageProps={pageProps}>

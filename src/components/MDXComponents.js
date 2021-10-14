@@ -21,17 +21,16 @@ import LinkHeading from '@/components/LinkHeading';
 import Codeblock from '@/components/Codeblock';
 
 const StyledLink = styled('a', {
-  textDecoration: 'underline',
-  textDecorationColor: '$sage9',
-  color: '$mauve11',
+  textDecoration: 'none',
   fontWeight: '$medium',
+  color: '$blue11',
 
   '&:hover': {
-    color: '$sage12',
+    color: '$blue9',
   },
 
   '&:active': {
-    color: '$sage11',
+    color: '$blue9',
   },
 });
 
@@ -186,12 +185,15 @@ const MDXComponents = {
         mt: '$6',
         mb: '$5',
         pl: '$4',
-        borderLeft: `1px solid $colors$gray6`,
-        color: 'orange',
+        py: '$1',
+        borderLeft: `3px solid $colors$blue11`,
+        color: '$blue3',
+        backgroundColor: '$blue3',
         '& p': {
+          m: 0,
           fontSize: '$md',
-          color: '$slate11',
-          lineHeight: '25px',
+          color: '$blue11',
+          lineHeight: '27px',
         },
       }}
       {...props}

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
 import { styled } from '@/stitches';
 
@@ -9,6 +10,8 @@ import Container from '@/design-system/Container';
 import Text from '@/design-system/Text';
 
 import Layout from '@/components/Layout';
+
+const SEO = dynamic(() => import('@/components/SEO'));
 
 const StyledImage = styled(Image, {
   borderRadius: '$sm',
@@ -45,6 +48,8 @@ const StyledFooterInfo = styled(Box, {
 function GalleryPage() {
   return (
     <Container size="sm" css={{ mt: '$6' }}>
+      <SEO title="Galeria" description="Un espacio para concentrar mi pasión por la fotografía." />
+
       <Grid columns={{ '@initial': 2, '@phone': 1 }} gapX={4} gapY={5}>
         <GridItem colSpan={1}>
           <StyledCover>

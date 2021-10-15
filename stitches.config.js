@@ -26,6 +26,8 @@ import {
   mintDark,
   sage,
   sageDark,
+  gold,
+  goldDark,
 } from '@radix-ui/colors';
 
 export const { styled, css, globalCss, keyframes, theme, createTheme, getCssText, config } = createStitches({
@@ -101,6 +103,7 @@ export const { styled, css, globalCss, keyframes, theme, createTheme, getCssText
       ...slate,
       ...mint,
       ...sage,
+      ...gold,
       hiContrast: '$gray12',
       // loContrast: 'white',
     },
@@ -289,5 +292,6 @@ export const darkTheme = createTheme({
     ...slateDark,
     ...mintDark,
     ...sageDark,
+    ...goldDark,
   },
 });

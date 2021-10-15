@@ -106,7 +106,15 @@ function Header() {
                   name="theme"
                   aria-label="change mode theme"
                 >
-                  {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+                  {theme === 'light' ? (
+                    <Box css={{ color: '$gold11' }}>
+                      <MoonIcon />
+                    </Box>
+                  ) : (
+                    <Box css={{ color: '$yellow11' }}>
+                      <SunIcon />
+                    </Box>
+                  )}
                 </IconButton>
               </Flex>
 
@@ -171,7 +179,13 @@ function Header() {
               name="theme"
               aria-label="change mode theme"
             >
-              {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+              {theme === 'light' ? (
+                <MoonIcon />
+              ) : (
+                <Box css={{ color: '$yellow11', backgroundColor: '$yellow11' }}>
+                  <SunIcon />
+                </Box>
+              )}
             </IconButton>
           </Flex>
         </DrawerMobile>

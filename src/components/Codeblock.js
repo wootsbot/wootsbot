@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 
-import { FileIcon, CheckIcon } from '@radix-ui/react-icons';
+import { CheckIcon, ClipboardIcon } from '@radix-ui/react-icons';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
 import { styled, css } from '@/stitches';
@@ -27,12 +27,14 @@ const StyledButtonWrapper = styled(Box, {
 const StyledLiveEditorWrapper = styled(Box, {
   position: 'relative',
   backgroundColor: '$colors$violet2',
+  color: '$colors$gray12',
   boxShadow: '0 0 0 1.5px $colors$violet3',
   zIndex: 0,
   borderRadius: 8,
   px: '$2',
   pt: '$5',
   pb: '$2',
+  mt: '$5',
 });
 
 const livePreviewStyles = css({
@@ -52,6 +54,7 @@ export const liveEditorStyle = {
   fontSize: 14,
   overflowX: 'auto',
   fontFamily: 'JetBrains Mono,Söhne Mono, menlo, monospacece',
+  backgroundColor: 'transparent',
 };
 
 export const liveErrorStyle = {
@@ -59,7 +62,6 @@ export const liveErrorStyle = {
   fontSize: 14,
   padding: '1em',
   overflowX: 'auto',
-  color: 'white',
 };
 
 const StyledContent = styled(TooltipPrimitive.Content, {
@@ -97,7 +99,7 @@ function CopyButton({ code, ...props }) {
             aria-label="change mode theme"
             onClick={onCopy}
           >
-            {hasCopied ? <CheckIcon /> : <FileIcon />}
+            {hasCopied ? <CheckIcon /> : <ClipboardIcon />}
           </IconButton>
         </TooltipTrigger>
         <TooltipContent sideOffset={5}>Copiado</TooltipContent>
@@ -111,12 +113,14 @@ const EditableNotice = (props) => {
     <Box
       css={{
         position: 'absolute',
+        backgroundColor: '$colors$violet3',
         width: '$full',
-        top: '-0.5em',
-        py: '$2',
+        top: -20,
+        py: '$1',
+        px: '$1',
         zIndex: '0',
         letterSpacing: '$wide',
-        color: '$gray11',
+        color: '$violet11',
         fontSize: '$xs',
         fontWeight: '$semibold',
         textTransform: 'uppercase',

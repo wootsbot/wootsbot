@@ -61,7 +61,8 @@ function WootsbotDevApp(props) {
       <IdProvider>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          enableSystem
+          defaultTheme="system"
           value={{
             dark: darkTheme.className,
             light: 'light',

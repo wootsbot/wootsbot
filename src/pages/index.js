@@ -13,6 +13,7 @@ import GridItem from '@/design-system/GridItem';
 import Container from '@/design-system/Container';
 import Box from '@/design-system/Box';
 import Stack from '@/design-system/Stack';
+import Spacer from '@/design-system/Spacer';
 
 import Layout from '@/components/Layout';
 import Link from '@/components/Link';
@@ -58,21 +59,23 @@ function HomePage({ posts }) {
             </GridItem>
 
             <GridItem colSpan={1}>
-              <Stack flexDirection="column" spacing={1}>
+              <Flex flexDirection="column" gap={2}>
                 <Heading as="h3" size="lg">
                   Que usa wootsbot
                 </Heading>
                 <Text size="lg">
-                  Lo que más utilizo para codificación y video. Esto son algunas de las cosas que he acumulado en los
-                  últimos años.
+                  Creo que es importante crear un ambiente donde aumente tu creatividad y te sientas cómodo, estas son
+                  algunas de las cosas que he recopilado en los últimos años.
                 </Text>
-              </Stack>
+
+                <Spacer />
+
+                <Link href="/uses" color="primary">
+                  Ver todo lo que uso
+                </Link>
+              </Flex>
             </GridItem>
           </Grid>
-
-          <Link href="/uses" color="primary">
-            Ver todo mi equipo
-          </Link>
         </Flex>
       </Box>
 
@@ -106,6 +109,8 @@ function HomePage({ posts }) {
             ))}
           </Flex>
 
+          <Spacer />
+
           <Link href="/blog" color="primary">
             Ver todas las publicaciones
           </Link>
@@ -129,7 +134,7 @@ function HomePage({ posts }) {
             <GridItem colSpan={1}>
               <Stack flexDirection="column" spacing={1}>
                 <Heading as="h3" size="lg">
-                  Jugando con mi drone y coche electrico RC Wltoys escala 1:18
+                  Jugando con un drone y coche electrico RC Wltoys escala 1:18
                 </Heading>
                 <Text size="lg">
                   Suelo ir a los parques a correr un rato mi Wltoys A959-B. Tomar fotos desde las alturas al campo es

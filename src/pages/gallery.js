@@ -13,6 +13,24 @@ import Layout from '@/components/Layout';
 
 const SEO = dynamic(() => import('@/components/SEO'));
 
+import galleryData from '@/data/gallery';
+
+const shimmer = (w, h) => `
+<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="#333" offset="20%" />
+      <stop stop-color="#222" offset="50%" />
+      <stop stop-color="#333" offset="70%" />
+    </linearGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="#333" />
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+</svg>`;
+
+const toBase64 = (str) => (typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str));
+
 const StyledImage = styled(Image, {
   borderRadius: '$sm',
 });
@@ -45,159 +63,40 @@ const StyledFooterInfo = styled(Box, {
   },
 });
 
-function GalleryPage() {
+function GalleryPage({ gallery }) {
   return (
     <Container size="sm" css={{ mt: '$6' }}>
       <SEO title="Galeria" description="Un espacio para concentrar mi pasión por la fotografía." />
 
       <Grid columns={{ '@initial': 2, '@phone': 1 }} gapX={4} gapY={5}>
-        <GridItem colSpan={1}>
-          <StyledCover>
-            <StyledImage
-              src="/static/images/gallery/w-08.jpeg"
-              alt="Picture of the author"
-              width={640}
-              height={640}
-              layout="responsive"
-              quality="100"
-            />
-          </StyledCover>
-          <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
-              Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
-            </Text>
-          </StyledFooterInfo>
-        </GridItem>
-
-        <GridItem colSpan={1}>
-          <StyledCover>
-            <StyledImage
-              src="/static/images/gallery/w-01.jpeg"
-              alt="Picture of the author"
-              width={640}
-              height={640}
-              layout="responsive"
-              quality="100"
-            />
-          </StyledCover>
-          <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
-              Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
-            </Text>
-          </StyledFooterInfo>
-        </GridItem>
-
-        <GridItem colSpan={1}>
-          <StyledCover>
-            <StyledImage
-              src="/static/images/gallery/w-02.jpeg"
-              alt="Picture of the author"
-              width={640}
-              height={640}
-              layout="responsive"
-              quality="100"
-            />
-          </StyledCover>
-          <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
-              Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
-            </Text>
-          </StyledFooterInfo>
-        </GridItem>
-
-        <GridItem colSpan={1}>
-          <StyledCover>
-            <StyledImage
-              src="/static/images/gallery/w-03.jpeg"
-              alt="Picture of the author"
-              width={640}
-              height={640}
-              layout="responsive"
-              quality="100"
-            />
-          </StyledCover>
-
-          <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
-              Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
-            </Text>
-          </StyledFooterInfo>
-        </GridItem>
-
-        <GridItem colSpan={1}>
-          <StyledCover>
-            <StyledImage
-              src="/static/images/gallery/w-04.jpeg"
-              alt="Picture of the author"
-              width={640}
-              height={640}
-              layout="responsive"
-              quality="100"
-            />
-          </StyledCover>
-          <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
-              Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
-            </Text>
-          </StyledFooterInfo>
-        </GridItem>
-
-        <GridItem colSpan={1}>
-          <StyledCover>
-            <StyledImage
-              src="/static/images/gallery/w-05.jpeg"
-              alt="Picture of the author"
-              width={640}
-              height={640}
-              layout="responsive"
-              quality="100"
-            />
-          </StyledCover>
-          <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
-              Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
-            </Text>
-          </StyledFooterInfo>
-        </GridItem>
-
-        <GridItem colSpan={1}>
-          <StyledCover>
-            <StyledImage
-              src="/static/images/gallery/w-06.jpeg"
-              alt="Picture of the author"
-              width={640}
-              height={640}
-              layout="responsive"
-              quality="100"
-            />
-          </StyledCover>
-          <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
-              Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
-            </Text>
-          </StyledFooterInfo>
-        </GridItem>
-
-        <GridItem colSpan={1}>
-          <StyledCover>
-            <StyledImage
-              src="/static/images/gallery/w-07.jpeg"
-              alt="Picture of the author"
-              width={640}
-              height={640}
-              layout="responsive"
-              quality="100"
-            />
-          </StyledCover>
-          <StyledFooterInfo>
-            <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
-              Canon / EOS 5D Mark III / EF 24-105mm f/4L IS USM / 35mm f/1.4
-            </Text>
-          </StyledFooterInfo>
-        </GridItem>
+        {gallery?.map((gal) => (
+          <GridItem key={gal.cover} colSpan={1}>
+            <StyledCover>
+              <StyledImage
+                src={gal.cover}
+                alt="Picture of the jorge lca"
+                width={640}
+                height={640}
+                layout="responsive"
+                placeholder="blur"
+                blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(640, 640))}`}
+                quality="100"
+              />
+            </StyledCover>
+            <StyledFooterInfo>
+              <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
+                {gal.options}
+              </Text>
+            </StyledFooterInfo>
+          </GridItem>
+        ))}
       </Grid>
     </Container>
   );
+}
+
+export async function getStaticProps() {
+  return { props: { gallery: galleryData } };
 }
 
 GalleryPage.Layout = Layout;

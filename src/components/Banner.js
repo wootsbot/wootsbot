@@ -53,14 +53,18 @@ function Banner() {
           </Flex>
         </Flex>
 
-        <Text css={{ mt: '$3' }}>
-          Desarrollador JavaScript al que le apaciona diseñar y gran admirador de UX!, coautor de{` `}
+        <Text css={{ mt: '$3', mb: '$1' }}>
+          Desarrollador frontend al que le apaciona diseñar, admirador del UX!, Constructor de cosas, Entusiasta del
+          código abierto y los teclados mecánicos.
+        </Text>
+
+        <Text>
+          Un fotógrafo apasionado y coautor de{` `}
           <LinkTab target="_blank" href="https://www.reactnextboilerplate.com/" rel="noopener noreferrer">
             React Next Boilerplate
           </LinkTab>
+          .
         </Text>
-
-        <Text css={{ mt: '$1' }}>Constructor de cosas, Entusiasta del código abierto y un fotógrafo apasionado.</Text>
       </Box>
 
       <StyledAvatarWrapper>

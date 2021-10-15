@@ -453,15 +453,15 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.2.0.tgz#667bfc6186ae7c9e0b45a08960c551437176e1ca"
   integrity sha512-VkE3KLBmJwcCaVARtQpfuKcKv8gcBmUubrfHGF84dXuuW6jgsRYxPtzcIhPyK9WAPpRt2/xY6zkD9MnRaJzSyw==
 
-"@stitches/core@^1.2.1":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-1.2.4.tgz#1607192695415164b246fc8a5509ad3f78eb6d73"
-  integrity sha512-SN/PgD5olgjXZRAlxFEqRLxb46bvlkyVhUBAgYa2peDWHp+aOpTAhmfDsTapXEzZJhuEiN9/F5yG1PdstgIn4A==
+"@stitches/core@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-1.2.5.tgz#6dd8d1aa3d5f437cea7448498e66b2c1e9d7193e"
+  integrity sha512-E2N+Y2bKK7YS+J0kyORduGSwZMQsztYZAp3G/6Hgl2smA+Zzugwfuhc7sAYscdY3ShRf4gvHueNmO2vX+uLB4Q==
 
-"@stitches/react@^1.2.1":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.4.tgz#0b544e97555ffadaeae5ca07f8fff7a6231a4ef3"
-  integrity sha512-QiP54385bx7NPk2dNpCdu49bUaC/lxl5bdP6pJOnxS/VKkF6tD1lTvJ+ud0u6wF2J92TUiCP6E5vKWVzV5dCbg==
+"@stitches/react@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.5.tgz#2353343c220f0c59ba388a26fdd9ff7962cb6031"
+  integrity sha512-95Wwjp5cvoYQjg616OBiHZM1PnIF51pnFQIgSPxPzS/xXBrer9sNO1tfpVfLYfOifvuotse2IFNbypJ92BXzvg==
 
 "@szmarczak/http-timer@^4.0.5":
   version "4.0.6"

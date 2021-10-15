@@ -12,6 +12,7 @@ import Flex from '@/design-system/Flex';
 import Text from '@/design-system/Text';
 
 const StyledInputEmail = styled('input', {
+  all: 'unset',
   width: 300,
   height: '100%',
   minHeight: 45,

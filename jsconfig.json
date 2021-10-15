@@ -7,7 +7,8 @@
       "@/hooks/*": ["./src/hooks/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/libs/*": ["./src/libs/*"],
-      "@/stitches": ["./stitches.config.js"]
+      "@/stitches": ["./stitches.config.js"],
+      "@/data/*": ["./src/data/*"]
     }
   }
 }

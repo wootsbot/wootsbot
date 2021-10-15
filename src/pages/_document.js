@@ -40,7 +40,7 @@ export default class Document extends NextDocument {
           <meta property="og:description" content="Jorge Luis Calleja A. Creo que entre más compartas, más aprendes" /> */}
           <meta property="og:site_name" content="Wootsbot dev" />
           <meta property="og:url" content="https://wootsbot.dev" />
-          <meta property="og:image" content="/static/icons/apple-touch-icon.png" />
+          {/* <meta property="og:image" content="/static/icons/apple-touch-icon.png" /> */}
         </Head>
         <body>
           <Main />

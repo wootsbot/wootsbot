@@ -13,25 +13,25 @@ const Container = styled(Box, {
   px: '$2',
 
   '@phone': {
-    px: '$4',
+    px: '$3',
   },
 
   variants: {
     size: {
       xs: {
-        maxWidth: '480px',
+        maxWidth: 480,
       },
       sm: {
-        maxWidth: '720px',
+        maxWidth: 720,
       },
       md: {
-        maxWidth: '1024px',
+        maxWidth: 1024,
       },
       lg: {
-        maxWidth: '1280px',
+        maxWidth: 1280,
       },
       xl: {
-        maxWidth: '1440px',
+        maxWidth: 1440,
       },
       none: {
         maxWidth: 'none',

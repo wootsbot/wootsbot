@@ -25,20 +25,20 @@ const siteConfig = {
       title: 'Wootsbot dev',
       description: 'Creo que "entre más compartas, más aprendes".',
       site_name: 'wootsbot.dev',
-      images: [
-        {
-          url: 'https://wootsbot.dev/og-image.png',
-          width: 1240,
-          height: 480,
-          alt: 'wootsbot',
-        },
-        {
-          url: 'https://wootsbot.dev/twitter-og-image.png',
-          width: 1012,
-          height: 506,
-          alt: 'Creo que "entre más compartas, más aprendes".',
-        },
-      ],
+      // images: [
+      //   {
+      //     url: 'https://wootsbot.dev/og-image.png',
+      //     width: 1240,
+      //     height: 480,
+      //     alt: 'wootsbot',
+      //   },
+      //   {
+      //     url: 'https://wootsbot.dev/twitter-og-image.png',
+      //     width: 1012,
+      //     height: 506,
+      //     alt: 'Creo que "entre más compartas, más aprendes".',
+      //   },
+      // ],
     },
   },
 };

@@ -16,7 +16,20 @@ function BlogSlugPage({ code, frontMatter }) {
 
   return (
     <Container css={{ mt: '$6', mb: '$5' }} size="sm">
-      <SEO title={frontMatter?.title} description={frontMatter?.summary} />
+      <SEO
+        title={frontMatter?.title}
+        description={frontMatter?.summary}
+        openGraph={{
+          images: [
+            {
+              url: `https://wootsbot.vercel.app${frontMatter.image}`,
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+            },
+          ],
+        }}
+      />
       <BlogSeo
         title={frontMatter?.title}
         authorName={frontMatter?.authorName}

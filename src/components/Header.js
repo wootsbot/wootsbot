@@ -22,10 +22,11 @@ const Container = styled(Box, {
   marginTop: '$3',
   marginBottom: '$3',
   width: '100%',
-  maxWidth: '720px',
+  maxWidth: 720,
   px: '$2',
+
   '@phone': {
-    px: '$5',
+    px: '$3',
   },
 });
 
@@ -44,7 +45,7 @@ const DrawerMobile = styled(Box, {
   marginTop: -48,
   px: '$2',
   '@phone': {
-    px: '$5',
+    px: '$3',
   },
 });
 

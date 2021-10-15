@@ -20,6 +20,22 @@ import DisplayListInfoCard from '@/components/DisplayListInfoCard';
 import LinkHeading from '@/components/LinkHeading';
 import Codeblock from '@/components/Codeblock';
 
+const shimmer = (w, h) => `
+<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="#333" offset="20%" />
+      <stop stop-color="#222" offset="50%" />
+      <stop stop-color="#333" offset="70%" />
+    </linearGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="#333" />
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+</svg>`;
+
+const toBase64 = (str) => (typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str));
+
 const StyledLink = styled('a', {
   textDecoration: 'none',
   fontWeight: '$medium',
@@ -99,13 +115,20 @@ const MDXComponents = {
   h6: (props) => <Heading as="h4" size="xs" {...props} css={{ mb: '$1' }} />,
   p: (props) => <Text {...props} css={{ mb: '$3' }} />,
 
-  Image: StyledImageNext,
+  Image: ({ width, height, ...props }) => (
+    <StyledImageNext
+      {...props}
+      width={width}
+      height={height}
+      placeholder="blur"
+      blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`}
+    />
+  ),
   img: ({ ...props }) => (
     <Box css={{ my: '$6' }}>
       <Box as="img" {...props} css={{ maxWidth: '100%', verticalAlign: 'middle', ...props.css }} />
     </Box>
   ),
-  // ImageWithTheme,
   a: CustomLink,
   hr: (props) => <StyledHr {...props} css={{ my: '$6', mx: 'auto' }} />,
   ul: (props) => <StyledUl {...props} as="ul" />,

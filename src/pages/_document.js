@@ -28,16 +28,16 @@ export default class Document extends NextDocument {
           <link rel="mask-icon" href="/static/icons/safari-pinned-tab.svg" color={sage.sage11} />
           <link rel="shortcut icon" href="/static/icons/favicon.svg" />
 
-          <meta name="twitter:card" content="summary" />
+          {/* <meta name="twitter:card" content="summary" />
           <meta name="twitter:url" content="https://twitter.com/wootsbot" />
           <meta name="twitter:title" content="Wootsbot dev" />
           <meta name="twitter:description" content="Jorge Luis Calleja A. Creo que entre más compartas, más aprendes" />
           <meta name="twitter:image" content="https://facturacion.parrot.rest/static/icons/logo-connect.svg" />
-          <meta name="twitter:creator" content="@wootsbot" />
+          <meta name="twitter:creator" content="@wootsbot" /> */}
 
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Wootsbot dev" />
-          <meta property="og:description" content="Jorge Luis Calleja A. Creo que entre más compartas, más aprendes" />
+          {/* <meta property="og:title" content="Wootsbot dev" />
+          <meta property="og:description" content="Jorge Luis Calleja A. Creo que entre más compartas, más aprendes" /> */}
           <meta property="og:site_name" content="Wootsbot dev" />
           <meta property="og:url" content="https://wootsbot.dev" />
           <meta property="og:image" content="/static/icons/apple-touch-icon.png" />

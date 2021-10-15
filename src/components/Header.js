@@ -181,9 +181,11 @@ function Header() {
               aria-label="change mode theme"
             >
               {theme === 'light' ? (
-                <MoonIcon />
+                <Box css={{ color: '$gold11' }}>
+                  <MoonIcon />
+                </Box>
               ) : (
-                <Box css={{ color: '$yellow11', backgroundColor: '$yellow11' }}>
+                <Box css={{ color: '$yellow11' }}>
                   <SunIcon />
                 </Box>
               )}

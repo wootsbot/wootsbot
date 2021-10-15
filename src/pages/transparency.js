@@ -12,12 +12,25 @@ import components from '@/components/MDXComponents';
 
 const SEO = dynamic(() => import('@/components/SEO'));
 
-function TransparencyPage({ code }) {
+function TransparencyPage({ code, frontMatter }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
 
   return (
     <Container size="sm">
-      <SEO title="Uses" description="Lo que más utilizo para codificación y video." />
+      <SEO
+        title={frontMatter?.title}
+        description={frontMatter?.summary}
+        openGraph={{
+          images: [
+            {
+              url: `https://wootsbot.vercel.app${frontMatter.image}`,
+              width: 800,
+              height: 600,
+              alt: 'woostbot',
+            },
+          ],
+        }}
+      />
 
       <article>
         <Box css={{ mt: '$5' }} className="wootsbot-article">

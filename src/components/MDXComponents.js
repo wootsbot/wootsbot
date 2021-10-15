@@ -261,6 +261,7 @@ const MDXComponents = {
   Stack,
   Box,
   Heading,
+  Text,
   // Unsplash,
   // YouTube,
 };

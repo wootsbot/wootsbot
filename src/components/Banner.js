@@ -54,8 +54,8 @@ function Banner() {
         </Flex>
 
         <Text css={{ mt: '$3', mb: '$1' }}>
-          Desarrollador frontend al que le apaciona diseñar, admirador del UX!, Constructor de cosas, Entusiasta del
-          código abierto y los teclados mecánicos.
+          Frontend chapter lead en <b>spin by oxxo</b>, al que le apasiona diseñar, admirador del UX!, Constructor de
+          cosas, Entusiasta del código abierto y los teclados mecánicos.
         </Text>
 
         <Text>
@@ -69,7 +69,7 @@ function Banner() {
 
       <StyledAvatarWrapper>
         <Avatar
-          src="/static/images/avatar.jpg"
+          src="/static/images/avatar.webp"
           alt="Picture of the author"
           width={120}
           height={120}

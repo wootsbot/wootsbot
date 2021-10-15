@@ -54,7 +54,7 @@ function BlogLayout({ children, frontMatter }) {
 
       <Flex alignItems="center" justifyContent="between">
         <Flex alignItems="center" gap={1}>
-          <Avatar alt="wootsbot" height={24} width={24} src="/static/images/avatar.jpg" />
+          <Avatar alt="wootsbot" height={24} width={24} src="/static/images/avatar.webp" />
           <Stack spacing={1}>
             <Text as="span" size="xs" css={{ fontWeight: '$light' }}>
               {'wootsbot /'}

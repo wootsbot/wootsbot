@@ -75,6 +75,10 @@ function Footer() {
         </Flex>
 
         <Flex flexDirection="column" gap={2}>
+          <NavLink href="/transparency" isDisableActive>
+            Mi misión
+          </NavLink>
+
           <NavLink href="/" isDisableActive>
             Sobre mi
           </NavLink>

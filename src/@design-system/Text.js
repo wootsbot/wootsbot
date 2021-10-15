@@ -2,7 +2,7 @@ import { styled } from '@/stitches';
 
 const Text = styled('p', {
   // Reset
-  lineHeight: '$base',
+  lineHeight: '$tall',
   margin: '0',
   fontWeight: 400,
   fontVariantNumeric: 'tabular-nums',

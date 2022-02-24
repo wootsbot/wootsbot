@@ -214,7 +214,7 @@
   resolved "https://registry.yarnpkg.com/@prisma/prisma-fmt-wasm/-/prisma-fmt-wasm-3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86.tgz#a9d0916ff42925a83134652a3d247d0c25ea3f6f"
   integrity sha512-f0Srf2EasvBRKBlTUrqkW5hp889+SRrRkqu0MgcuTXlgHxVMj7DIo1JNylPb1y/HDwtjLWf6AL+sk+2R891SWA==
 
-"@radix-ui/colors@^0.1.7":
+"@radix-ui/colors@^0.1.8":
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@radix-ui/colors/-/colors-0.1.8.tgz#b08c62536fc462a87632165fb28e9b18f9bd047e"
   integrity sha512-jwRMXYwC0hUo0mv6wGpuw254Pd9p/R6Td5xsRpOmaWkUHlooNWqVcadgyzlRumMq3xfOTXwJReU0Jv+EIy4Jbw==
@@ -256,12 +256,12 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
-"@radix-ui/react-icons@^1.0.3":
+"@radix-ui/react-icons@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-icons/-/react-icons-1.1.0.tgz#c060c48ea04ea9df15cfc2be801f84eea3015855"
   integrity sha512-nhctV9YKN8G4HfkS3p03ml+osTBDMGKImaAJTm666hymtaWEgIPiqL7F53ivDqIO4A+20ERwUiiKJ8h3XK7uAg==
 
-"@radix-ui/react-id@0.1.4", "@radix-ui/react-id@^0.1.1":
+"@radix-ui/react-id@0.1.4", "@radix-ui/react-id@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-id/-/react-id-0.1.4.tgz#4cd6126e6ac8a43ebe6d52948a068b797cc9ad71"
   integrity sha512-/hq5m/D0ZfJWOS7TLF+G0l08KDRs87LBE46JkAvgKkg1fW4jkucx9At9D9vauIPSbdNmww5kXEp566hMlA8eXA==
@@ -318,7 +318,7 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-compose-refs" "0.1.0"
 
-"@radix-ui/react-tooltip@^0.1.1":
+"@radix-ui/react-tooltip@^0.1.6":
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-tooltip/-/react-tooltip-0.1.6.tgz#46a3e385e004aaebd16ecaa1da7d1af70ba3bb45"
   integrity sha512-0uaRpRmTCQo5yMUkDpv4LEDnaQDoeLXcNNhZonCZdbZBQ7ntvjURIWIigq1/pXZp0UX7oPpFzsXD9jUp8JT0WA==
@@ -424,12 +424,12 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.4.0.tgz#e277e5bdbdf7cb1e20d320f02f5e2ed113cd3185"
   integrity sha512-QppPM/8l3Mawvh4rn9CNEYIU9bxpXUCRMaX9yUpvBk1nMKusLKpfXGDEKExKaPhLzcn3lzil7pR6rnJ11HgeRQ==
 
-"@stitches/core@^1.2.5":
+"@stitches/core@^1.2.6":
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/@stitches/core/-/core-1.2.6.tgz#ca464406eb8e5788ed6332548833d5f46e43fa3c"
   integrity sha512-nDGhYDZw74uL7D4FYwpya2Sgr1LucsdrF7Nr6Ut4jQD49sBK36S2eC2oCAlfAX0JksH0QVfOrWwUipp3uaID1w==
 
-"@stitches/react@^1.2.5":
+"@stitches/react@^1.2.6":
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.6.tgz#61f2a3d1110334ecd33bcb7463650127d42470cb"
   integrity sha512-gRVITYj8W4jJmoiVxWDv72yCvd12VvtUUAnTzs07EqmtvGCVgKZu3Dx0x5KVCcb0b6tfgvvNH2L84YrzdM4Mag==

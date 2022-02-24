@@ -18,6 +18,9 @@ import Spacer from '@/design-system/Spacer';
 import Layout from '@/components/Layout';
 import Link from '@/components/Link';
 
+import WorkSpace from '../../public/static/images/gallery/w-10.jpeg';
+import Widgets from '../../public/static/images/referencia-drone.jpeg';
+
 const SEO = dynamic(() => import('@/components/SEO'));
 const Banner = dynamic(() => import('@/components/Banner'));
 
@@ -49,10 +52,11 @@ function HomePage({ posts }) {
           <Grid columns={{ '@initial': 2, '@phone': 1 }} gap={4}>
             <GridItem colSpan={1}>
               <StyledImage
-                src="/static/images/espace.jpeg"
+                src={WorkSpace}
                 alt="Picture of the author"
-                width={500}
+                width={400}
                 height={400}
+                placeholder="blur"
                 layout="intrinsic"
                 quality="100"
               />
@@ -93,10 +97,10 @@ function HomePage({ posts }) {
                   display: 'flex',
                   width: '100%',
                   height: 'auto',
-                  backgroundColor: '$gray1',
+                  backgroundColor: '$whiteA2',
                   borderRadius: '$md',
+                  backdropFilter: 'blur(8px)',
                   boxShadow: '$cardBase',
-
                   '&:hover': {
                     boxShadow: '$cardHover',
                   },
@@ -122,10 +126,11 @@ function HomePage({ posts }) {
           <Grid columns={{ '@initial': 2, '@phone': 1 }} gap={4}>
             <GridItem colSpan={1}>
               <StyledImage
-                src="/static/images/referencia-drone.jpeg"
+                src={Widgets}
                 alt="Picture of the author"
                 width={500}
-                height={350}
+                height={390}
+                placeholder="blur"
                 layout="intrinsic"
                 quality="100"
               />

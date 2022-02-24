@@ -12,7 +12,7 @@ import components from '@/components/MDXComponents';
 
 const SEO = dynamic(() => import('@/components/SEO'));
 
-function TransparencyPage({ code, frontMatter }) {
+function TransparencyPage({ code, frontMatter, uses }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
 
   return (

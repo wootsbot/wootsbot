@@ -44,25 +44,6 @@ const StyledCover = styled(Box, {
   // maxHeight: 350,
 });
 
-const StyledFooterInfo = styled(Box, {
-  position: 'absolute',
-  width: '100%',
-  maxWidth: 250,
-  marginTop: -25,
-  zIndex: '$2',
-  px: '$2',
-  py: '$1',
-  backgroundColor: '$colors$sage12',
-  borderBottomLeftRadius: '$sm',
-  //  borderTopRightRadius: '$2xl',
-
-  '@phone': {
-    marginTop: -40,
-    maxWidth: 300,
-    px: '$1',
-  },
-});
-
 function GalleryPage({ gallery }) {
   return (
     <Container size="sm" css={{ mt: '$6' }}>
@@ -83,11 +64,6 @@ function GalleryPage({ gallery }) {
                 quality="100"
               />
             </StyledCover>
-            <StyledFooterInfo>
-              <Text size="xs" css={{ fontWeight: '$semibold', color: '$sage1' }}>
-                {gal.options}
-              </Text>
-            </StyledFooterInfo>
           </GridItem>
         ))}
       </Grid>

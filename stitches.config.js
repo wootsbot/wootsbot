@@ -28,6 +28,7 @@ import {
   sageDark,
   gold,
   goldDark,
+  whiteA,
 } from '@radix-ui/colors';
 
 export const { styled, css, globalCss, keyframes, theme, createTheme, getCssText, config } = createStitches({
@@ -104,7 +105,10 @@ export const { styled, css, globalCss, keyframes, theme, createTheme, getCssText
       ...mint,
       ...sage,
       ...gold,
+      ...whiteA,
       hiContrast: '$gray12',
+      textPrimary: '$gray12',
+      textSecondary: '$gray11',
       // loContrast: 'white',
     },
     space: {
@@ -220,8 +224,8 @@ export const { styled, css, globalCss, keyframes, theme, createTheme, getCssText
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       outline: '0 0 0 3px rgba(66, 153, 225, 0.6)',
       code: `0 0 0 1.5px ${violet.violet3}`,
-      cardBase: `0 0 0 1px ${gray.gray5}`,
-      cardHover: `0 0 0 1.5px ${gray.gray6}`,
+      cardBase: `0 0 0 1px ${whiteA.whiteA4}`,
+      cardHover: `0 0 0 1.5px ${whiteA.whiteA5}`,
       cardSuccess: `0 0 0 1.5px ${green.green6}`,
       cardError: `0 0 0 1.5px ${red.red8}`,
       inner: 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',

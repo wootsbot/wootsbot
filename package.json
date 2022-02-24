@@ -5,17 +5,19 @@
   "version": "0.1.0",
   "author": "Jorge Luis Calleja <>",
   "dependencies": {
-    "@fontsource/inter": "^4.5.0",
-    "@fontsource/jetbrains-mono": "^4.5.0",
-    "@hookform/resolvers": "^2.8.2",
+    "@fontsource/inter": "^4.5.4",
+    "@fontsource/jetbrains-mono": "^4.5.3",
+    "@hookform/resolvers": "^2.8.8",
     "@icons-pack/react-simple-icons": "^4.6.1",
+    "@prisma/client": "^3.3.0",
     "@radix-ui/colors": "^0.1.7",
     "@radix-ui/react-icons": "^1.0.3",
-    "@radix-ui/react-id": "^0.1.0",
-    "@radix-ui/react-tooltip": "^0.1.0",
+    "@radix-ui/react-id": "^0.1.1",
+    "@radix-ui/react-tooltip": "^0.1.1",
     "@stitches/core": "^1.2.5",
     "@stitches/react": "^1.2.5",
     "copy-to-clipboard": "^3.3.1",
+    "crypto": "^1.0.1",
     "date-fns": "^2.24.0",
     "dayjs": "^1.10.7",
     "eslint-plugin-prettier": "^4.0.0",
@@ -24,7 +26,8 @@
     "hast-util-to-string": "1.0.4",
     "lodash.merge": "^4.6.2",
     "mdx-bundler": "^6.0.2",
-    "next": "^11.1.2",
+    "next": "^12.1.0",
+    "next-connect": "^0.10.2",
     "next-seo": "^4.28.1",
     "next-themes": "^0.0.15",
     "normalize.css": "^8.0.1",
@@ -35,7 +38,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
-    "react-hook-form": "^7.17.3",
+    "react-hook-form": "^7.27.1",
     "react-live": "^2.3.0",
     "reading-time": "^1.5.0",
     "refractor": "3.3.1",
@@ -52,7 +55,9 @@
   "devDependencies": {
     "esbuild": "^0.13.3",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "prettier-plugin-prisma": "^3.1.1",
+    "prisma": "^3.3.0"
   },
   "keywords": [
     "gatsby"
@@ -63,7 +68,11 @@
     "build": "next build",
     "start": "next start",
     "next:lint": "next lint",
+    "prisma:studio": "npx prisma studio",
     "prettier": "prettier --config .prettierrc \"./**/*.+(js|json|jsx)\" --write"
+  },
+  "prisma": {
+    "schema": "./src/prisma/schema.prisma"
   },
   "repository": {
     "type": "git",

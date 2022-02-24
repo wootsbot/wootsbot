@@ -7,6 +7,7 @@
       "@/hooks/*": ["./src/hooks/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/libs/*": ["./src/libs/*"],
+      "@/prisma/*": ["./src/prisma/*"],
       "@/stitches": ["./stitches.config.js"],
       "@/data/*": ["./src/data/*"]
     }

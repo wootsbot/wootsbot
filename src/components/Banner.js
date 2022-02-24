@@ -8,6 +8,8 @@ import Flex from '@/design-system/Flex';
 import Text from '@/design-system/Text';
 import Heading from '@/design-system/Heading';
 
+import AvatarMe from '../../public/static/images/yo.jpeg';
+
 const LinkTab = styled('a', {
   color: '$gray12',
 });
@@ -17,7 +19,6 @@ const StyledAvatarWrapper = styled(Box, {
   maxWidth: 120,
   height: '100%',
   maxHeight: 120,
-
   '@phone': {
     width: 90,
     height: 90,
@@ -36,7 +37,19 @@ function Banner() {
       gap={5}
     >
       <Box>
-        <Flex gap={2}>
+        <Flex gap={4} alignItems="center">
+          <StyledAvatarWrapper>
+            <Avatar
+              src={AvatarMe}
+              alt="Picture of the author"
+              placeholder="blur"
+              width={120}
+              height={120}
+              layout="responsive"
+              quality="100"
+            />
+          </StyledAvatarWrapper>
+
           <Flex flexDirection="column" gap={2}>
             <Heading size="2xl">Hola, soy Jorge.</Heading>
             <Heading
@@ -54,8 +67,8 @@ function Banner() {
         </Flex>
 
         <Text css={{ mt: '$3', mb: '$1' }}>
-          Frontend chapter lead en <b>spin by oxxo</b>, al que le apasiona diseñar, admirador del UX!, Constructor de
-          cosas, Entusiasta del código abierto y los teclados mecánicos.
+          Frontend lead en <b>Spin By Oxxo</b>, al que le apasiona diseñar, admirador del UX!, Constructor de cosas,
+          Entusiasta del código abierto y los teclados mecánicos.
         </Text>
 
         <Text>
@@ -66,17 +79,6 @@ function Banner() {
           .
         </Text>
       </Box>
-
-      <StyledAvatarWrapper>
-        <Avatar
-          src="/static/images/avatar.webp"
-          alt="Picture of the author"
-          width={120}
-          height={120}
-          layout="responsive"
-          quality="100"
-        />
-      </StyledAvatarWrapper>
     </Flex>
   );
 }

@@ -19,7 +19,7 @@ const StyledInputEmail = styled('input', {
   maxHeight: 45,
   border: 'none',
   borderRadius: '$md',
-  backgroundColor: '$sage5',
+  backgroundColor: '$whiteA4',
   my: '$1',
   pl: '$2',
   fontSize: '$md',
@@ -58,13 +58,12 @@ const ButtonSubscribe = styled('button', {
   maxHeight: 45,
   border: 'none',
   borderRadius: '$md',
-  backgroundColor: '$sage5',
+  backgroundColor: '$whiteA4',
   my: '$1',
   px: '$2',
   fontSize: '$md',
 
   '&:hover': {
-    backgroundColor: '$sage6',
     cursor: 'pointer',
     boxShadow: '$cardHover',
   },
@@ -163,9 +162,10 @@ function Subscribe() {
         display: 'flex',
         width: '100%',
         height: 'auto',
-        backgroundColor: '$gray1',
+        backgroundColor: '$whiteA2',
         borderRadius: '$md',
         boxShadow: '$cardBase',
+        backdropFilter: 'blur(8px)',
         p: '$3',
 
         '&:hover': {
@@ -176,7 +176,7 @@ function Subscribe() {
       <Flex flexDirection="column" gap={2}>
         <Flex flexDirection="column" gap={1}>
           <Heading size="lg">Suscríbete al boletín</Heading>
-          <Text>
+          <Text color="primary">
             Reciba correos electrónicos míos sobre desarrollo web, tecnología y acceso anticipado a nuevos artículos.
           </Text>
         </Flex>

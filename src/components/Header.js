@@ -30,6 +30,14 @@ const Container = styled(Box, {
   },
 });
 
+const StyledMoonIcon = styled(MoonIcon, {
+  color: '$gold11',
+});
+
+const StyledSunIcon = styled(SunIcon, {
+  color: '$yellow11',
+});
+
 const StyledLink = styled('a', {
   textDecoration: 'none',
   fontSize: '$xl',
@@ -107,15 +115,7 @@ function Header() {
                   name="theme"
                   aria-label="change mode theme"
                 >
-                  {theme === 'light' ? (
-                    <Box css={{ color: '$gold11' }}>
-                      <MoonIcon />
-                    </Box>
-                  ) : (
-                    <Box css={{ color: '$yellow11' }}>
-                      <SunIcon />
-                    </Box>
-                  )}
+                  {theme === 'light' ? <StyledMoonIcon /> : <StyledSunIcon />}
                 </IconButton>
               </Flex>
 
@@ -180,15 +180,7 @@ function Header() {
               name="theme"
               aria-label="change mode theme"
             >
-              {theme === 'light' ? (
-                <Box css={{ color: '$gold11' }}>
-                  <MoonIcon />
-                </Box>
-              ) : (
-                <Box css={{ color: '$yellow11' }}>
-                  <SunIcon />
-                </Box>
-              )}
+              {theme === 'light' ? <StyledMoonIcon /> : <StyledSunIcon />}
             </IconButton>
           </Flex>
         </DrawerMobile>

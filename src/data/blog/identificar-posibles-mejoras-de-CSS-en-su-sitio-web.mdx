@@ -1,0 +1,88 @@
+---
+title: 'Identificar posibles mejoras de CSS en su sitio web'
+publishedAt: '2021-10-14'
+summary: 'Estas trabajando en un proyecto grande o pequeño y algunas de sus declaraciones de importación se ven algo asi ../../../component'
+image: '/static/images/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web/preview.webp'
+tags: ['CSS', 'Overview', 'developers', 'chrome', 'features', 'DevTools']
+---
+
+Esta caracteristica nos ofrece información detallada sobre colores, fuentes, media queries y declaraciones no utilizadas (Unused declarations).
+Esta función es útil cuando realiza modificaciones CSS en la interfaz de usuario y ya no necesita utilizar herramientas de terceros como el selector de color.
+
+> Se trata de una función en faces de pruebas de Chrome 96. El equipo de Google Chrome está trabajando activamente en esta función.
+
+## Activar CSS Overview
+
+### CSS Overview panel
+
+- Abra cualquier página web
+- Abra DevTools
+- Haga clic en Más opciones> Más herramientas> CSS Overview.
+
+<Image
+  alt="Jorge Luis Calleja Alvarado"
+  src="/static/images/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web/step-2.png"
+  width={200}
+  height={130}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+### Ejecutar CSS Overview report
+
+- Haga clic en el botón Capturar descripción general (Capture overview) para generar un informe de descripción general CSS de su página.
+
+<Image
+  alt="Jorge Luis Calleja Alvarado"
+  src="/static/images/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web/step-3.png"
+  width={200}
+  height={130}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+### Overview summary
+
+Un resumen de alto nivel del CSS de su página.
+
+<Image
+  alt="Jorge Luis Calleja Alvarado"
+  src="/static/images/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web/step-4.png"
+  width={200}
+  height={130}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+### Colores
+
+Todos los colores de tu página. Los colores están agrupados por usos como colores de fondo, colores de texto, etc. También le muestra los textos que tienen problemas de bajo contraste.
+
+<Image
+  alt="Jorge Luis Calleja Alvarado"
+  src="/static/images/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web/step-5.png"
+  width={200}
+  height={130}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+Se puede hacer clic en cada uno de los colores. Por ejemplo, digamos que este color de borde `#52A9FF` no coincide con el esquema de color de su sitio, haga clic en él para obtener una lista de los elementos que usan el color.
+
+<Image
+  alt="Jorge Luis Calleja Alvarado"
+  src="/static/images/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web/step-6.png"
+  width={200}
+  height={130}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+## Conclusión
+
+Utilice el panel Descripción general de CSS (CSS Overview) para comprender mejor el CSS de su página, con esto puede identificar posibles mejoras ya aplicarlas en sus paginas.

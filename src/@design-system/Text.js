@@ -114,11 +114,19 @@ const Text = styled('p', {
       },
 
       gray: {
-        color: '$gray12',
+        color: '$gray11',
       },
 
       contrast: {
         color: '$hiContrast',
+      },
+
+      primary: {
+        color: '$textPrimary',
+      },
+
+      secondary: {
+        color: '$textSecondary',
       },
     },
     gradient: {
@@ -195,7 +203,7 @@ const Text = styled('p', {
   ],
   defaultVariants: {
     size: 'md',
-    color: 'contrast',
+    color: 'secondary',
   },
 });
 

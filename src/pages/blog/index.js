@@ -24,12 +24,12 @@ const StyledInputSearch = styled('input', {
   maxHeight: 45,
   border: 'none',
   borderRadius: '$md',
-  backgroundColor: '$sage5',
+  backgroundColor: '$whiteA4',
   my: '$1',
   pl: '$2',
   pr: '$2',
   fontSize: '$md',
-  color: '$sage12',
+  color: '$textPrimary',
   outline: 'none',
 
   '&:hover': {
@@ -45,7 +45,7 @@ const StyledInputSearch = styled('input', {
   },
 
   '&::placeholder': {
-    color: '$sage10',
+    color: '$textSecondary',
     fontSize: '$sm',
   },
 

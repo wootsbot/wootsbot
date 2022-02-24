@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Post {
+  uuid      String   @id @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at")
+  slug      String   @unique
+  likes     Int      @default(0)
+  views     Int      @default(0)
+
+  PostLikesUser PostLikesUser[]
+  @@map("posts")
+}
+
+model User {
+  uuid      String   @id
+  createdAt DateTime @default(now()) @map("created_at")
+
+  PostLikesUser PostLikesUser[]
+  @@map("users")
+}
+
+model PostLikesUser {
+  uuid      String   @id @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at")
+  postUuid  String?  @unique @map("post_uuid") @db.Uuid
+  userUuid  String?  @unique @map("user_uuid")
+
+  post Post? @relation(fields: [postUuid], references: [uuid])
+  user User? @relation(fields: [userUuid], references: [uuid])
+  @@map("post_likes_users")
+}

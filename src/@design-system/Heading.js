@@ -25,7 +25,7 @@ const Heading = forwardRef((props, forwardedRef) => {
     xs: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '23px' } },
     sm: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '30px' } },
     md: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '41px' } },
-    lg: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '55px' } },
+    lg: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '41px' } },
     xl: { fontWeight: '$bold', lineHeight: 1.2, '@desktop': { lineHeight: '55px' } },
     '2xl': { fontWeight: '$bold', lineHeight: 1, '@desktop': { lineHeight: '55px' } },
     '3xl': { fontWeight: '$bold', lineHeight: 1, '@desktop': { lineHeight: '55px' } },
@@ -38,6 +38,7 @@ const Heading = forwardRef((props, forwardedRef) => {
       {...textProps}
       ref={forwardedRef}
       size={textSize[size]}
+      color="primary"
       css={{
         fontVariantNumeric: 'proportional-nums',
         ...merge(textCss[size], props.css),

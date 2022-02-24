@@ -24,7 +24,7 @@ const StyledInputSearch = styled('input', {
   maxHeight: 45,
   border: 'none',
   borderRadius: '$md',
-  backgroundColor: '$whiteA4',
+  backgroundColor: '$sage5',
   my: '$1',
   pl: '$2',
   pr: '$2',

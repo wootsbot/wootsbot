@@ -35,7 +35,7 @@ const CardPost = styled(Link, {
   p: '$2',
 });
 
-function HomePage({ posts }) {
+function HomePage({ posts = [] }) {
   const lastPosts = posts?.sort((a, b) => dayjs(b.publishedAt).valueOf() - dayjs(a.publishedAt).valueOf())?.slice(0, 3);
 
   return (

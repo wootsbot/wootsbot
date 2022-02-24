@@ -9,7 +9,7 @@
     "@fontsource/jetbrains-mono": "^4.5.3",
     "@hookform/resolvers": "^2.8.8",
     "@icons-pack/react-simple-icons": "^4.6.1",
-    "@prisma/client": "^3.3.0",
+    "@prisma/client": "^3.10.0",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-icons": "^1.1.0",
     "@radix-ui/react-id": "^0.1.4",
@@ -56,8 +56,8 @@
     "esbuild": "^0.13.3",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
-    "prettier-plugin-prisma": "^3.1.1",
-    "prisma": "^3.3.0"
+    "prettier-plugin-prisma": "^3.10.0",
+    "prisma": "^3.10.0"
   },
   "keywords": [
     "gatsby"

@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import Head from 'next/head';
-import App from 'next/app';
+import Router from 'next/router';
 
 import { IdProvider } from '@radix-ui/react-id';
 import { ThemeProvider } from 'next-themes';
@@ -45,6 +45,7 @@ import '@fontsource/jetbrains-mono/800.css';
 
 import { globalStyles, darkTheme } from '@/stitches';
 import { getSeo } from '@/utils/seo';
+import * as gtag from '@/libs/gtag';
 
 const Frame = ({ children }) => <>{children}</>;
 
@@ -55,6 +56,24 @@ function WootsbotDevApp(props) {
   const Layout = Component.Layout || Frame;
 
   globalStyles();
+
+  const start = (url) => {
+    gtag.pageview(url);
+  };
+
+  const done = () => {};
+
+  useEffect(() => {
+    Router.events.on('routeChangeStart', start);
+    Router.events.on('routeChangeComplete', done);
+    Router.events.on('routeChangeError', done);
+
+    return () => {
+      Router.events.off('routeChangeStart', start);
+      Router.events.off('routeChangeComplete', done);
+      Router.events.off('routeChangeError', done);
+    };
+  }, []);
 
   return (
     <StrictMode>

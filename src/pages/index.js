@@ -18,7 +18,7 @@ import Spacer from '@/design-system/Spacer';
 import Layout from '@/components/Layout';
 import Link from '@/components/Link';
 
-import WorkSpace from '../../public/static/images/gallery/w-10.jpeg';
+import WorkSpace from '../../public/static/images/personal/Dst.jpg';
 import Widgets from '../../public/static/images/referencia-drone.jpeg';
 
 const SEO = dynamic(() => import('@/components/SEO'));
@@ -54,8 +54,8 @@ function HomePage({ posts = [] }) {
               <StyledImage
                 src={WorkSpace}
                 alt="Picture of the author"
-                width={400}
-                height={400}
+                width={500}
+                height={370}
                 placeholder="blur"
                 layout="intrinsic"
                 quality="100"

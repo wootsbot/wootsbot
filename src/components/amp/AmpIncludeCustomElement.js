@@ -1,14 +1,12 @@
-import Head from 'next/head';
+import Script from 'next/script';
 
 export default function AmpIncludeCustomElement(props) {
   return (
-    <Head>
-      <script
-        async
-        custom-element={props.name}
-        src={'https://cdn.ampproject.org/v0/' + props.name + '-' + props.version + '.js'}
-        key={props.name}
-      />
-    </Head>
+    <Script
+      async
+      custom-element={props.name}
+      src={'https://cdn.ampproject.org/v0/' + props.name + '-' + props.version + '.js'}
+      key={props.name}
+    />
   );
 }

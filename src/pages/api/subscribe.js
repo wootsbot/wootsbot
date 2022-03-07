@@ -20,7 +20,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: data.error.email[0] });
   }
 
-  res.setHeader('Cache-Control', 'public, s-maxage=1200, stale-while-revalidate=600');
-
   return res.status(201).json({ error: '' });
 }

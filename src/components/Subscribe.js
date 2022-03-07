@@ -134,6 +134,7 @@ function Subscribe() {
       method: 'POST',
     });
 
+    console.log('error', res);
     const { error } = await res.json();
 
     if (error) {

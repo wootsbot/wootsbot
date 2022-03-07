@@ -40,9 +40,9 @@ function Footer() {
     <Container as="footer" size="sm" css={{ mb: '$12', mt: '$10' }}>
       <StyledHr />
 
-      <Box css={{ mb: '$6' }}>
+      {/* <Box css={{ mb: '$6' }}>
         <Subscribe />
-      </Box>
+      </Box> */}
 
       <Flex flexDirection={{ '@initial': 'row', '@phone': 'column' }} gap={9}>
         <Flex flexDirection="column" gap={2}>

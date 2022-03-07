@@ -41,7 +41,7 @@ function HomePage({ posts = [] }) {
   return (
     <Container size="sm" css={{ mt: '$6' }}>
       <SEO
-        title="Jorge L. Calleja – Developer"
+        title="Jorge L. Calleja – Frontend lead en Spin By Oxxo"
         description="Desarrollador JavaScript al que le apaciona diseñar y gran admirador de UX!, coautor de React Next Boilerplate. Constructor de cosas, Entusiasta del código abierto y un fotógrafo apasionado."
       />
 
@@ -121,7 +121,7 @@ function HomePage({ posts = [] }) {
         </Flex>
       </Box>
 
-      <Box css={{ mt: '$10' }}>
+      {/* <Box css={{ mt: '$10' }}>
         <Flex flexDirection="column" gap={2}>
           <Grid columns={{ '@initial': 2, '@phone': 1 }} gap={4}>
             <GridItem colSpan={1}>
@@ -149,7 +149,7 @@ function HomePage({ posts = [] }) {
             </GridItem>
           </Grid>
         </Flex>
-      </Box>
+      </Box> */}
     </Container>
   );
 }

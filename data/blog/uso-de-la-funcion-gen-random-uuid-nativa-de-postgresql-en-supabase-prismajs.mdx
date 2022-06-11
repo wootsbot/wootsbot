@@ -1,0 +1,62 @@
+---
+title: 'Uso de la funcion gen_random_uuid() nativa de Postgresql en Supabase + Prismajs'
+publishedAt: '2022-06-06'
+summary: 'Algunas funciones de bases de datos nativas son parte de una extensión. Por ejemplo, gen_random_uuid() es parte del módulo pgcrypto y el atributo de tipo nativo @db.Citext espera la extensión citext. Debe instalar la extensión para usar cualquier función o característica, PostgreSQL incluye una función para generar un UUID: gen_random_uuid, Esta función devuelve un UUID de versión 4 (aleatorio). Este es el tipo de UUID más utilizado y es apropiado para la mayoría de las aplicaciones'
+image: '/static/images/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs/preview.png'
+tags: ['PostgreSQL', 'Supabase', 'Prismajs', 'pgcrypto']
+---
+
+PostgreSQL incluye una función para generar un **UUID**, la exponen con el nombre `gen_random_uuid()` → uuid. Esta función devuelve un UUID de versión 4 (aleatorio). Este es el tipo de UUID más utilizado y es apropiado para la mayoría de las aplicaciones y lo haremos con la ayuda de
+[Supabase](https://supabase.com/) + [Prismajs](https://www.prisma.io/).
+
+> Algunas funciones de bases de datos nativas son parte de una extensión. Por ejemplo, `gen_random_uuid()` es parte del módulo [`pgcrypto`](https://www.postgresql.org/docs/10/pgcrypto.html). El módulo pgcrypto proporciona funciones criptográficas para PostgreSQL.
+
+## Creando modelo User
+
+En el `schema.prisma` voy a crear el modelo `User` con los siguientes atributos, la propiedad `@default(uuid())` nos genera un identificador único global basado en la especificación UUID. Este es un ejemplo que puedes encontrar en la [documentacion de prisma](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#uuid)
+
+```js
+model User {
+  id          String   @id @default(uuid())
+  name        String
+  userName    String   @map("user_name")
+}
+```
+
+Pero queremos hacer uso de la función `gen_random_uuid()` de **PostgreSQL**, Así que los cambios que tenemos que hacer son los siguientes.
+
+```diff
+  model User {
+-    id    String   @id @default(uuid())
++    id    String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+```
+
+> `dbgenerated` Representa valores predeterminados que no se pueden expresar en el esquema de Prisma (como `random()`).
+
+entonces nuestro modelo final sería el siguiente.
+
+```js
+model User {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  userName    String   @map("user_name")
+}
+```
+
+Veremos que en el dashboard de supabase al crear un nuevo usuario en la columna `id` veremos po defecto `gen_random_uuid()`.
+
+<Image
+  alt="Jorge Luis Calleja Alvarado"
+  src="/static/images/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs/exmple_0.png"
+  width={250}
+  height={190}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+### Conclusión
+
+En PostgreSQL, existen varias alternativas a los campos de ID, cada una de las cuales tiene un caso de uso adecuado para usar o no, con `gen_random_uuid` lo que le devolverán son incuestionablemente únicos, lo que garantiza que reciba datos precisos.
+
+También puede usar `dbgenerated()` para establecer el valor predeterminado para los tipos admitidos. Por ejemplo, puede generar UUID a nivel de base de datos en lugar de depender del `uuid()` de Prisma.

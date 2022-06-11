@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Wootsbot]]></title>
+        <description><![CDATA[Wootsbot]]></description>
+        <link>https://www.wootsbot.dev</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 11 Jun 2022 04:13:01 GMT</lastBuildDate>
+        <atom:link href="https://www.wootsbot.de/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Embellecer importaciones absolutas con alias en nextjs]]></title>
+            <description><![CDATA[Estas trabajando en un proyecto grande o pequeño y algunas de sus declaraciones de importación se ven algo asi ../../../component]]></description>
+            <link>https://www.wootsbot.dev/blog/embellecer-importaciones-absolutas-con-alias-en-nextjs</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/embellecer-importaciones-absolutas-con-alias-en-nextjs</guid>
+            <pubDate>Thu, 14 Oct 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Identificar posibles mejoras de CSS en su sitio web]]></title>
+            <description><![CDATA[Esta función es útil cuando realiza modificaciones CSS en la interfaz de usuario y ya no necesita utilizar herramientas de terceros como el selector de color.]]></description>
+            <link>https://www.wootsbot.dev/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</guid>
+            <pubDate>Thu, 14 Oct 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[¿Qué es XState y por qué usar máquinas de estado?]]></title>
+            <description><![CDATA[Una de las bibliotecas clave que utilizo actualmente en mis desarrollos es XState. En esta pequeña publicación, Quiero mostrarte por qué, sinceramente, es uno de los descubrimientos más importantes que he hecho recientemente sobre programación y por qué te recomiendo que lo implementes.]]></description>
+            <link>https://www.wootsbot.dev/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado</guid>
+            <pubDate>Wed, 08 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Turborepo Mejorando La Experiencia De Desarrollo En Monorepos]]></title>
+            <description><![CDATA[Turborepo Mejorando La Experiencia De Desarrollo En Monorepos, TurboRepo será una gran tendencia este año 2022, por lo que rápidamente me di a la tarea de escribir y tratar de explicar qué es, cómo usar TurboRepo y cómo reinventa las técnicas del sistema de compilación para mejorar la experiencia de desarrollo con monorepos.]]></description>
+            <link>https://www.wootsbot.dev/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</guid>
+            <pubDate>Sat, 26 Mar 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Uso de la funcion gen_random_uuid() nativa de Postgresql en Supabase + Prismajs]]></title>
+            <description><![CDATA[Algunas funciones de bases de datos nativas son parte de una extensión. Por ejemplo, gen_random_uuid() es parte del módulo pgcrypto y el atributo de tipo nativo @db.Citext espera la extensión citext. Debe instalar la extensión para usar cualquier función o característica, PostgreSQL incluye una función para generar un UUID: gen_random_uuid, Esta función devuelve un UUID de versión 4 (aleatorio). Este es el tipo de UUID más utilizado y es apropiado para la mayoría de las aplicaciones]]></description>
+            <link>https://www.wootsbot.dev/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</guid>
+            <pubDate>Mon, 06 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

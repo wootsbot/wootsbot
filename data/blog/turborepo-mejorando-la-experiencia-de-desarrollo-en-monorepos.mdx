@@ -1,0 +1,174 @@
+---
+title: 'Turborepo Mejorando La Experiencia De Desarrollo En Monorepos'
+publishedAt: '2022-03-26'
+summary: 'Turborepo Mejorando La Experiencia De Desarrollo En Monorepos, TurboRepo será una gran tendencia este año 2022, por lo que rápidamente me di a la tarea de escribir y tratar de explicar
+qué es, cómo usar TurboRepo y cómo reinventa las técnicas del sistema de compilación para mejorar la experiencia de desarrollo con monorepos.'
+image: '/static/images/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos/preview.png'
+tags: ['TurboRepo', 'DX', 'turborepo', 'turbo', 'repo', 'monorepos', 'JavaScript', 'TypeScript', 'next', 'vercel']
+---
+
+[TurboRepo](https://turborepo.org/) será una gran tendencia este año 2022, por lo que rápidamente me di a la tarea de escribir y tratar de explicar
+qué es, cómo usar TurboRepo y cómo reinventa las técnicas del sistema de compilación para mejorar la experiencia de desarrollo con monorepos.
+
+## ¿Qué es TurboRepo?
+
+Como la [pagina oficial](https://turborepo.org/) lo define: **Turborepo es un sistema de compilación de alto rendimiento para bases de código JavaScript y TypeScript.**
+
+Turborepo reinventa las técnicas de sistemas de compilación utilizadas por Facebook y Google para eliminar la carga y los gastos generales de mantenimiento.
+
+> Este sistema de compilación podría mejorar las velocidades de compilación aproximadamente entre un 65 % y un 85 % de tus monorepositorios.
+
+En la siguiente imagen muestro la línea de tiempo de ejecución de tareas de un monorepo con turborepo y con 3 paquetes A, B, C tales que A y C dependen de B
+
+<Image
+  alt="Jorge Luis Calleja Alvarado"
+  src="/static/images/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos/turborepo-line.png"
+  width={125}
+  height={70}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+Mismo ejemplo con [lerna](https://lerna.js.org/)
+
+<Image
+  alt="Jorge Luis Calleja Alvarado"
+  src="/static/images/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos/lerna-line.png"
+  width={125}
+  height={70}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+## ¿Qué hace TurboRepo?
+
+Sus principios de Turbo Repo es nunca volver a calcular el trabajo que se ha hecho antes.
+
+Para esto genera un gráfico de dependencia a partir de un pipeline de compilación, este se configura en el archivo `package.json` o `turbo.json`, ejecuta cada tarea y encuentra y toma huellas almacenadas en caché de los resultados generados por tareas ejecutadas previamente.
+
+¿Qué sucede cuando se inicia una tarea por segunda vez? Si turborepo encuentra una huella digital, la restaura desde la memoria caché y reproduce los registros.
+
+## Turborepo gestionando tareas
+
+En este ejemplo tenemos la siguiente estructura de archivos.
+
+```md
+basic
+├─┬ node_modules
+│ │├─┬ @turborepo
+│
+│ README.md
+│ .gitignore
+│ .eslintrc.js
+│ package.json
+│ turbo.json
+│ yarn.lock
+│
+└───packages
+│ ├───config
+│ │ ├───eslint-preset.js
+│ │ └───package.json
+│ │
+│ ├───tsconfig
+│ │ ├───package.json
+│ │ └───base.json
+│ │ └───nextjs.js
+│ │ └───react-library.json
+│ │
+│ ├───ui
+│ │ └───package.json
+│ │ ├───Button.tsx
+│ │ └───index.tsx
+│ │ └───tsconfig.json
+```
+
+Destacaremos `turbo.json` con la siguientes tareas `build`, `lint`, `dev`, `clean`. Estas tareas se pueden actualizar con las requeridas por su proyecto y deben ser consistentes con los scripts `package.json`
+
+En el archivo `turbo.json` es donde se definen las relaciones topológicas entre las tareas de compilación
+
+```json
+// turbo.json
+
+{
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
+```
+
+En el archivo `package.json` estan los scripts que turborepo gestionara
+
+```json
+// package.json
+
+{
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "clean": "turbo run clean",
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "turbo": "latest"
+  }
+}
+```
+
+Ejecutaremos la tarea `build`, por ser la primera vez turborepo escribió su primer cache.
+
+```
+$ yarn build
+```
+
+<Image
+  alt="Jorge Luis Calleja Alvarado"
+  src="/static/images/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos/turborepo_1.gif"
+  width={125}
+  height={70}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+Si ejecutamos la tarea `build` por segunda vez, turborepo no volverá a ejecutar el trabajo que ya se ha hecho, sino
+que lo tomará de la memoria caché.
+
+```
+$ yarn build
+```
+
+<Image
+  alt="Jorge Luis Calleja Alvarado"
+  src="/static/images/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos/turborepo_2.gif"
+  width={125}
+  height={70}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+### Conclusión
+
+He visto muchos proyectos open source de muchas empresas que desarrollan software, parecen estar migrando hacia monorepos para almacenar su código, algo ha considerar es que las herramientas que se utilizan para esta administración de compilación, especialmente para JavaScript/TypeScript, parecen ser demasiado lentas, es por eso que turborepo es algo que debería considerar agregar a su flujo de desarrollo.
+
+Turborepo está diseñado para adaptarse de forma incremental, por lo que puede agregarlo a sus proyectos de forma gradual y parcial en unos minutos.
+
+#### [Ejemplos](https://github.com/vercel/turborepo/tree/main/examples/basic)

@@ -1,8 +1,100 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import * as React from 'react';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import { AppProps } from 'next/app';
+import Router from 'next/router';
+import Head from 'next/head';
+
+import { ThemeProvider } from 'next-themes';
+
+import { DefaultSeo } from 'next-seo';
+
+/**
+ * dayjs config
+ */
+import dayjs from 'dayjs';
+import 'dayjs/locale/es';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
+dayjs.extend(localizedFormat);
+dayjs.extend(relativeTime);
+
+// when Sunday is the first day of the week
+dayjs.locale('es'); // use Spanish locale globally
+
+import '@fontsource/inter';
+import '@fontsource/inter/100.css';
+import '@fontsource/inter/200.css';
+import '@fontsource/inter/300.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/inter/800.css';
+import '@fontsource/inter/900.css';
+import '@fontsource/jetbrains-mono';
+import '@fontsource/jetbrains-mono/100.css';
+import '@fontsource/jetbrains-mono/200.css';
+import '@fontsource/jetbrains-mono/300.css';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/500.css';
+import '@fontsource/jetbrains-mono/600.css';
+import '@fontsource/jetbrains-mono/700.css';
+import '@fontsource/jetbrains-mono/800.css';
+
+import { globalStyles, darkTheme } from '@/stitches';
+import { getSeo } from '@/utils/seo';
+import * as gtag from '@/libs/gtag';
+
+interface MyAppProps extends AppProps {}
+// @ts-ignore
+const Noop: React.FC = ({ children }) => <>{children}</>;
+
+function WootsbotApp({ Component, pageProps }: MyAppProps) {
+  globalStyles();
+
+  const seo = getSeo();
+  const Layout = (Component as any).Layout || Noop;
+
+  const start = (url: string) => {
+    gtag.pageview(url);
+  };
+
+  const done = () => {};
+
+  React.useEffect(() => {
+    Router.events.on('routeChangeStart', start);
+    Router.events.on('routeChangeComplete', done);
+    Router.events.on('routeChangeError', done);
+
+    return () => {
+      Router.events.off('routeChangeStart', start);
+      Router.events.off('routeChangeComplete', done);
+      Router.events.off('routeChangeError', done);
+    };
+  }, []);
+
+  return (
+    <ThemeProvider
+      attribute="class"
+      enableSystem
+      defaultTheme="system"
+      value={{
+        dark: darkTheme.className,
+        light: 'light',
+      }}
+    >
+      <DefaultSeo {...seo} />
+      <Head>
+        <title>Wootsbot.dev</title>
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+      </Head>
+
+      <Layout pageProps={pageProps}>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default WootsbotApp;

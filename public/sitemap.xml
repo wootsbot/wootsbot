@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.wootsbot.dev/gallery</loc>
+  </url>
+
+  <url>
+    <loc>https://www.wootsbot.dev</loc>
+  </url>
+
+  <url>
+    <loc>https://www.wootsbot.dev/transparency</loc>
+  </url>
+
+  <url>
+    <loc>https://www.wootsbot.dev/uses</loc>
+  </url>
+
+  <url>
+    <loc>https://www.wootsbot.dev/blog/embellecer-importaciones-absolutas-con-alias-en-nextjs</loc>
+  </url>
+
+  <url>
+    <loc>https://www.wootsbot.dev/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</loc>
+  </url>
+
+  <url>
+    <loc>https://www.wootsbot.dev/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado</loc>
+  </url>
+
+  <url>
+    <loc>https://www.wootsbot.dev/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</loc>
+  </url>
+
+  <url>
+    <loc>https://www.wootsbot.dev/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</loc>
+  </url>
+</urlset>

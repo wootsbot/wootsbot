@@ -4,21 +4,55 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "postbuild": "NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs && node ./scripts/generate-sitemap.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --config .prettierrc.js \"./**/*.+(js|json|ts|tsx)\" --write"
   },
   "dependencies": {
+    "@fontsource/inter": "^4.5.11",
+    "@fontsource/jetbrains-mono": "^4.5.9",
+    "@hookform/resolvers": "^2.9.0",
+    "@icons-pack/react-simple-icons": "5.0.0",
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-icons": "^1.1.1",
+    "@radix-ui/react-tooltip": "^0.1.7",
+    "@stitches/react": "^1.2.8",
+    "contentlayer": "^0.2.5",
+    "copy-to-clipboard": "^3.3.1",
+    "dayjs": "^1.11.3",
+    "lodash.merge": "^4.6.2",
     "next": "12.1.6",
+    "next-contentlayer": "^0.2.5",
+    "next-seo": "^5.4.0",
+    "next-themes": "^0.2.0",
+    "parse-numeric-range": "1.2.0",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-feather": "^2.0.10",
+    "react-hook-form": "^7.31.3",
+    "react-live": "^2.3.0",
+    "rss": "1.2.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@types/lodash.merge": "^4.6.7",
     "@types/node": "17.0.41",
+    "@types/parse-numeric-range": "^0.0.1",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
+    "globby": "13.1.1",
+    "prettier": "^2.6.2",
+    "reading-time": "^1.4.0",
+    "rehype": "12.0.1",
+    "rehype-autolink-headings": "6.1.1",
+    "rehype-code-titles": "1.0.3",
+    "rehype-prism-plus": "^1.4.0",
+    "rehype-slug": "5.0.1",
+    "remark-gfm": "^3.0.1",
     "typescript": "4.7.3"
   }
 }

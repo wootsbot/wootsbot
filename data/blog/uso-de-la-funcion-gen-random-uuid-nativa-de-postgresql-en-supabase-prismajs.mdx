@@ -1,7 +1,7 @@
 ---
 title: 'Uso de la funcion gen_random_uuid() nativa de Postgresql en Supabase + Prismajs'
 publishedAt: '2022-06-06'
-summary: 'Algunas funciones de bases de datos nativas son parte de una extensión. Por ejemplo, gen_random_uuid() es parte del módulo pgcrypto y el atributo de tipo nativo @db.Citext espera la extensión citext. Debe instalar la extensión para usar cualquier función o característica, PostgreSQL incluye una función para generar un UUID: gen_random_uuid, Esta función devuelve un UUID de versión 4 (aleatorio). Este es el tipo de UUID más utilizado y es apropiado para la mayoría de las aplicaciones'
+summary: 'Hace un par de semanas me encontré con la sorpresa de trabajar con la función gen_random_uuid nativa de PostgreSQL en supabase y con el ORM prisma, que expone la extensión pgcrypto, aquí una breve explicación de cómo usar esta función para generar el UUID de versión 4.'
 image: '/static/images/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs/preview.png'
 tags: ['PostgreSQL', 'Supabase', 'Prismajs', 'pgcrypto']
 ---

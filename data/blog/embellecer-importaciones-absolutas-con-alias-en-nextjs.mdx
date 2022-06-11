@@ -1,12 +1,10 @@
 ---
 title: 'Embellecer importaciones absolutas con alias en nextjs'
 publishedAt: '2021-10-14'
-summary: 'Estas trabajando en un proyecto grande o pequeño y algunas de sus declaraciones de importación se ven algo asi ../../../component'
+summary: 'Estas trabajando en un proyecto grande o pequeño y algunas de sus declaraciones de importación se ven algo asi import Component from "../../../Component"'
 image: '/static/images/blog/embellecer-importaciones-absolutas-con-alias-en-nextjs/alias-01.png'
 tags: ['react', 'nextjs', 'nextjsV9.4', 'javaScript']
 ---
-
-Estas trabajando en un proyecto grande o pequeño y algunas de sus declaraciones de importación se ven algo asi `import Component from '../../../Component'`.
 
 Desde Next.js `v9.4.x` y posteriores, hace que la configuración de importaciones absolutas sea muy simple para proyectos de JavaScript y TypeScript.
 Todo lo que necesita hacer es agregar la configuración `baseUrl` a `jsconfig.json` [(proyectos JS)](https://code.visualstudio.com/docs/languages/jsconfig#_jsconfig-options) o `tsconfig.json` [(proyectos TS)](https://www.typescriptlang.org/docs/handbook/module-resolution.html#base-url).

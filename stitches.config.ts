@@ -255,7 +255,7 @@ export const globalStyles = globalCss({
 
   '::selection': {
     backgroundColor: '$violet11',
-    color: '$gray1',
+    color: '$textSecondary',
   },
 
   '.wootsbot-article>ul>li>:last-child': {
@@ -311,6 +311,10 @@ export const globalStyles = globalCss({
     height: '.375em',
     top: 'calc(.875em - .1875em)',
     left: '.25em',
+  },
+
+  '.wootsbot-article > p': {
+    color: '$textSecondary',
   },
 });
 

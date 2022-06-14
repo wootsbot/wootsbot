@@ -44,7 +44,7 @@ Los eventos que tendrá nuestra máquina son:
 - `FETCH_ERROR`: Pasar del estado de `loading` al estado `failure`, esto sucede si hay un error en la llamada a la API.
 
 <Image
-  alt="Jorge Luis Calleja Alvarado"
+  alt="xstate"
   src="/static/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_0.png"
   width={155}
   height={65}
@@ -56,7 +56,7 @@ Los eventos que tendrá nuestra máquina son:
 En la próxima iteración, verá cómo pasó del estado `idle`, con el evento `FETCH` al estado `loading`
 
 <Image
-  alt="Jorge Luis Calleja Alvarado"
+  alt="xstate"
   src="/static/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_1.gif"
   width={155}
   height={65}
@@ -70,7 +70,7 @@ En el estado en que se encuentra la máquina `loading`, entonces nos habilita 3 
 En este ejemplo simularemos que nuestro usuario quiere cancelar la llamada lo cual nos apoyará desde el evento `FETCH_CANCEL`, lo que el evento nos va a llevar del estado `loading` al estado `idle` y habilitará el evento nuevamente `FETCH`, esto para que pueda realizar el flujo de nuevo.
 
 <Image
-  alt="Jorge Luis Calleja Alvarado"
+  alt="xstate"
   src="/static/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_3.gif"
   width={155}
   height={65}
@@ -82,7 +82,7 @@ En este ejemplo simularemos que nuestro usuario quiere cancelar la llamada lo cu
 Para simular una llamada a la api no es exitosa nos ayudará el evento `FETCH_ERROR`, nos va a llevar del estado `loading` al estado `failure`, con ayuda del evento `FETCH_ERROR`. y nos habilitará el evento `FETCH_RETRY` para poder hacer un reintento.
 
 <Image
-  alt="Jorge Luis Calleja Alvarado"
+  alt="xstate"
   src="/static/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_4.gif"
   width={155}
   height={65}
@@ -94,7 +94,7 @@ Para simular una llamada a la api no es exitosa nos ayudará el evento `FETCH_ER
 Así que ahora estamos en un estado de `failure` y con el evento `FETCH_RETRY` vamos a regresar al estado `loading` para poder hacer un reintento.
 
 <Image
-  alt="Jorge Luis Calleja Alvarado"
+  alt="xstate"
   src="/static/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_5.gif"
   width={155}
   height={65}
@@ -106,7 +106,7 @@ Así que ahora estamos en un estado de `failure` y con el evento `FETCH_RETRY` v
 Con todos los estados expuestos en este momento, es hora de ver cómo llegamos al estado de `loaded`, nos apoyamos el evento `FETCH_SUCCESS`, y esto termina el flujo del estado de la máquina.
 
 <Image
-  alt="Jorge Luis Calleja Alvarado"
+  alt="xstate"
   src="/static/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_2.gif"
   width={155}
   height={65}

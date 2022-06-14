@@ -4,21 +4,28 @@
         <description><![CDATA[Wootsbot]]></description>
         <link>https://www.wootsbot.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 11 Jun 2022 04:13:01 GMT</lastBuildDate>
-        <atom:link href="https://www.wootsbot.de/feed.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 14 Jun 2022 04:55:28 GMT</lastBuildDate>
+        <atom:link href="https://www.wootsbot.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Embellecer importaciones absolutas con alias en nextjs]]></title>
-            <description><![CDATA[Estas trabajando en un proyecto grande o pequeño y algunas de sus declaraciones de importación se ven algo asi ../../../component]]></description>
+            <description><![CDATA[Estas trabajando en un proyecto grande o pequeño y algunas de sus declaraciones de importación se ven algo asi import Component from "../../../Component"]]></description>
             <link>https://www.wootsbot.dev/blog/embellecer-importaciones-absolutas-con-alias-en-nextjs</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/embellecer-importaciones-absolutas-con-alias-en-nextjs</guid>
             <pubDate>Thu, 14 Oct 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Identificar posibles mejoras de CSS en su sitio web]]></title>
-            <description><![CDATA[Esta función es útil cuando realiza modificaciones CSS en la interfaz de usuario y ya no necesita utilizar herramientas de terceros como el selector de color.]]></description>
+            <description><![CDATA[Esta caracteristica nos ofrece información detallada sobre colores, fuentes, media queries y declaraciones no utilizadas (Unused declarations).]]></description>
             <link>https://www.wootsbot.dev/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</guid>
             <pubDate>Thu, 14 Oct 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Mi Experiencia Con Starlink Tras 4 Meses De Uso desde México]]></title>
+            <description><![CDATA[Hace un par de días he visto más empresas adoptando el teletrabajo, y me pregunte cual seria un lugar perfecto para hacer la tarea que se hace en la oficina, mi mente imagino montañas 🏔️, woo seria genial 😉, y pensé en la combinación de montaña, cabaña y Starlink. Así que quiero escribir sobre mi experiencia, cómo me ha ayudado a mejorar mi experiencia como desarrollador con ventajas y desventajas, pero creo que esto podría aplicarse a cualquier actividad que requiera conexión a internet y mucha concentración.]]></description>
+            <link>https://www.wootsbot.dev/blog/mi-experiencia-con-starlink-tras-4-meses-de-uso-en-mexico</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/mi-experiencia-con-starlink-tras-4-meses-de-uso-en-mexico</guid>
+            <pubDate>Tue, 14 Jun 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[¿Qué es XState y por qué usar máquinas de estado?]]></title>
@@ -29,14 +36,14 @@
         </item>
         <item>
             <title><![CDATA[Turborepo Mejorando La Experiencia De Desarrollo En Monorepos]]></title>
-            <description><![CDATA[Turborepo Mejorando La Experiencia De Desarrollo En Monorepos, TurboRepo será una gran tendencia este año 2022, por lo que rápidamente me di a la tarea de escribir y tratar de explicar qué es, cómo usar TurboRepo y cómo reinventa las técnicas del sistema de compilación para mejorar la experiencia de desarrollo con monorepos.]]></description>
+            <description><![CDATA[Turborepo Mejorando La Experiencia De Desarrollo En Monorepos, será una gran tendencia este año 2022, por lo que rápidamente me di a la tarea de escribir y tratar de explicar qué es, cómo usar TurboRepo y cómo reinventa las técnicas del sistema de compilación para mejorar la experiencia de desarrollo con monorepos]]></description>
             <link>https://www.wootsbot.dev/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</guid>
             <pubDate>Sat, 26 Mar 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Uso de la funcion gen_random_uuid() nativa de Postgresql en Supabase + Prismajs]]></title>
-            <description><![CDATA[Algunas funciones de bases de datos nativas son parte de una extensión. Por ejemplo, gen_random_uuid() es parte del módulo pgcrypto y el atributo de tipo nativo @db.Citext espera la extensión citext. Debe instalar la extensión para usar cualquier función o característica, PostgreSQL incluye una función para generar un UUID: gen_random_uuid, Esta función devuelve un UUID de versión 4 (aleatorio). Este es el tipo de UUID más utilizado y es apropiado para la mayoría de las aplicaciones]]></description>
+            <description><![CDATA[Hace un par de semanas me encontré con la sorpresa de trabajar con la función gen_random_uuid nativa de PostgreSQL en supabase y con el ORM prisma, que expone la extensión pgcrypto, aquí una breve explicación de cómo usar esta función para generar el UUID de versión 4.]]></description>
             <link>https://www.wootsbot.dev/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</guid>
             <pubDate>Mon, 06 Jun 2022 00:00:00 GMT</pubDate>

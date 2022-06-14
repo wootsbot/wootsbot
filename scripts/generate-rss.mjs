@@ -1,12 +1,12 @@
-import { writeFileSync } from "fs";
-import RSS from "rss";
-import { allBlogs } from "../.contentlayer/generated/Blog/_index.mjs";
+import { writeFileSync } from 'fs';
+import RSS from 'rss';
+import { allBlogs } from '../.contentlayer/generated/Blog/_index.mjs';
 
 async function generate() {
   const feed = new RSS({
-    title: "Wootsbot",
-    site_url: "https://www.wootsbot.dev",
-    feed_url: "https://www.wootsbot.de/feed.xml",
+    title: 'Wootsbot',
+    site_url: 'https://www.wootsbot.dev',
+    feed_url: 'https://www.wootsbot.dev/feed.xml',
   });
 
   allBlogs.map((post) => {
@@ -18,7 +18,7 @@ async function generate() {
     });
   });
 
-  writeFileSync("./public/feed.xml", feed.xml({ indent: true }));
+  writeFileSync('./public/feed.xml', feed.xml({ indent: true }));
 }
 
 generate();

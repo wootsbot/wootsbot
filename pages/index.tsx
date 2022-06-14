@@ -38,6 +38,18 @@ const CardPost = styled(Link, {
   borderRadius: '$md',
 });
 
+const StyledAvatarWrapper = styled(Box, {
+  width: '100%',
+  maxWidth: 800,
+  height: '100%',
+  maxHeight: 800,
+
+  '@tablet': {
+    width: '100%',
+    height: '100%',
+  },
+});
+
 type HomePageProps = {
   posts?: Blog[] | [];
 };
@@ -70,9 +82,9 @@ function HomePage({ posts = [] }: HomePageProps) {
             <GridItem colSpan={1}>
               <StyledImage
                 src={WorkSpace}
-                alt="Picture of the author"
-                width={520}
-                height={400}
+                alt="Picture work space"
+                width={1280}
+                height={960}
                 placeholder="blur"
                 layout="intrinsic"
                 quality="100"
@@ -105,31 +117,31 @@ function HomePage({ posts = [] }: HomePageProps) {
           Eche un vistazo a mi escritura.
         </Heading>
 
-        <Flex flexDirection="column" gap={2}>
-          <Flex flexDirection="column" gap={2}>
-            {lastPosts?.map((post) => (
-              <Box
-                key={post?.title}
-                css={{
-                  display: 'flex',
-                  width: '100%',
-                  height: 'auto',
-                  backgroundColor: '$whiteA2',
-                  borderRadius: '$md',
-                  backdropFilter: 'blur(8px)',
-                  background: 'linear-gradient(to right,$green9,$violet9)',
-                  position: 'relative',
-                  p: '5px',
-                }}
-              >
-                <CardPost href={`/blog/${post.slug}`} isIcon={false}>
-                  <Text size="lg">{post?.title}</Text>
-                </CardPost>
-              </Box>
-            ))}
-          </Flex>
+        <Flex flexDirection="column" gap={4}>
+          {lastPosts?.map((post) => (
+            <Grid key={post?.title} columns={3} gap={2}>
+              <GridItem colSpan={{ '@initial': 1, '@phone': 3 }}>
+                <Link href={`/blog/${post?.slug}`} isIcon={false}>
+                  <StyledAvatarWrapper>
+                    <StyledImage
+                      src={post?.image}
+                      alt={`Picture ${post?.title}`}
+                      width={1852}
+                      height={640}
+                      layout="responsive"
+                      quality="100"
+                    />
+                  </StyledAvatarWrapper>
+                </Link>
+              </GridItem>
 
-          <Spacer />
+              <GridItem colSpan={{ '@initial': 2, '@phone': 3 }}>
+                <Link href={`/blog/${post?.slug}`} isIcon={false}>
+                  <Text size="md">{post?.title}</Text>
+                </Link>
+              </GridItem>
+            </Grid>
+          ))}
 
           <Link href="/blog" color="primary">
             Ver todas las publicaciones

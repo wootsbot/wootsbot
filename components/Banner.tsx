@@ -25,7 +25,7 @@ const StyledAvatarWrapper = styled(Box, {
   },
 });
 const Avatar = styled(Image, {
-  borderRadius: '$full',
+  borderRadius: '50%',
   border: '5px solid $violet6 !important',
 });
 
@@ -44,8 +44,8 @@ function Banner() {
               src={AvatarMe}
               alt="Picture of the author"
               placeholder="blur"
-              width={100}
-              height={100}
+              width={1956}
+              height={1956}
               layout="responsive"
               quality="100"
             />

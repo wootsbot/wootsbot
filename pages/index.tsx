@@ -51,11 +51,13 @@ const StyledAvatarWrapper = styled(Box, {
 });
 
 type HomePageProps = {
-  posts?: Blog[] | [];
+  posts: Blog[] | [];
 };
 
 function HomePage({ posts = [] }: HomePageProps) {
-  const lastPosts = posts?.sort((a, b) => dayjs(b.publishedAt).valueOf() - dayjs(a.publishedAt).valueOf())?.slice(0, 3);
+  const lastPosts = posts
+    ?.sort((a: Blog, b: Blog) => dayjs(b?.publishedAt).valueOf() - dayjs(a?.publishedAt).valueOf())
+    ?.slice(0, 3);
 
   return (
     <Container size="sm" css={{ mt: '$6' }}>
@@ -96,7 +98,7 @@ function HomePage({ posts = [] }: HomePageProps) {
                 <Heading as="h3" size="lg">
                   Esta es mi pila de tecnologías
                 </Heading>
-                <Text size="lg">
+                <Text size="md">
                   Creo que es importante crear un ambiente donde aumente tu creatividad y te sientas cómodo, estas son
                   algunas de las cosas que he recopilado en los últimos años.
                 </Text>

@@ -13,6 +13,8 @@ import Stack from '@/design-system/Stack';
 import Heading from '@/design-system/Heading';
 import Container from '@/design-system/Container';
 
+import PostViewCounter from '@/components/PostViewCounter';
+
 import type { Blog } from '@/contentlayer/generated';
 
 import SEO from '@/components/SEO';
@@ -98,7 +100,12 @@ function BlogLayout({ children, post }: BlogLayout) {
           {summary}
         </Text>
 
-        <Flex alignItems="center" justifyContent="between">
+        <Flex
+          flexDirection={{ '@initial': 'row', '@phone': 'column' }}
+          alignItems={{ '@initial': 'center', '@phone': 'start' }}
+          justifyContent="between"
+          gap={1}
+        >
           <Flex alignItems="center" gap={1}>
             <Avatar alt="wootsbot" height={30} width={30} src="/static/images/yoV2.jpg" />
             <Stack spacing={1}>
@@ -112,12 +119,13 @@ function BlogLayout({ children, post }: BlogLayout) {
             </Stack>
           </Flex>
 
-          <Text as="span" size="sm" css={{ fontWeight: '$light' }}>
-            {minutesRead} min de lectura
-          </Text>
-          {/* <Text as="span" size="sm" css={{ fontWeight: '$light' }}>
-          {minutesRead} min de lectura • {views} vistas
-        </Text> */}
+          <Flex gap={1}>
+            <Text as="span" size="sm" css={{ fontWeight: '$light' }}>
+              {minutesRead} min de lectura
+            </Text>
+            {` • `}
+            <PostViewCounter slug={post.slug} />
+          </Flex>
         </Flex>
 
         {image && (

@@ -4,7 +4,7 @@
         <description><![CDATA[Wootsbot]]></description>
         <link>https://www.wootsbot.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 14 Jun 2022 04:55:28 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 Jun 2022 21:03:45 GMT</lastBuildDate>
         <atom:link href="https://www.wootsbot.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Embellecer importaciones absolutas con alias en nextjs]]></title>

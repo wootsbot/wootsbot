@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 import { useTheme } from 'next-themes';
 import { SunIcon, MoonIcon, HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons';
+// import { Rss } from 'react-feather';
+import { Rss } from '@icons-pack/react-simple-icons';
 
 import { styled } from '@/stitches';
 
@@ -58,6 +60,11 @@ const DrawerMobile = styled(Box, {
 function Header() {
   const { theme, setTheme } = useTheme();
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+
+  const openInNewTab = (url: string) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+    if (newWindow) newWindow.opener = null;
+  };
 
   const renderLinks = () => (
     <>
@@ -115,6 +122,16 @@ function Header() {
                 }}
               >
                 {renderLinks()}
+                <IconButton
+                  onClick={() => openInNewTab('/feed.xml')}
+                  size="lg"
+                  variant="raised"
+                  name="theme"
+                  aria-label="change mode theme"
+                >
+                  <Rss size={15} />
+                </IconButton>
+
                 <IconButton
                   onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                   size="lg"
@@ -180,6 +197,17 @@ function Header() {
 
           <Flex flexDirection="column" alignItems="center" gap={5}>
             {renderLinks()}
+
+            <IconButton
+              onClick={() => openInNewTab('/feed.xml')}
+              size="lg"
+              variant="raised"
+              name="theme"
+              aria-label="change mode theme"
+            >
+              <Rss size={15} />
+            </IconButton>
+
             <IconButton
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               size="lg"

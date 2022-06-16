@@ -1,6 +1,8 @@
 import dayjs from 'dayjs';
 import Image from 'next/image';
 
+import useSWR from 'swr';
+
 import { styled } from '@/stitches';
 
 import Link from '@/components/Link';
@@ -10,6 +12,11 @@ import Box from '@/design-system/Box';
 import Grid from '@/design-system/Grid';
 import GridItem from '@/design-system/GridItem';
 import Heading from '@/design-system/Heading';
+
+import fetcher from '@/libs/fetcher';
+import { PostViews } from '@/libs/types';
+
+import type { Blog } from '@/contentlayer/generated';
 
 const StyledAvatarWrapper = styled(Box, {
   width: '100%',
@@ -27,15 +34,16 @@ const StyledImage = styled(Image, {
   borderRadius: '$md',
 });
 
-export type BlogPreviewProps = {
-  image: string;
-  publishedAt: string;
-  slug: string;
-  summary: string;
-  title: string;
-};
+export default function BlogPreview({
+  title,
+  summary,
+  slug,
+  publishedAt,
+  image,
+}: Pick<Blog, 'title' | 'summary' | 'slug' | 'publishedAt' | 'image'>) {
+  const { data } = useSWR<PostViews>(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
 
-export default function BlogPreview({ title, summary, slug, publishedAt, image }: BlogPreviewProps) {
   return (
     <Grid columns={3} gap={2}>
       <GridItem colSpan={3}>
@@ -52,16 +60,18 @@ export default function BlogPreview({ title, summary, slug, publishedAt, image }
               />
             </StyledAvatarWrapper>
           </Link>
-          <Text as="time" size="xs" color="gray">
-            {dayjs(publishedAt).format('MMMM D, YYYY')}
-          </Text>
-          {/* <Flex flexDirection="row" gap={1} css={{ flexWrap: 'wrap' }}>
-            {tags?.map((t, _id) => (
-              <Text size="xs" key={`${t}-${_id}`} css={{ background: '$gold4', p: 2 }}>
-                {t}
-              </Text>
-            ))}
-          </Flex> */}
+
+          <Flex gap={1}>
+            <Text as="time" size="sm" color="gray">
+              {dayjs(publishedAt).format('MMMM D, YYYY')}
+            </Text>
+
+            {` • `}
+
+            <Text size="sm" color="gray">
+              {`${views ? new Number(views).toLocaleString() : '–––'} vistas`}
+            </Text>
+          </Flex>
         </Flex>
       </GridItem>
 

@@ -96,7 +96,10 @@ function BlogLayout({ children, post }: BlogLayout) {
           </Heading>
         </Box>
 
-        <Text size="2xl" css={{ lineHeight: 1.625, textAlign: 'center', 'text-size-adjust': '100%', mb: 40, mt: 40 }}>
+        <Text
+          size={{ '@initial': '2xl', '@phone': 'xl' }}
+          css={{ lineHeight: 1.625, textAlign: 'center', 'text-size-adjust': '100%', mb: 40, mt: 40 }}
+        >
           {summary}
         </Text>
 

@@ -1,0 +1,77 @@
+---
+title: 'Un Terminal Para Un Desarrollador Front End ✨'
+publishedAt: '2022-09-09'
+summary: 'Con el desarrollo moderno gran cantidad de las librerías o frameworks como react, nextjs, Angular, vue, svelte, etc. Dependen en gran medida de la terminal y pienso igual que usted y me doy cuenta de que pasamos mucho tiempo en la terminal ejecutando tareas de estas herramientas y construyendo nuestras interfaces de usuario.'
+image: '/static/images/blog/un-terminal-para-un-desarrollador-front-end/preview.png'
+tags: ['PostgreSQL', 'Supabase', 'Prismajs', 'pgcrypto']
+---
+
+En ocaciones me quedo con la ironía de que nuestro trabajo se basa en crear interfaces Ui y que las herramientas que nos ayudan con nuestro flujo de desarrollo se basan en líneas de comandos. Entonces creo que debemos buscar herramientas que nos ayuden a mejorar u optimizar estos procesos y tengo un par de configuraciones que me han ayudado a mejorar mi experiencia desarrollada para la web y móviles.
+
+## Mis herramientas que uso para el desarrollo
+
+- [hyper](https://hyper.is/):
+  El objetivo del proyecto es crear una experiencia hermosa y extensible para los usuarios de la interfaz de línea de comandos, basada en tecnologías web.
+
+- [fig](https://fig.io/): La línea de comando de próxima generación. La fuente de la verdad para los secretos, scripts y credenciales SSH de su equipo.
+
+- [exa](https://the.exa.website/):
+  Un reemplazo moderno para el comando `ls`.
+
+- [starship](https://starship.rs/): ¡El indicador mínimo, ultrarrápido e infinitamente personalizable para cualquier shell!
+
+- [ohmyz](https://ohmyz.sh/): Oh My Zsh es un framework encantador, de código abierto e impulsado por la comunidad para administrar su configuración de Zsh.
+
+> Hyper me ha acompañado mucho tiempo, aunque su primer commit fue en [06 Oct 2016](https://github.com/vercel/hyper/releases?page=9), no fue que lo consi en la fecha 10 Mar 2017 por un compañero de trabajo, en ese momento fue algo nuevo y fantástico para mí, en esos tiempos usaba mucho la terminal para lanzar servidores de node para ejecutar los proyectos de react, bueno ya te conte mi emotivo encuentro con esta sensacional terminal, vamos a lo interesante, vamos a configurar nuestra terminal de proxima generacion.
+
+## Instalación de un terminal de próxima generación
+
+### Configuración en Windows
+
+Para aclarar que no soy un experto y he usado muy poco Windows, así que tómate esto con paciencia si tu entorno es Windows.
+
+Afortunadamente, las versiones más nuevas de Windows vienen con la capacidad de instalar y ejecutar Linux como si fuera cualquier otra aplicación.
+
+Les dejo un tutorial de los pasos requeridos [cómo instalar y usar Zsh en Windows 10](https://heyayush.com/2021-05-04_installing-zsh-on-windows10/).
+
+Ok entnces ya tenemos lo basico ahora vaya y [descarge hyper desde aqui](https://hyper.is/#installation)
+
+que camino tome no importe la idea es usar Bash o Zsh dentro de Windows.
+
+### instalación en macOS (.app)
+
+creo que es importante mosntrar los dos metodos que exiten para instalarlo con exito.
+
+install con Homebrew
+
+```
+$ brew install --cask hyper
+```
+
+install descargando el `.app`, te dejo el [link de descarga oficial de hyper](https://hyper.is/#installation)
+
+Para usar Zsh, es bastante simple de instalar, ¡porque ahora tenemos Homebrew! Solo ejecutaremos un comando y estaremos listos.
+
+`brew install zsh`
+
+Notarás que después de que finalice la instalación, realmente no sucede nada. Tendremos que cambiar nuestro shell a Zsh, y lo hacemos con un comando bastante simple:
+
+```
+chsh -s $(which zsh)
+```
+
+Lo que esto hace es cambiar nuestro shell para usar Zsh cada vez que iniciamos sesión. Ahora, simplemente cierre su terminal y vuelva a abrirlo, y estará listo para usar Zsh.
+
+### instalación en otros
+
+Creo no deveria teer problemas con solo seguir la guia oficial de [desde el repositorio oficial](https://github.com/vercel/hyper#usage)
+
+## Instalar oh-my-zsh
+
+Ahora que Zsh está instalado, queremos comenzar a configurarlo para que funcione bien para nosotros. Una de las formas más fáciles de comenzar es instalando Oh My Zsh. Oh My Zsh es un framework de configuración de Zsh, y viene con una tonelada de temas y complementos de Zsh que le ahorran mucho tiempo configurando cómo desea que se vea y funcione su shell.
+
+Instalarlo es bastante simple, solo hazlo
+
+`sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+
+Una vez que finalice esta instalación, hará una referencia para verificar su nuevo archivo `~/.zshrc` . Este es un archivo de configuración oculto, y aquí es donde comenzará a agregar su configuración para hacer que Zsh sea como lo desea. Repasemos partes del archivo predeterminado que crea para usted y algunos de los cambios que querrá comenzar a hacer.

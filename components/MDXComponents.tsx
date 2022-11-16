@@ -135,11 +135,11 @@ const MDXComponents = {
   hr: (props: StyledHrVariants) => <StyledHr {...props} css={{ my: '$6', mx: 'auto' }} />,
   ul: (props: StyledUlVariants) => <StyledUl {...props} as="ul" />,
   ol: (props: StyledUlVariants) => <StyledUl {...props} as="ol" />,
-  li: (props: StyledTextVariants) => (
-    <li>
-      <Text {...props} size="sm" />
-    </li>
-  ),
+  // li: (props: StyledTextVariants) => (
+  //   <li>
+  //     <Text {...props} size="sm" />
+  //   </li>
+  // ),
   strong: (props: StyledTextVariants) => (
     <Text as="strong" {...props} css={{ display: 'inline', fontWeight: '$semibold' }} />
   ),

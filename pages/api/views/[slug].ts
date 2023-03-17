@@ -3,7 +3,11 @@ import prisma from '@/libs/prisma';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const slug = req.query.slug.toString();
+    const slug = req.query?.slug as string;
+
+    if (!slug) {
+      return res.status(400).json({ message: 'Slug is required.' });
+    }
 
     if (req.method === 'POST') {
       const newOrUpdatedViews = await prisma.views.upsert({

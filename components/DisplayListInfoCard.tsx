@@ -1,93 +1,40 @@
+import clsx from 'clsx';
 import { CheckCircle } from 'react-feather';
-
-import { styled, VariantProps } from '@/stitches';
-
-import Box from '@/design-system/Box';
-import Stack from '@/design-system/Stack';
-import Flex from '@/design-system/Flex';
-import Text from '@/design-system/Text';
-
-const StyledRoot = styled(Box, {
-  p: '$3',
-  width: '100%',
-  borderRadius: '$md',
-
-  variants: {
-    color: {
-      success: {
-        backgroundColor: '$mint3',
-        boxShadow: '0 0 0 1.5px $colors$green9',
-      },
-      error: {
-        backgroundColor: '$red3',
-        boxShadow: '0 0 0 1.5px $colors$red7',
-      },
-      info: {
-        backgroundColor: '$blue3',
-        boxShadow: '0 0 0 1.5px $colors$blue7',
-      },
-      warning: {
-        backgroundColor: '$yellow3',
-        boxShadow: '0 0 0 1.5px $colors$yellow7',
-      },
-    },
-  },
-
-  defaultVariants: {
-    color: 'success',
-  },
-});
-
-const StyledItem = styled(Flex, {
-  variants: {
-    color: {
-      success: {
-        color: '$mint11',
-      },
-
-      error: {
-        color: '$red11',
-      },
-
-      info: {
-        color: '$blue11',
-      },
-      warning: {
-        color: '$yellow11',
-      },
-    },
-  },
-
-  defaultVariants: {
-    color: 'success',
-  },
-});
-
-export type StyledDisplayListInfoCardVariants = VariantProps<typeof StyledRoot>;
 
 type DisplayListInfoCardProps = {
   title?: string;
   items?: [];
-  color: string;
-} & StyledDisplayListInfoCardVariants;
+  color: 'default' | 'success' | 'error';
+};
 
-export default function DisplayListInfoCard({ title, items = [], color = 'success' }: DisplayListInfoCardProps) {
+export default function DisplayListInfoCard({ title, items = [], color = 'default' }: DisplayListInfoCardProps) {
   return (
-    <StyledRoot color={color}>
-      <Text>{title}</Text>
+    <div
+      className={clsx('flex flex-col bg-neutral-900 border rounded-lg p-4 my-8', {
+        'border-neutral-800': color === 'default',
+        'border-rose-900': color === 'error',
+        'border-emerald-900': color === 'success',
+      })}
+    >
+      <span className="text-lg my-1 mb-4 text-white">{title}</span>
 
-      <Box css={{ mt: '$2' }}>
-        <Stack flexDirection="column" spacing={2}>
-          {items?.map((item) => (
-            <StyledItem key={item} color={color} gap={2}>
-              <Box>
-                <CheckCircle size={18} />
-              </Box>
-              <Text css={{ fontWeight: '$medium' }}>{item}</Text>
-            </StyledItem>
-          ))}
-        </Stack>
-      </Box>
-    </StyledRoot>
+      <ul className="flex flex-col p-0 m-0">
+        {items?.map((item) => (
+          <li key={item} className="flex flex-row items-baseline mb-2">
+            <div className="mr-4">
+              <CheckCircle
+                size={18}
+                className={clsx({
+                  'text-white': color === 'default',
+                  'text-rose-500': color === 'error',
+                  'text-emerald-500': color === 'success',
+                })}
+              />
+            </div>
+            <p className="m-0 text-white">{item}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

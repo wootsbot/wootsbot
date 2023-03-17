@@ -1,123 +1,90 @@
-/* eslint-disable react/no-unescaped-entities */
-import dayjs from 'dayjs';
+import Link from 'next/link';
+import { format } from 'date-fns';
+import { SiGithub, SiTwitter, SiStackoverflow, SiInstagram, SiPolywork } from '@icons-pack/react-simple-icons';
 
-import { Github, Twitter, Stackoverflow, Instagram, Polywork } from '@icons-pack/react-simple-icons';
-
-import { styled } from '@/stitches';
-
-import Box from '@/design-system/Box';
-import Text from '@/design-system/Text';
-import Flex from '@/design-system/Flex';
-import Container from '@/design-system/Container';
-
-import NavLink from '@/components/NavLink';
-
-const StyledLink = styled('a', {
-  textDecoration: 'underline',
-  textDecorationColor: '$sage9',
-  color: '$mauve11',
-  fontWeight: '$medium',
-
-  '&:hover': {
-    color: '$sage12',
-  },
-
-  '&:active': {
-    color: '$sage11',
-  },
-});
-
-const StyledHr = styled('hr', {
-  borderColor: '$slate8',
-  borderTopWidth: 1,
-  width: '100%',
-  mb: '$7',
-});
+import Wootsbot from '@/design-system/icons/Wootsbot';
 
 function Footer() {
   return (
-    <Container as="footer" size="sm" css={{ mb: '$12', mt: '$10' }}>
-      <StyledHr />
+    <footer className="antialiased px-8 max-w-[65ch] mx-auto text-center mb-24">
+      <Link href="/" className="flex flex-col items-center justify-center mb-10 mt-24">
+        <Wootsbot size={45} />
+      </Link>
 
-      {/* <Box css={{ mb: '$6' }}>
-        <Subscribe />
-      </Box> */}
-
-      <Flex flexDirection={{ '@initial': 'row', '@phone': 'column' }} gap={9}>
-        <Flex flexDirection="column" gap={2}>
-          <Text as="span" size="xl" css={{ fontWeight: '$semibold' }}>
-            Jorge Luis Calleja A.
-          </Text>
-          <Text
-            size="xl"
-            css={{
-              maxWidth: 250,
-              fontWeight: '$light',
-              lineHeight: '$8',
-              backgroundImage: 'linear-gradient(to left, $blue11, $violet11)',
-              color: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
-            Creo que "entre más compartas, más aprendes".
-          </Text>
-
-          <Flex gap={2}>
-            <StyledLink target="_blank" rel="noopener noreferrer" href="https://github.com/wootsbot">
-              <Github size={20} />
-            </StyledLink>
-
-            <StyledLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/wootsbot">
-              <Twitter size={20} />
-            </StyledLink>
-
-            <StyledLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://stackoverflow.com/users/4089384/wootsbot"
-            >
-              <Stackoverflow size={20} />
-            </StyledLink>
-
-            <StyledLink target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/wootsbot/">
-              <Instagram size={20} />
-            </StyledLink>
-
-            <StyledLink target="_blank" rel="noopener noreferrer" href="https://www.polywork.com/wootsbot">
-              <Polywork size={20} />
-            </StyledLink>
-          </Flex>
-        </Flex>
-
-        <Flex flexDirection="column" gap={2}>
-          <NavLink href="/transparency" isDisableActive>
+      <ul className="list-unstyled flex justify-center flex-wrap gap-4 text-sm">
+        <li>
+          <Link className="underline" href="/transparency">
             Mi misión
-          </NavLink>
-
-          <NavLink href="/" isDisableActive>
+          </Link>
+        </li>
+        <li>
+          <Link className="underline font-normal" href="/">
             Sobre mi
-          </NavLink>
-
-          <NavLink href="/uses" isDisableActive>
+          </Link>
+        </li>
+        <li>
+          <Link className="underline" rel="noopener noreferrer" href="/uses">
             Uses
-          </NavLink>
-
-          <NavLink href="/blog" isDisableActive>
+          </Link>
+        </li>
+        <li>
+          <Link className="underline" rel="noopener noreferrer" href="/blog">
             Articulos
-          </NavLink>
+          </Link>
+        </li>
 
-          <NavLink href="/gallery" isDisableActive>
-            Galeria
-          </NavLink>
-        </Flex>
-      </Flex>
+        <li>
+          <Link className="underline" target="_blank" rel="noopener noreferrer" href="/feed.xml">
+            Rss
+          </Link>
+        </li>
+      </ul>
 
-      <Box css={{ mt: '$4' }}>
-        <Flex css={{ fontSize: '$2', fontWeight: '$thin' }}>
-          All rights reserved © wootsbot.dev {` ${dayjs().year()}.`}
-        </Flex>
-      </Box>
-    </Container>
+      <ul className="list-unstyled flex justify-center flex-wrap gap-4 text-sm mt-5">
+        <li>
+          <a className="underline" target="_blank" rel="noopener noreferrer" href="https://github.com/wootsbot">
+            <SiGithub size={20} />
+          </a>
+        </li>
+        <li>
+          <Link className="underline" target="_blank" rel="noopener noreferrer" href="https://twitter.com/wootsbot">
+            <SiTwitter size={20} />
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://stackoverflow.com/users/4089384/wootsbot"
+          >
+            <SiStackoverflow size={20} />
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/wootsbot/"
+          >
+            <SiInstagram size={20} />
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.polywork.com/wootsbot"
+          >
+            <SiPolywork size={20} />
+          </Link>
+        </li>
+      </ul>
+
+      <p className="mt-3"> All rights reserved © wootsbot.dev {format(new Date(), 'yyyy')}</p>
+    </footer>
   );
 }
 

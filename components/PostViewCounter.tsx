@@ -1,10 +1,10 @@
+'use client';
+
 import { useEffect } from 'react';
 import useSWR from 'swr';
 
 import fetcher from '@/libs/fetcher';
 import { PostViews } from '@/libs/types';
-
-import Text from '@/design-system/Text';
 
 export type ViewCounterProps = {
   slug: string;
@@ -12,7 +12,7 @@ export type ViewCounterProps = {
 
 export default function ViewCounter({ slug }: ViewCounterProps) {
   const { data } = useSWR<PostViews>(`/api/views/${slug}`, fetcher);
-  const views = new Number(data?.total);
+  const views = data?.total ?? 0;
 
   useEffect(() => {
     const registerView = () =>
@@ -23,9 +23,5 @@ export default function ViewCounter({ slug }: ViewCounterProps) {
     registerView();
   }, [slug]);
 
-  return (
-    <Text as="span" size="sm" css={{ fontWeight: '$light' }}>
-      {`${views > 0 ? views.toLocaleString() : '–––'} vistas`}
-    </Text>
-  );
+  return <p className="text-xs text-gray-400">{`${views > 0 ? views : '–––'} vistas`}</p>;
 }

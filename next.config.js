@@ -1,15 +1,14 @@
 const { withContentlayer } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
-
-module.exports = withContentlayer({
-  swcMinify: true,
-  reactStrictMode: true,
-  experimental: {
-    legacyBrowsers: false,
-    browsersListForSwc: true,
+const nextConfig = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
   },
-  async headers() {
+  experimental: {
+    appDir: true,
+  },
+  headers() {
     return [
       {
         source: '/(.*)',
@@ -17,14 +16,13 @@ module.exports = withContentlayer({
       },
     ];
   },
-});
+};
 
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
-    child-src *.youtube.com *.google.com *.twitter.com;
-    style-src 'self' 'unsafe-inline' *.googleapis.com;
+    default-src 'self' vercel.live;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live;
+    style-src 'self' 'unsafe-inline';
     img-src * blob: data:;
     media-src 'none';
     connect-src *;
@@ -68,3 +66,5 @@ const securityHeaders = [
     value: 'camera=(), microphone=(), geolocation=()',
   },
 ];
+
+module.exports = withContentlayer(nextConfig);

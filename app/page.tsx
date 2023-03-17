@@ -11,48 +11,49 @@ import AvatarMe from '../public/static/images/yoV2.jpg';
 
 export default async function HomePage() {
   return (
-    <section className="antialiased px-8 max-w-[65ch] mx-auto">
-      <div className="flex justify-center py-10">
-        <Image
-          alt="wootsbot"
-          className="rounded-full border-8 border-yellow-500/100"
-          src={AvatarMe}
-          placeholder="blur"
-          width={150}
-          priority
-        />
-      </div>
+    <div className="antialiased px-8 max-w-[65ch] mx-auto">
+      <section>
+        <div className="flex justify-center py-10">
+          <Image
+            alt="wootsbot"
+            className="rounded-full border-8 border-yellow-500/100"
+            src={AvatarMe}
+            placeholder="blur"
+            width={150}
+            priority
+          />
+        </div>
+        <div className="text-lg grid gap-4">
+          <h1 className="text-2xl mb-2 font-bold">Hola 👋, soy Jorge.</h1>
+          {/* <h2>"Haciendo esto y aquello"</h2> */}
+          <p className="py-2">
+            Arquitecto Front-End + Developer Experience at {` `}
+            <b className="text-yellow-300">Digital@FEMSA</b> - <b className="text-violet-300">Spin By Oxxo</b>.
+            Entusiasta del código abierto + JS/TS + Teclados mecánicos + Máquinas de estado + aprendiendo Rust.
+          </p>
 
-      <div className="text-lg grid gap-4">
-        <h1 className="text-2xl mb-2 font-bold">Hola 👋, soy Jorge.</h1>
-        {/* <h2>"Haciendo esto y aquello"</h2> */}
-        <p className="py-2">
-          Arquitecto Front-End + Developer Experience at {` `}
-          <b className="text-yellow-300">Digital@FEMSA</b> - <b className="text-violet-300">Spin By Oxxo</b>. Entusiasta
-          del código abierto + JS/TS + Teclados mecánicos + Máquinas de estado + aprendiendo Rust.
-        </p>
+          <p>
+            {' '}
+            Un fotógrafo apasionado, coautor de{` `}
+            <Link
+              className="underline"
+              target="_blank"
+              href="https://www.reactnextboilerplate.com/"
+              rel="noopener noreferrer"
+            >
+              React Next Boilerplate
+            </Link>
+            {` `} y Constructor de cosas.
+          </p>
 
-        <p>
-          {' '}
-          Un fotógrafo apasionado, coautor de{` `}
-          <Link
-            className="underline"
-            target="_blank"
-            href="https://www.reactnextboilerplate.com/"
-            rel="noopener noreferrer"
-          >
-            React Next Boilerplate
-          </Link>
-          {` `} y Constructor de cosas.
-        </p>
+          <p>
+            En mi tiempo libre, ayudo a enseñar a los estudiantes de secundaria de las zonas rurales de Guerrero los
+            conceptos básicos de la programación.
+          </p>
+        </div>
+      </section>
 
-        <p>
-          En mi tiempo libre, ayudo a enseñar a los estudiantes de secundaria de las zonas rurales de Guerrero los
-          conceptos básicos de la programación.
-        </p>
-      </div>
-
-      <div className="mt-11">
+      <section className="mt-11">
         <h2 className="mb-10 text-2xl">Escribiendo</h2>
 
         <ul>
@@ -97,9 +98,9 @@ export default async function HomePage() {
               </li>
             ))}
         </ul>
-      </div>
+      </section>
 
-      <div className="border rounded-xl p-10 lg:-mx-10 relative my-10">
+      <section className="border rounded-xl p-10 lg:-mx-10 relative my-10">
         <h2 className="text-xl font-body capitalize mb-4">"Haciendo esto y aquello"</h2>
         <h3 className="text-xl text-red-400 mb-10">Creo que "entre más compartas, más aprendes".</h3>
 
@@ -148,7 +149,7 @@ export default async function HomePage() {
             </Link>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

@@ -28,7 +28,7 @@ function RoundedImage(props) {
 
 function Callout(props) {
   return (
-    <div className="flex bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 my-8">
+    <div className="flex bg-neutral-900 border border-neutral-800 rounded-lg p-4 my-8">
       <div className="flex items-center w-4 mr-4">{props.emoji}</div>
       <div className="w-full callout">{props.children}</div>
     </div>
@@ -50,7 +50,7 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
-    <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+    <article className="prose prose-quoteless prose-invert">
       <Component components={{ ...components }} />
     </article>
   );

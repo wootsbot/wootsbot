@@ -78,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="es-MX"
       className={clsx(
-        'text-black bg-white dark:text-white dark:bg-[#0f0d0e]',
+        'text-white bg-[#0f0d0e]',
         inter.variable,
         jetBrainsMono.variable,
         outfit.variable,

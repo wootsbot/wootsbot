@@ -27,7 +27,7 @@ export default async function HomePage() {
           <h1 className="text-2xl mb-2 font-bold">Hola 👋, soy Jorge.</h1>
           {/* <h2>"Haciendo esto y aquello"</h2> */}
           <p className="py-2">
-            Arquitecto Front-End + Developer Experience at {` `}
+            Arquitecto Front-End + Developer Experience en {` `}
             <b className="text-yellow-300">Digital@FEMSA</b> - <b className="text-violet-300">Spin By Oxxo</b>.
             Entusiasta del código abierto + JS/TS + Teclados mecánicos + Máquinas de estado + aprendiendo Rust.
           </p>

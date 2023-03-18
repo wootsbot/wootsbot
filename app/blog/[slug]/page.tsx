@@ -69,7 +69,7 @@ function BlogPage({ params }) {
 
       <Link href="/blog" className="flex flex-row items-center all-blogs">
         <ArrowUpLeft className="mr-2" />
-        Escribiendo
+        Todos los artículos
       </Link>
 
       <div className="mb-12 lg:mb-20">

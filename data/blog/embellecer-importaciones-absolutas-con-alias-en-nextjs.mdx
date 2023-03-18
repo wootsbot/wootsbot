@@ -1,14 +1,88 @@
 ---
 title: 'Embellecer importaciones absolutas con alias en nextjs'
 publishedAt: '2021-10-14'
+updatedAt: '2023-03-18'
 summary: 'Estas trabajando en un proyecto grande o pequeño y algunas de sus declaraciones de importación se ven algo asi import Component from "../../../Component"'
 image: '/static/images/blog/embellecer-importaciones-absolutas-con-alias-en-nextjs/alias-01.png'
 tags: 'react,nextjs,nextjsV9.4,javaScript'
 publish: true
 ---
 
+{/* <Files
+  title="Folder structure after generation"
+  data={[
+    {
+      name: ".contentlayer",
+      children: [
+        {
+          name: "generated",
+          children: [
+            {
+              name: "Post",
+              children: [
+                { name: "posts__hello-world.mdx.json", isHighlighted: true },
+              ],
+            },
+          ],
+
+        },
+        {name: "index.js"},
+        {name: "types.d.ts"},
+      ],
+    },
+    {
+      name: "content",
+      children: [
+        {
+          name: "posts",
+          children: [
+            { name: "hello-world.mdx", isHighlighted: true },
+          ],
+        },
+      ],
+    },
+    {
+      name:"contentlayer.config.js"
+    },
+    {
+      name: "next.config.js"
+    }
+
+]}
+/> */}
+
 Desde Next.js `v9.4.x` y posteriores, hace que la configuración de importaciones absolutas sea muy simple para proyectos de JavaScript y TypeScript.
 Todo lo que necesita hacer es agregar la configuración `baseUrl` a `jsconfig.json` [(proyectos JS)](https://code.visualstudio.com/docs/languages/jsconfig#_jsconfig-options) o `tsconfig.json` [(proyectos TS)](https://www.typescriptlang.org/docs/handbook/module-resolution.html#base-url).
+
+<Files
+  data={[
+    {
+      name: ".next",
+      children: [],
+    },
+    {
+      name: "app",
+      children: [],
+    },
+    {
+      name: "pages",
+      children: [],
+    },
+    {
+      name: "package.json",
+    },
+    {
+      name: ".gitignore",
+    },
+    {
+      name: "next.config.js",
+    },
+    { name: "tsconfig.json", isHighlighted: true },
+    {
+      name: "...",
+    },
+]}
+/>
 
 ```js
 // tsconfig.json or jsconfig.json
@@ -28,6 +102,37 @@ Los editores como VSCode admiten automáticamente la configuración en jsconfig.
 
 Además, Next.js `v9.4.x` también admite la opción de rutas, que le permite crear alias de módulos personalizados.
 Por ejemplo:
+
+
+<Files
+  data={[
+    {
+      name: ".next",
+      children: [],
+    },
+    {
+      name: "app",
+      children: [],
+    },
+    {
+      name: "pages",
+      children: [],
+    },
+    {
+      name: "package.json",
+    },
+    {
+      name: ".gitignore",
+    },
+    {
+      name: "next.config.js",
+    },
+    { name: "tsconfig.json", isHighlighted: true },
+    {
+      name: "...",
+    },
+]}
+/>
 
 ```js
 // tsconfig.json or jsconfig.json

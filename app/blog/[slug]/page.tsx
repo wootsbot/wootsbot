@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { intlFormat } from 'date-fns';
 import { ArrowUpLeft } from 'react-feather';
 
 import Balancer from 'react-wrap-balancer';
@@ -78,7 +79,37 @@ function BlogPage({ params }) {
         </h1>
 
         <div className="grid grid-cols-[auto_1fr_auto] items-center mt-4 mb-8 font-mono text-sm max-w-[650px]">
-          <div className="bg-neutral-800 rounded-md px-2 py-1 tracking-tighter">{post.publishedAt}</div>
+          <div className="flex flex-row space-x-3">
+            <div className="bg-neutral-800 rounded-md px-2 py-1 tracking-tighter">
+              {intlFormat(
+                new Date(post?.publishedAt),
+                {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                },
+                {
+                  locale: 'es-MX',
+                },
+              )}
+            </div>
+
+            {post?.updatedAt && (
+              <div className="bg-green-800 rounded-md px-2 py-1 tracking-tighter">
+                {intlFormat(
+                  new Date(post?.updatedAt),
+                  {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  },
+                  {
+                    locale: 'es-MX',
+                  },
+                )}
+              </div>
+            )}
+          </div>
           <div className="h-[0.2em] bg-neutral-800 mx-2" />
 
           <div className="flex flex-row items-center">

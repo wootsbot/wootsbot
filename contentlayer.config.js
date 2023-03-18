@@ -38,7 +38,7 @@ const computedFields = {
       '@type': 'BlogPosting',
       headline: doc.title,
       datePublished: doc.publishedAt,
-      dateModified: doc.publishedAt,
+      dateModified: doc.updatedAt,
       description: doc.summary,
       image: doc.image ? `https://wootsbot.dev${doc.image}` : `https://wootsbot.dev/api/og?title=${doc.title}`,
       url: `https://wootsbot.dev/${doc._raw.flattenedPath}`,
@@ -63,6 +63,10 @@ export const Blog = defineDocumentType(() => ({
     publishedAt: {
       type: 'string',
       required: true,
+    },
+    updatedAt: {
+      type: 'string',
+      required: false,
     },
     summary: {
       type: 'string',

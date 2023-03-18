@@ -2,6 +2,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import DisplayListInfoCard from '@/components/DisplayListInfoCard';
+import { Files } from '@/components/Files';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 const CustomLink = (props) => {
@@ -40,6 +41,7 @@ const components = {
   a: CustomLink,
   Callout,
   DisplayListInfoCard,
+  Files,
 };
 
 interface MdxProps {

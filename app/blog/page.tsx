@@ -39,19 +39,42 @@ async function BlogPage() {
               <div className="blog-item">
                 <Link className="flex flex-col space-y-1 mb-6 blog-item-link" href={`/blog/${post.slug}`}>
                   <p className="text-m no-underline">{post.title}</p>
-                  <time className="text-sm text-gray-400">
-                    {intlFormat(
-                      new Date(post?.publishedAt),
-                      {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      },
-                      {
-                        locale: 'es-MX',
-                      },
+
+                  <div className="flex flex-row items-center space-x-3">
+                    <time className="text-sm text-gray-400">
+                      {intlFormat(
+                        new Date(post?.publishedAt),
+                        {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        },
+                        {
+                          locale: 'es-MX',
+                        },
+                      )}
+                    </time>
+
+                    {post?.updatedAt && (
+                      <>
+                        <span>-</span>
+                        <time className="text-sm text-gray-400">
+                          {intlFormat(
+                            new Date(post?.updatedAt),
+                            {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric',
+                            },
+                            {
+                              locale: 'es-MX',
+                            },
+                          )}
+                        </time>
+                      </>
                     )}
-                  </time>
+                  </div>
+
                   <ViewCounter slug={post.slug} />
                 </Link>
               </div>

@@ -27,8 +27,19 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
     return;
   }
 
-  const { title, publishedAt: publishedTime, summary: description, image, slug } = post;
-  const ogImage = image ? `https://wootsbot.dev${image}` : `https://wootsbot.dev/api/og?title=${title}`;
+  const {
+    title,
+    publishedAt: publishedTime,
+    summary: description,
+    image,
+    slug,
+    twitterPreview: twitterPreviewImage,
+  } = post;
+
+  let ogImage = image ? `https://wootsbot.dev${image}` : `https://wootsbot.dev/api/og?title=${title}`;
+  const twitterPreview = twitterPreviewImage ? `https://wootsbot.dev${twitterPreviewImage}` : ogImage;
+
+  ogImage = twitterPreview ?? ogImage;
 
   return {
     title,
@@ -49,7 +60,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
       card: 'summary_large_image',
       title,
       description,
-      images: [ogImage],
+      images: [twitterPreview],
     },
   };
 }

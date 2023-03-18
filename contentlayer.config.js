@@ -75,6 +75,11 @@ export const Blog = defineDocumentType(() => ({
     image: {
       type: 'string',
     },
+    twitterPreview: {
+      type: 'string',
+      description: 'image for twitter posts',
+      required: false,
+    },
     publish: {
       type: 'boolean',
     },

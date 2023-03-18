@@ -27,6 +27,7 @@ async function BlogPage() {
 
       <ul>
         {allBlogs
+          .filter((b) => b.publish)
           .sort((a, b) => {
             if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
               return -1;

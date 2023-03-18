@@ -16,7 +16,7 @@ PostgreSQL incluye una función para generar un **UUID**, la exponen con el nomb
 
 En el `schema.prisma` voy a crear el modelo `User` con los siguientes atributos, la propiedad `@default(uuid())` nos genera un identificador único global basado en la especificación UUID. Este es un ejemplo que puedes encontrar en la [documentacion de prisma](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#uuid)
 
-```js
+```prisma /uuid()/#s title="schema.prisma"
 model User {
   id          String   @id @default(uuid())
   name        String
@@ -36,7 +36,7 @@ Pero queremos hacer uso de la función `gen_random_uuid()` de **PostgreSQL**, As
 
 entonces nuestro modelo final sería el siguiente.
 
-```js
+```prisma /"gen_random_uuid()"/#i title="schema.prisma"
 model User {
   id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name        String

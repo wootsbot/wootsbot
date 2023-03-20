@@ -16,7 +16,7 @@ Turborepo reinventa las técnicas de sistemas de compilación utilizadas por Fac
 
 > Este sistema de compilación podría mejorar las velocidades de compilación aproximadamente entre un 65 % y un 85 % de tus monorepositorios.
 
-En la siguiente imagen muestro la línea de tiempo de ejecución de tareas de un monorepo con turborepo y con 3 paquetes A, B, C tales que A y C dependen de B
+En la siguiente imagen muestro la línea de tiempo de ejecución de tareas de un monorepo con turborepo y con 3 paquetes A, B, C tales que A y C dependen de B.
 
 <Image
   alt="Jorge Luis Calleja Alvarado"
@@ -52,41 +52,79 @@ Para esto genera un gráfico de dependencia a partir de un pipeline de compilaci
 
 En este ejemplo tenemos la siguiente estructura de archivos.
 
-```md
-basic
-├─┬ node_modules
-│ │├─┬ @turborepo
-│
-│ README.md
-│ .gitignore
-│ .eslintrc.js
-│ package.json
-│ turbo.json
-│ yarn.lock
-│
-└───packages
-│ ├───config
-│ │ ├───eslint-preset.js
-│ │ └───package.json
-│ │
-│ ├───tsconfig
-│ │ ├───package.json
-│ │ └───base.json
-│ │ └───nextjs.js
-│ │ └───react-library.json
-│ │
-│ ├───ui
-│ │ └───package.json
-│ │ ├───Button.tsx
-│ │ └───index.tsx
-│ │ └───tsconfig.json
-```
+<Files
+  data={[
+    {
+      name: "root",
+      children: [
+        {
+          name: "node_modules",
+          children: [
+            {
+              name: "@turborepo",
+            },
+          ],
+
+        },
+        {name: "README.md"},
+        {name: ".gitignore"},
+        {name: "package.json"},
+        {name: "turbo.json", isHighlighted: true},
+        {name: "yarn.lock"},
+        {
+          name: "packages",
+          children: [
+            {
+              name: "config",
+                children: [
+                {
+                  name: "eslint-preset.js",
+                },
+                {
+                  name: "package.json",
+                },
+              ],
+            },
+            {
+              name: "tsconfig",
+                children: [
+                {
+                  name: "package.json",
+                },
+                {
+                  name: "base.json",
+                },
+              ],
+            },
+            {
+              name: "ui",
+                children: [
+                {
+                  name: "package.json",
+                },
+                {
+                  name: "Button.tsx",
+                },
+                {
+                  name: "index.tsx",
+                },
+                {
+                  name: "tsconfig.json",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+]}
+/> 
 
 Destacaremos `turbo.json` con la siguientes tareas `build`, `lint`, `dev`, `clean`. Estas tareas se pueden actualizar con las requeridas por su proyecto y deben ser consistentes con los scripts `package.json`
 
 En el archivo `turbo.json` es donde se definen las relaciones topológicas entre las tareas de compilación
 
-```json
+```json {5-7,9-10,12-13, 15-16}
 // turbo.json
 
 {
@@ -109,6 +147,38 @@ En el archivo `turbo.json` es donde se definen las relaciones topológicas entre
 ```
 
 En el archivo `package.json` estan los scripts que turborepo gestionara
+
+
+<Files
+  data={[
+    {
+      name: "root",
+      children: [
+        {
+          name: "node_modules",
+          children: [
+            {
+              name: "@turborepo",
+            },
+          ],
+
+        },
+        {name: "README.md"},
+        {name: ".gitignore"},
+        {name: "package.json", isHighlighted: true},
+        {name: "turbo.json"},
+        {name: "yarn.lock"},
+        {
+          name: "packages",
+          children: [
+ 
+          ],
+        },
+      ],
+    },
+]}
+/> 
+
 
 ```json
 // package.json
@@ -147,10 +217,16 @@ $ yarn build
 />
 
 Si ejecutamos la tarea `build` por segunda vez, turborepo no volverá a ejecutar el trabajo que ya se ha hecho, sino
-que lo tomará de la memoria caché.
+que lo tomará de la memoria caché, Tendrás en consola una salida como la siguiente `>>> FULL TURBO`
 
 ```
 $ yarn build
+```
+
+```text />>> FULL TURBO/#v
+  Tasks:    2 successful, 2 total
+ Cached:    2 cached, 2 total
+   Time:    864ms >>> FULL TURBO
 ```
 
 <Image
@@ -169,4 +245,4 @@ He visto muchos proyectos open source de muchas empresas que desarrollan softwar
 
 Turborepo está diseñado para adaptarse de forma incremental, por lo que puede agregarlo a sus proyectos de forma gradual y parcial en unos minutos.
 
-#### [Ejemplos](https://github.com/vercel/turborepo/tree/main/examples/basic)
+[Ejemplos](https://github.com/vercel/turborepo/tree/main/examples/basic)

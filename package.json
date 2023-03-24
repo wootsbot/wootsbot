@@ -20,6 +20,7 @@
     "@vercel/edge-config": "^0.1.4",
     "@vercel/og": "^0.4.0",
     "clsx": "1.2.1",
+    "cmdk": "^0.2.0",
     "contentlayer": "0.3.0",
     "copy-to-clipboard": "3.3.3",
     "date-fns": "2.29.3",

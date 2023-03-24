@@ -34,18 +34,21 @@ const paytoneOne = Paytone_One({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Wootsbot.dev',
-    template: '%s | Wootsbot.dev',
+    default: 'wootsbot.dev',
+    template: '%s | wootsbot.dev',
   },
   description: 'Arquitecto Front-End + Developer Experience at Digital@FEMSA - Spin By Oxxo.',
+  keywords: ['Next.js', 'React', 'JavaScript', 'TypeScript', 'Web', 'FrontEnd', 'serverless'],
+  bookmarks: ['wootsbot.dev/blog'],
+  creator: 'Jorge Luis Calleja Alvarado',
   openGraph: {
-    title: 'Wootsbot.dev',
+    title: 'wootsbot.dev',
     description: 'Arquitecto Front-End + Developer Experience at Digital@FEMSA - Spin By Oxxo.',
     url: 'https://wootsbot.dev',
     siteName: 'Wootsbot.dev',
     images: [
       {
-        url: 'https://wootsbot.dev/og.jpg',
+        url: 'https://wootsbot.dev/static/images/yoV2.jpg',
         width: 1920,
         height: 1080,
       },
@@ -65,8 +68,10 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'Wootsbot.dev',
+    title: 'wootsbot.dev',
     card: 'summary_large_image',
+    creator: 'Jorge Luis Calleja Alvarado',
+    images: ['https://wootsbot.dev/static/images/yoV2.jpg'],
   },
   icons: {
     shortcut: '/favicon.svg',

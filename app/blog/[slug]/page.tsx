@@ -34,16 +34,21 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
     image,
     slug,
     twitterPreview: twitterPreviewImage,
+    tags,
   } = post;
 
   let ogImage = image ? `https://wootsbot.dev${image}` : `https://wootsbot.dev/api/og?title=${title}`;
   const twitterPreview = twitterPreviewImage ? `https://wootsbot.dev${twitterPreviewImage}` : ogImage;
+  const tagsList = tags?.split(',');
 
   ogImage = twitterPreview ?? ogImage;
 
   return {
     title,
     description,
+    creator: 'Jorge Luis Calleja Alvarado',
+    keywords: tagsList,
+    bookmarks: [`https://wootsbot.dev/blog/${slug}`],
     openGraph: {
       title,
       description,
@@ -61,6 +66,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
       title,
       description,
       images: [twitterPreview],
+      creator: 'Jorge Luis Calleja Alvarado',
     },
   };
 }
@@ -68,8 +74,6 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
 function BlogPage({ params }) {
   const post = allBlogs.find((post) => post.slug === params.slug);
   const minutesRead = Math.round(post?.readingTime.minutes);
-
-  console.log('post', { post });
 
   if (!post) {
     notFound();

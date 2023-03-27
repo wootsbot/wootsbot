@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
-
-import { ArrowUpLeft } from 'react-feather';
 
 import Balancer from 'react-wrap-balancer';
 
@@ -52,12 +49,7 @@ function TransparencyPage() {
   }
 
   return (
-    <section className="antialiased px-8 max-w-[65ch] mx-auto py-10">
-      <Link href="/" className="flex flex-row items-center all-blogs">
-        <ArrowUpLeft className="mr-2" />
-        Inicio
-      </Link>
-
+    <section>
       <div className="mb-12 lg:mb-24">
         <h1 className="font-black text-3xl lg:text-6xl uppercase">
           <Balancer>{transparency.title}</Balancer>

@@ -3,9 +3,6 @@ import Link from 'next/link';
 function Projects() {
   return (
     <section className="border rounded-xl p-10 lg:-mx-10 relative my-10">
-      <h2 className="text-xl font-body capitalize mb-4">"Haciendo esto y aquello"</h2>
-      <h3 className="text-xl text-red-400 mb-10">Creo que "entre más compartas, más aprendes".</h3>
-
       <div className="grid md:grid-cols-2 gap-4 text-brand-charcoal">
         <article className="bg-pink-500 rounded-lg p-6 grid grid-rows-[auto_1fr_auto]">
           <h4 className="font-semibold mb-4">X-boilerplate</h4>

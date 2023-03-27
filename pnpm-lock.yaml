@@ -5,7 +5,7 @@ specifiers:
   '@fontsource/jetbrains-mono': 4.5.12
   '@heroicons/react': ^2.0.16
   '@hookform/resolvers': 2.9.11
-  '@icons-pack/react-simple-icons': 7.1.0
+  '@icons-pack/react-simple-icons': 7.1.1
   '@prisma/client': ^4.11.0
   '@tailwindcss/typography': 0.5.9
   '@types/node': 17.0.41
@@ -54,7 +54,7 @@ dependencies:
   '@fontsource/jetbrains-mono': 4.5.12
   '@heroicons/react': 2.0.16_react@18.2.0
   '@hookform/resolvers': 2.9.11_react-hook-form@7.43.5
-  '@icons-pack/react-simple-icons': 7.1.0_react@18.2.0
+  '@icons-pack/react-simple-icons': 7.1.1_react@18.2.0
   '@prisma/client': 4.11.0_prisma@4.11.0
   '@vercel/analytics': 0.1.11_react@18.2.0
   '@vercel/edge-config': 0.1.4
@@ -591,8 +591,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@icons-pack/react-simple-icons/7.1.0_react@18.2.0:
-    resolution: {integrity: sha512-vh/nArXrxjnppiGV31fQv2yE2sAAF1uhrQezx/WakXazK3xdGgsyL8Ww1e6feN5715vGyWSrCJIcd2Va2+fr0A==}
+  /@icons-pack/react-simple-icons/7.1.1_react@18.2.0:
+    resolution: {integrity: sha512-rqKuRx+o8zZ3Z6a1Y0lAKrlhRbhKusR3XhWOSMs68Tiz4si+erq+Ti6+ocW3Z5lbsAjPtmRLG+svwLttigcEcg==}
     peerDependencies:
       react: ^16.13 || ^17 || ^18
     dependencies:

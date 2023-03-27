@@ -23,5 +23,5 @@ export default function ViewCounter({ slug }: ViewCounterProps) {
     registerView();
   }, [slug]);
 
-  return <p className="text-xs text-gray-400">{`${views > 0 ? views : '–––'} vistas`}</p>;
+  return <p className="text-sm text-gray-400">{`${views > 0 ? views : '–––'} vistas`}</p>;
 }

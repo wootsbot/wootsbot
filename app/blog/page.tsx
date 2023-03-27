@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 import Link from 'next/link';
 import { intlFormat } from 'date-fns';
@@ -13,9 +14,11 @@ export const metadata: Metadata = {
     'Bienvenido a este lugar digital donde comparto lo que estoy aprendiendo sobre el desarrollo frontend, Experiencia del desarrollador, rust, código abierto, JS/TS, Teclados mecánicos, Máquinas de estado y mucho más.',
 };
 
+const FORMAT_LOCALE_ES_MX = 'es-MX' as const;
+
 async function BlogPage() {
   return (
-    <section className="antialiased px-8 max-w-[65ch] mx-auto py-10">
+    <section>
       <h1 className="font-black text-3xl lg:text-5xl uppercase mb-10">Escribiendo</h1>
 
       <p className="sm:text-xl my-4 mb-12">
@@ -23,9 +26,7 @@ async function BlogPage() {
         Experiencia del desarrollador, rust, código abierto, JS/TS, Teclados mecánicos, Máquinas de estado y mucho más.
       </p>
 
-      {/* <div className="bg-gray-500 mx-auto h-20 w-1 my-10"></div> */}
-
-      <ul>
+      <ul className="mb-16 flex flex-col space-y-16">
         {allBlogs
           .filter((b) => b.publish)
           .sort((a, b) => {
@@ -36,12 +37,10 @@ async function BlogPage() {
           })
           .map((post) => (
             <li key={post.slug}>
-              <div className="blog-item">
+              <article className="blog-item">
                 <Link className="flex flex-col space-y-1 mb-6 blog-item-link" href={`/blog/${post.slug}`}>
-                  <p className="text-m no-underline">{post.title}</p>
-
-                  <div className="flex flex-row items-center space-x-3">
-                    <time className="text-sm text-gray-400">
+                  <div className="flex flex-row items-center space-x-4 mb-3">
+                    <time className="text-md text-gray-400">
                       {intlFormat(
                         new Date(post?.publishedAt),
                         {
@@ -50,34 +49,30 @@ async function BlogPage() {
                           day: 'numeric',
                         },
                         {
-                          locale: 'es-MX',
+                          locale: FORMAT_LOCALE_ES_MX,
                         },
                       )}
                     </time>
-
-                    {post?.updatedAt && (
-                      <>
-                        <span>-</span>
-                        <time className="text-sm text-gray-400">
-                          {intlFormat(
-                            new Date(post?.updatedAt),
-                            {
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric',
-                            },
-                            {
-                              locale: 'es-MX',
-                            },
-                          )}
-                        </time>
-                      </>
-                    )}
+                    <ViewCounter slug={post.slug} />
                   </div>
 
-                  <ViewCounter slug={post.slug} />
+                  <div className="grid grid-cols-12 gap-8">
+                    <Image
+                      className="rounded-lg col-span-12 sm:col-span-5"
+                      alt={post.title}
+                      src={post?.image as string}
+                      width={600}
+                      height={400}
+                      quality={75}
+                    />
+
+                    <div className="col-span-12 sm:col-span-7">
+                      <h2 className="text-lg no-underline mb-3">{post.title}</h2>
+                      <p className="text-gray-400">{post.summary}</p>
+                    </div>
+                  </div>
                 </Link>
-              </div>
+              </article>
             </li>
           ))}
       </ul>

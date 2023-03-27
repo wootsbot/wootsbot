@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import PhotoIcon from '@heroicons/react/24/outline/PhotoIcon';
+
 import { intlFormat } from 'date-fns';
 import { ArrowUpLeft } from 'react-feather';
 
@@ -38,10 +40,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
   } = post;
 
   let ogImage = image ? `https://wootsbot.dev${image}` : `https://wootsbot.dev/api/og?title=${title}`;
-  const twitterPreview = twitterPreviewImage ? `https://wootsbot.dev${twitterPreviewImage}` : ogImage;
   const tagsList = tags?.split(',');
-
-  ogImage = twitterPreview ?? ogImage;
 
   return {
     title,
@@ -65,7 +64,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
       card: 'summary_large_image',
       title,
       description,
-      images: [twitterPreview],
+      images: [ogImage],
       creator: 'Jorge Luis Calleja Alvarado',
     },
   };
@@ -80,13 +79,8 @@ function BlogPage({ params }) {
   }
 
   return (
-    <section className="antialiased px-8 max-w-[65ch] mx-auto py-10">
+    <section>
       <script type="application/ld+json">{JSON.stringify(post.structuredData)}</script>
-
-      <Link href="/blog" className="flex flex-row items-center all-blogs">
-        <ArrowUpLeft className="mr-2" />
-        Todos los artículos
-      </Link>
 
       <div className="mb-12 lg:mb-20">
         <h1 className="font-black text-3xl lg:text-6xl uppercase mb-5">
@@ -138,19 +132,22 @@ function BlogPage({ params }) {
       </div>
 
       <div className="mb-12 lg:mb-20">
-        <p className="text-xl mb-5">{post.summary}</p>
-
-        {post.image && (
-          <Image
-            className="rounded-lg"
-            src={post.image}
-            alt={`Picture of ${post.title}`}
-            width={1852}
-            height={640}
-            //placeholder="blur"
-            quality="100"
-          />
-        )}
+        <div>
+          {post.image && (
+            <Image
+              className="rounded-lg"
+              src={post.image}
+              alt={`Picture of ${post.title}`}
+              width={1024}
+              height={686}
+              quality={100}
+            />
+          )}
+          <figcaption className="flex flex-row items-center space-x-2 mt-2 justify-end">
+            <PhotoIcon className="w-4 text-gray-600" />
+            <p className="text-gray-600 text-xs">Crédito de la imagen por Jorge L. Calleja</p>
+          </figcaption>
+        </div>
       </div>
 
       <Mdx code={post.body.code} />

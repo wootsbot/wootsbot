@@ -79,7 +79,7 @@ function BlogPage({ params }) {
   }
 
   return (
-    <section className="antialiased px-8 max-w-[65ch] mx-auto py-10">
+    <section>
       <script type="application/ld+json">{JSON.stringify(post.structuredData)}</script>
 
       <div className="mb-12 lg:mb-20">
@@ -138,9 +138,9 @@ function BlogPage({ params }) {
               className="rounded-lg"
               src={post.image}
               alt={`Picture of ${post.title}`}
-              width={1852}
-              height={640}
-              quality="100"
+              width={1024}
+              height={686}
+              quality={100}
             />
           )}
           <figcaption className="flex flex-row items-center space-x-2 mt-2 justify-end">

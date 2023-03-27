@@ -105,10 +105,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         paytoneOne.variable,
       )}
     >
-      <body className="antialiased max-w-6xl flex flex-col lg:flex-row mx-4 lg:mx-auto">
-        <aside className="h-screen md:w-[150px] md:flex-shrink-0 -mx-4 md:mx-0 md:px-0 font-serif border-r border-gray-700 py-10 sticky top-0">
-          <nav aria-label="Navigation" className="h-full">
-            <div className="flex flex-col justify-between items-center h-full">
+      <body className="antialiased max-w-7xl flex flex-col sm:flex-row mx-auto">
+        <aside className="z-10 w-full sm:h-screen bg-[#050505] md:w-[150px] md:flex-shrink-0 p-4 sm:px-0 sm:-mx-4 md:mx-0 md:px-0 sm:border-r sm:border-gray-700 sm:py-10 sticky top-0">
+          <nav aria-label="Navigation" className="sm:h-full">
+            <div className="flex flex-row sm:flex-col justify-between items-center sm:h-full">
               <Link
                 aria-label="Logotipo de Wootsbot que redirige a la página de inicio"
                 className="underline cursor-pointer"
@@ -118,9 +118,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <WootsbotM size={50} strokeWidth={6} />
               </Link>
 
-              <ul className="flex flex-col items-center justify-center space-y-12">
+              <ul className="flex flex-row sm:flex-col items-center justify-center space-x-12 sm:space-x-0 space-y-0 sm:space-y-12">
                 <li>
-                  <div className="group flex relative">
+                  <Tooltip label="Inicio">
                     <Link
                       aria-label="Logotipo de Wootsbot que redirige a la página de inicio"
                       className="underline cursor-pointer"
@@ -129,10 +129,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     >
                       <HomeIcon className="w-6" />
                     </Link>
-                    <span className="text-xs group-hover:opacity-100 transition-opacity bg-gray-800 px-3 py-1 text-gray-100 rounded-md absolute -translate-y-1/2 translate-x-3/4 opacity-0 m-4 mx-auto">
-                      Inicio
-                    </span>
-                  </div>
+                  </Tooltip>
                 </li>
                 <li>
                   <Tooltip label="Mi misión">
@@ -191,7 +188,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="max-w-[65ch] mx-auto px-8 pt-10 pb-10">
           {children}
           <AnalyticsWrapper />
-          <p className="mt-3"> All rights reserved © wootsbot.dev {format(new Date(), 'yyyy')}</p>
+          <p className="mt-32"> All rights reserved © wootsbot.dev {format(new Date(), 'yyyy')}</p>
         </main>
       </body>
     </html>

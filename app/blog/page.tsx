@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     'Bienvenido a este lugar digital donde comparto lo que estoy aprendiendo sobre el desarrollo frontend, Experiencia del desarrollador, rust, código abierto, JS/TS, Teclados mecánicos, Máquinas de estado y mucho más.',
 };
 
+const FORMAT_LOCALE_ES_MX = 'es-MX' as const;
+
 async function BlogPage() {
   return (
     <section>
@@ -47,7 +49,7 @@ async function BlogPage() {
                           day: 'numeric',
                         },
                         {
-                          locale: 'es-MX',
+                          locale: FORMAT_LOCALE_ES_MX,
                         },
                       )}
                     </time>
@@ -56,7 +58,7 @@ async function BlogPage() {
 
                   <div className="grid grid-cols-12 gap-8">
                     <Image
-                      className="rounded-lg col-span-5"
+                      className="rounded-lg col-span-12 sm:col-span-5"
                       alt={post.title}
                       src={post?.image as string}
                       width={600}
@@ -64,7 +66,7 @@ async function BlogPage() {
                       quality={75}
                     />
 
-                    <div className="col-span-7">
+                    <div className="col-span-12 sm:col-span-7">
                       <h2 className="text-lg no-underline mb-3">{post.title}</h2>
                       <p className="text-gray-400">{post.summary}</p>
                     </div>

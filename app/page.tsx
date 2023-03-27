@@ -1,28 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import {
-  SiGithub,
-  SiTwitter,
-  SiStackoverflow,
-  SiInstagram,
-  SiPolywork,
-  SiLinkedin,
-  SiDevdotto,
-} from '@icons-pack/react-simple-icons';
-import { intlFormat } from 'date-fns';
+import { intlFormat, differenceInMinutes } from 'date-fns';
 
 import { allBlogs } from '@/contentlayer/generated';
 
 import ViewCounter from '@/components/PostViewCounter';
-import Container from '@/components/Container';
-
-import WootsbotM from '@/design-system/icons/wootsbotM';
-
-import PresentationSRC from '../public/static/images/presentation.png';
 
 import Projects from './projects';
 import Social from './social';
+
+const FORMAT_LOCALE_ES_MX = 'es-MX' as const;
+const START_WORK_DEVELOPER = new Date('2016-10-02');
+
+const difference = differenceInMinutes(new Date(), START_WORK_DEVELOPER);
+const nowInMexicoTimezone = new Intl.NumberFormat(FORMAT_LOCALE_ES_MX).format(difference);
 
 export default async function HomePage() {
   return (
@@ -31,6 +23,9 @@ export default async function HomePage() {
         <div>
           <div className="text-lg grid gap-4">
             <h1 className="text-5xl mb-2 font-medium">Hola 👋, Soy Jorge</h1>
+
+            <p>{`Desarrollador con ${nowInMexicoTimezone} minutos.`}</p>
+
             <p className="py-2">
               Arquitecto Front-End + Developer Experience en {` `}
               <b className="text-yellow-400">Digital@FEMSA</b> - <b className="text-green-400">Spin By Oxxo</b>.
@@ -90,7 +85,7 @@ export default async function HomePage() {
                             day: 'numeric',
                           },
                           {
-                            locale: 'es-MX',
+                            locale: FORMAT_LOCALE_ES_MX,
                           },
                         )}
                       </time>
@@ -99,7 +94,7 @@ export default async function HomePage() {
 
                     <div className="grid grid-cols-12 gap-8">
                       <Image
-                        className="rounded-lg col-span-5"
+                        className="rounded-lg col-span-12 sm:col-span-5"
                         alt={post.title}
                         src={post?.image as string}
                         width={600}
@@ -107,7 +102,7 @@ export default async function HomePage() {
                         quality={75}
                       />
 
-                      <div className="col-span-7">
+                      <div className="col-span-12 sm:col-span-7">
                         <h2 className="text-lg no-underline mb-3">{post.title}</h2>
                         <p className="text-gray-400">{post.summary}</p>
                       </div>

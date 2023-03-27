@@ -4,7 +4,7 @@
         <description><![CDATA[Wootsbot]]></description>
         <link>https://www.wootsbot.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 17 Mar 2023 20:45:48 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 27 Mar 2023 21:00:47 GMT</lastBuildDate>
         <atom:link href="https://www.wootsbot.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Embellecer importaciones absolutas con alias en nextjs]]></title>
@@ -22,17 +22,24 @@
         </item>
         <item>
             <title><![CDATA[Mi Experiencia Con Starlink Tras 4 Meses De Uso desde México]]></title>
-            <description><![CDATA[Hace un par de días he visto más empresas adoptando el teletrabajo, y me pregunte cual seria un lugar perfecto para hacer la tarea que se hace en la oficina, mi mente imagino montañas 🏔️, woo seria genial 😉, y pensé en la combinación de montaña, cabaña y Starlink. Así que quiero escribir sobre mi experiencia, cómo me ha ayudado a mejorar mi experiencia como desarrollador con ventajas y desventajas, pero creo que esto podría aplicarse a cualquier actividad que requiera conexión a internet y mucha concentración.]]></description>
+            <description><![CDATA[Mi experiencia con starlink tras un uso intensivo de 4 meses en un lugar remoto donde no hay señal de móvil]]></description>
             <link>https://www.wootsbot.dev/blog/mi-experiencia-con-starlink-tras-4-meses-de-uso-en-mexico</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/mi-experiencia-con-starlink-tras-4-meses-de-uso-en-mexico</guid>
             <pubDate>Tue, 14 Jun 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[¿Qué es XState y por qué usar máquinas de estado?]]></title>
-            <description><![CDATA[Una de las bibliotecas clave que utilizo actualmente en mis desarrollos es XState. En esta pequeña publicación, Quiero mostrarte por qué, sinceramente, es uno de los descubrimientos más importantes que he hecho recientemente sobre programación y por qué te recomiendo que lo implementes.]]></description>
+            <description><![CDATA[Una de las bibliotecas clave que utilizo actualmente en mis desarrollos es XState. Es uno de los descubrimientos más importantes que he hecho recientemente sobre programación.]]></description>
             <link>https://www.wootsbot.dev/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado</guid>
             <pubDate>Wed, 08 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Turborepo Mejorando La Experiencia De Desarrollo En Monorepos]]></title>
+            <description><![CDATA[Turborepo será una gran tendencia este año 2022, por lo que rápidamente me di a la tarea de escribir y tratar de explicar qué es y cómo usar TurboRepo.]]></description>
+            <link>https://www.wootsbot.dev/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</guid>
+            <pubDate>Sat, 26 Mar 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Un Terminal Para Un Desarrollador Front End ✨]]></title>
@@ -43,7 +50,7 @@
         </item>
         <item>
             <title><![CDATA[Uso de la funcion gen_random_uuid() nativa de Postgresql en Supabase + Prismajs]]></title>
-            <description><![CDATA[Hace un par de semanas me encontré con la sorpresa de trabajar con la función gen_random_uuid nativa de PostgreSQL en supabase y con el ORM prisma, que expone la extensión pgcrypto, aquí una breve explicación de cómo usar esta función para generar el UUID de versión 4.]]></description>
+            <description><![CDATA[La función gen_random_uuid nativa de PostgreSQL en supabase + ORM prisma]]></description>
             <link>https://www.wootsbot.dev/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</guid>
             <pubDate>Mon, 06 Jun 2022 00:00:00 GMT</pubDate>

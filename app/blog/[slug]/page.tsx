@@ -7,7 +7,6 @@ import Image from 'next/image';
 import PhotoIcon from '@heroicons/react/24/outline/PhotoIcon';
 
 import { intlFormat } from 'date-fns';
-import { ArrowUpLeft } from 'react-feather';
 
 import Balancer from 'react-wrap-balancer';
 
@@ -35,7 +34,6 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
     summary: description,
     image,
     slug,
-    twitterPreview: twitterPreviewImage,
     tags,
   } = post;
 

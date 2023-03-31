@@ -185,7 +185,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
         </aside>
 
-        <main className="max-w-[65ch] mx-auto px-8 pt-10 pb-10">
+        <main className="max-w-[65ch] sm:mx-auto px-8 pt-10 pb-10">
           {children}
           <AnalyticsWrapper />
           <p className="mt-32"> All rights reserved © wootsbot.dev {format(new Date(), 'yyyy')}</p>

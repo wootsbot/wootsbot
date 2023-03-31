@@ -42,6 +42,7 @@ const computedFields = {
       description: doc.summary,
       image: doc.image ? `https://wootsbot.dev${doc.image}` : `https://wootsbot.dev/api/og?title=${doc.title}`,
       url: `https://wootsbot.dev/${doc._raw.flattenedPath}`,
+      creditImage: doc.creditImage,
       author: {
         '@type': 'Person',
         name: 'Jorge Luis Calleja A.',
@@ -87,6 +88,12 @@ export const Blog = defineDocumentType(() => ({
     tags: {
       type: 'string',
       description: 'Comma separated listing of tags',
+      required: false,
+    },
+
+    creditImage: {
+      type: 'string',
+      description: 'Credits for images used on the blog',
       required: false,
     },
   },

@@ -20,7 +20,11 @@ export default function ViewCounter({ slug }: ViewCounterProps) {
         method: 'POST',
       });
 
-    registerView();
+    if (process.env.NEXT_PUBLIC_RECORD_VIEWS === 'enabled') {
+      registerView();
+      console.log('process.env', process.env.NEXT_PUBLIC_SHOW_VIEWS)
+    }
+
   }, [slug]);
 
   return <p className="text-sm text-gray-400">{`${views > 0 ? views : '–––'} vistas`}</p>;

@@ -67,7 +67,7 @@ async function BlogPage() {
                     />
 
                     <div className="col-span-12 sm:col-span-7">
-                      <h2 className="text-lg no-underline mb-3">{post.title}</h2>
+                      <h2 className="text-lg no-underline mb-3 font-light">{post.title}</h2>
                       <p className="text-gray-400">{post.summary}</p>
                     </div>
                   </div>

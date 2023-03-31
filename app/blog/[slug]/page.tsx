@@ -72,6 +72,8 @@ function BlogPage({ params }) {
   const post = allBlogs.find((post) => post.slug === params.slug);
   const minutesRead = Math.round(post?.readingTime.minutes);
 
+  console.log('post', { post })
+
   if (!post) {
     notFound();
   }
@@ -143,7 +145,7 @@ function BlogPage({ params }) {
           )}
           <figcaption className="flex flex-row items-center space-x-2 mt-2 justify-end">
             <PhotoIcon className="w-4 text-gray-600" />
-            <p className="text-gray-600 text-xs">Crédito de la imagen por Jorge L. Calleja</p>
+            <p className="text-gray-600 text-xs">{post?.creditImage ?? 'Crédito de la imagen por Jorge L. Calleja'}</p>
           </figcaption>
         </div>
       </div>

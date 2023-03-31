@@ -70,7 +70,7 @@ export default async function HomePage() {
                 return -1;
               }
               return 1;
-            })
+            })?.slice(0, 3)
             .map((post) => (
               <li key={post.slug}>
                 <article className="blog-item">

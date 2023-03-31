@@ -111,7 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex flex-row sm:flex-col justify-between items-center sm:h-full">
               <Link
                 aria-label="Logotipo de Wootsbot que redirige a la página de inicio"
-                className="underline cursor-pointer"
+                className="underline cursor-pointer hidden sm:block"
                 rel="noopener noreferrer"
                 href="/"
               >

@@ -8,9 +8,10 @@ import { PostViews } from '@/libs/types';
 
 export type ViewCounterProps = {
   slug: string;
+  isDetails?: boolean;
 };
 
-export default function ViewCounter({ slug }: ViewCounterProps) {
+export default function ViewCounter({ slug, isDetails = false }: ViewCounterProps) {
   const { data } = useSWR<PostViews>(`/api/views/${slug}`, fetcher);
   const views = data?.total ?? 0;
 
@@ -20,12 +21,11 @@ export default function ViewCounter({ slug }: ViewCounterProps) {
         method: 'POST',
       });
 
-    if (process.env.NEXT_PUBLIC_RECORD_VIEWS === 'enabled') {
+    if (process.env.NEXT_PUBLIC_RECORD_VIEWS === 'enabled' && isDetails) {
       registerView();
-      console.log('process.env', process.env.NEXT_PUBLIC_SHOW_VIEWS)
     }
 
-  }, [slug]);
+  }, [slug, isDetails]);
 
   return <p className="text-sm text-gray-400">{`${views > 0 ? views : '–––'} vistas`}</p>;
 }

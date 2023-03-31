@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import Image from 'next/image';
 
 import PhotoIcon from '@heroicons/react/24/outline/PhotoIcon';
@@ -125,7 +124,7 @@ function BlogPage({ params }) {
             <p className="mr-2">{minutesRead} min de lectura</p>
             <span className="mr-2">{` • `}</span>
             <div>
-              <ViewCounter slug={post.slug} />
+              <ViewCounter slug={post.slug} isDetails />
             </div>
           </div>
         </div>

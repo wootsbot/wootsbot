@@ -1,0 +1,168 @@
+---
+title: 'Una Guía Para Mejorar La Experiencia Con La Terminal Como Desarrollador Front End ✨'
+publishedAt: '2023-4-1'
+summary: 'Mejora tu experiencia con la terminal. Las librerías y frameworks como React, Next.js, Angular, Vue y Svelte dependen en gran medida de la terminal. Aprende cómo mejorar tu flujo de trabajo con estas herramientas.'
+image: '/static/images/blog/una-guía-para-mejorar-tu-experiencia-con-la-terminal-como-desarrollador-front-end/preview.png'
+tags: 'hyper,fig,exa,starship,ohmyz,terminal'
+publish: false
+creditImage: 'hyper.is'
+---
+
+Con el desarrollo moderno, muchas de las librerías y frameworks más utilizados como React, Next.js, Angular, Vue, Svelte, entre otros, dependen en gran medida de la terminal. Esto nos obliga a pasar mucho tiempo en la terminal ejecutando tareas y construyendo nuestras interfaces de usuario.
+
+> Esta guía solo funciona para Linux y macOS, ya que `exa` aún no tiene soporte para Windows 🫣.
+
+## Configurando la terminal para mejorar tu experiencia
+
+- [hyper](https://hyper.is/):
+  El objetivo del proyecto es crear una experiencia hermosa y extensible para los usuarios de la interfaz de línea de comandos, basada en tecnologías web.
+
+- [fig](https://fig.io/): La línea de comando de próxima generación. La fuente de la verdad para los secretos, scripts y credenciales SSH de su equipo.
+
+- [exa](https://the.exa.website/):
+  Un reemplazo moderno para el comando `ls`.
+
+- [starship](https://starship.rs/): ¡El indicador mínimo, ultrarrápido e infinitamente personalizable para cualquier shell!
+
+- [ohmyz](https://ohmyz.sh/): Oh My Zsh es un framework encantador, de código abierto e impulsado por la comunidad para administrar su configuración de Zsh.
+
+> Hyper me ha acompañado mucho tiempo, aunque su primer commit fue en [06 Oct 2016](https://github.com/vercel/hyper/releases?page=9), no fue que lo consi en la fecha 10 Mar 2017 por un compañero de trabajo.
+
+## instalación de hyper
+
+install con Homebrew
+
+```
+$ brew install --cask hyper
+```
+
+install descargando el `.app`, te dejo el [link de descarga oficial de hyper](https://hyper.is/#installation)
+
+Para usar Zsh, es bastante simple de instalar, ¡porque ahora tenemos Homebrew! Solo ejecutaremos un comando y estaremos listos.
+
+`brew install zsh`
+
+Notarás que después de que finalice la instalación, realmente no sucede nada. Tendremos que cambiar nuestro shell a Zsh, y lo hacemos con un comando bastante simple:
+
+```
+chsh -s $(which zsh)
+```
+
+Lo que esto hace es cambiar nuestro shell para usar Zsh cada vez que iniciamos sesión. Ahora, simplemente cierre su terminal y vuelva a abrirlo, y estará listo para usar Zsh.
+
+## instalación en otros
+
+Creo no deveria teer problemas con solo seguir la guia oficial de [desde el repositorio oficial](https://github.com/vercel/hyper#usage)
+
+## Instalar oh-my-zsh
+
+Ahora que Zsh está instalado, queremos comenzar a configurarlo para que funcione bien para nosotros. Una de las formas más fáciles de comenzar es instalando Oh My Zsh. Oh My Zsh es un framework de configuración de Zsh, y viene con una tonelada de temas y complementos de Zsh que le ahorran mucho tiempo configurando cómo desea que se vea y funcione su shell.
+
+Instalarlo es bastante simple, solo hazlo
+
+`sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+
+Una vez que finalice esta instalación, hará una referencia para verificar su nuevo archivo `~/.zshrc` .
+
+Este es un archivo de configuración oculto, y aquí es donde comenzará a agregar su configuración para hacer que Zsh sea como lo desea. Repasemos partes del archivo predeterminado que crea para usted y algunos de los cambios que querrá comenzar a hacer.
+
+
+## Configuar exa
+
+En mi opinión, exa no es un reemplazo directo para ´ls´, valores predeterminados mucho más sensatos que ls, por lo que si bien las opciones de línea de comandos disponibles son similares, no son exactamente iguales.
+
+Sin embargo, la mayoría de las opciones comunes funcionarán de manera consistente.
+
+ejecute el siguinte comando para realizar la instalacion
+
+```sh
+brew install exa
+```
+
+simplemnte cierre y abra nuevamnete su terminal `hypper` y ejecute `exa --long --header --git` y obtendra un resultado como el sigunete:
+
+<Image
+  alt="prisma"
+  src="/static/images/blog/una-guía-para-mejorar-tu-experiencia-con-la-terminal-como-desarrollador-front-end/ls-git.png"
+  width={250}
+  height={190}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+Exa puede mostrar íconos junto a los nombres de los archivos para que sean más fáciles de distinguir. Los iconos son símbolos Unicode especiales y, como tales, requieren que la fuente que se utilice tenga los glifos correctos.
+
+Una buena solución para usar iconos en la terminal es el proyecto [Nerd Fonts](https://www.nerdfonts.com/), que parchea las fuentes de ancho fijo existentes con los íconos necesario.
+
+personalmente uso la fuente `DroidSansMono Nerd Font`, mi archivo de configuracion de `.hypper.js` se ve asi
+
+```js
+"use strict";
+// Future versions of Hyper may add additional config options,
+// which will not automatically be merged into this file.
+// See https://hyper.is#cfg for all currently supported options.
+module.exports = {
+    config: {
+        // default font size in pixels for all tabs
+        fontSize: 12,
+        // font family with optional fallbacks
+        fontFamily: "DroidSansMono Nerd Font",
+        ...
+```
+
+mi archivo de configuracion `.zshrc´ con exa se ve de esta forma
+
+```sh
+# E X A => M A N A G E R - T O - L S
+alias ls='exa --icons'
+alias lsa='exa --all'
+alias l='exa -lbF --git --icons'
+alias ll='exa -lbGF --git --icons'
+alias llm='exa -lbGd --git --sort=modified'
+alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale'
+```
+
+al ejecutar mis alias de exa se ve de esta forma con los icons
+
+<Image
+  alt="prisma"
+  src="/static/images/blog/una-guía-para-mejorar-tu-experiencia-con-la-terminal-como-desarrollador-front-end/ls-icons.png"
+  width={250}
+  height={190}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+
+## Personaliza tu entorno
+
+Una de las mejores cosas de la terminal es que puedes personalizarla para que se ajuste a tus necesidades específicas. Puedes cambiar el color, el tamaño y la fuente de la terminal para que sea más fácil de leer y trabajar. También puedes personalizar la línea de comandos que se muestra en la terminal para que se ajuste a tus preferencias.
+
+Para hacer esto, puedes utilizar herramientas como Oh My Zsh o Fish shell, que son frameworks para la línea de comandos que te permiten personalizar tu entorno de forma sencilla y eficiente.
+
+## Usa atajos de teclado
+
+La terminal está diseñada para ser utilizada con el teclado, y hay muchos atajos de teclado útiles que puedes utilizar para hacer que trabajar con ella sea más rápido y eficiente. Algunos de los atajos más comunes incluyen:
+
+- Ctrl + C: detener un proceso en ejecución
+- Ctrl + D: salir de la terminal actual
+- Ctrl + L: limpiar la terminal
+- Tab: autocompletar un comando o ruta de archivo
+- Flechas arriba y abajo: acceder a los comandos utilizados recientemente
+
+Aprender estos atajos te ayudará a ahorrar tiempo y hacer que trabajar con la terminal sea más fácil y fluido.
+
+## Aprende los comandos básicos
+
+Por último, pero no menos importante, es importante aprender los comandos básicos de la terminal para poder trabajar con ella de forma efectiva. Algunos de los comandos básicos que deberías conocer incluyen:
+
+cd: cambiar de directorio
+ls: listar archivos y carpetas en el directorio actual
+mkdir: crear una nueva carpeta
+touch: crear un nuevo archivo
+rm: eliminar un archivo o carpeta
+mv: mover un archivo o carpeta de una ubicación a otra
+cp: copiar un archivo o carpeta de una ubicación a otra

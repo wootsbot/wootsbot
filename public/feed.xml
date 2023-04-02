@@ -4,7 +4,7 @@
         <description><![CDATA[Wootsbot]]></description>
         <link>https://www.wootsbot.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 27 Mar 2023 21:00:47 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 02 Apr 2023 20:06:47 GMT</lastBuildDate>
         <atom:link href="https://www.wootsbot.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Embellecer importaciones absolutas con alias en nextjs]]></title>
@@ -19,6 +19,13 @@
             <link>https://www.wootsbot.dev/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</guid>
             <pubDate>Thu, 14 Oct 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Importando React En Una Aplicación React: ¿cuál Es La Mejor Opción?]]></title>
+            <description><![CDATA[Explorando las diferencias entre import * as React y import React en proyectos React]]></description>
+            <link>https://www.wootsbot.dev/blog/importando-react-en-una-aplicacion-react-cual-es-la-mejor-opcion</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/importando-react-en-una-aplicacion-react-cual-es-la-mejor-opcion</guid>
+            <pubDate>Sun, 02 Apr 2023 06:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Mi Experiencia Con Starlink Tras 4 Meses De Uso desde México]]></title>
@@ -42,11 +49,11 @@
             <pubDate>Sat, 26 Mar 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Un Terminal Para Un Desarrollador Front End ✨]]></title>
-            <description><![CDATA[Con el desarrollo moderno gran cantidad de las librerías o frameworks como react, nextjs, Angular, vue, svelte, etc. Dependen en gran medida de la terminal y pienso igual que usted y me doy cuenta de que pasamos mucho tiempo en la terminal ejecutando tareas de estas herramientas y construyendo nuestras interfaces de usuario.]]></description>
-            <link>https://www.wootsbot.dev/blog/un-terminal-para-un-desarrollador-front-end</link>
-            <guid isPermaLink="true">https://www.wootsbot.dev/blog/un-terminal-para-un-desarrollador-front-end</guid>
-            <pubDate>Fri, 09 Sep 2022 00:00:00 GMT</pubDate>
+            <title><![CDATA[Una Guía Para Mejorar La Experiencia Con La Terminal Como Desarrollador Front End ✨]]></title>
+            <description><![CDATA[Mejora tu experiencia con la terminal. Las librerías y frameworks como React, Next.js, Angular, Vue y Svelte dependen en gran medida de la terminal. Aprende cómo mejorar tu flujo de trabajo con estas herramientas.]]></description>
+            <link>https://www.wootsbot.dev/blog/una-guia-para-mejorar-la-experiencia-con-la-terminal-como-desarrollador-front-end</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/una-guia-para-mejorar-la-experiencia-con-la-terminal-como-desarrollador-front-end</guid>
+            <pubDate>Sat, 01 Apr 2023 06:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Uso de la funcion gen_random_uuid() nativa de Postgresql en Supabase + Prismajs]]></title>
@@ -54,6 +61,13 @@
             <link>https://www.wootsbot.dev/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</guid>
             <pubDate>Mon, 06 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Zed El Mejor Editor De Texto Del Mundo]]></title>
+            <description><![CDATA[Codifica a la velocidad del pensamiento, Zed el mejor editor de texto del mundo para usted y su equipo, un editor de código multijugador de alto rendimiento de los creadores de Atom y Tree-sitter]]></description>
+            <link>https://www.wootsbot.dev/blog/zed-el-mejor-editor-de-texto-del-mundo</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/zed-el-mejor-editor-de-texto-del-mundo</guid>
+            <pubDate>Fri, 31 Mar 2023 06:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

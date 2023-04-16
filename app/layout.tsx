@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: 'Wootsbot.dev',
     images: [
       {
-        url: 'https://wootsbot.dev/https://wootsbot.dev/avatar.jpg',
+        url: 'https://wootsbot.dev/avatar.jpg',
         width: 1920,
         height: 1080,
       },
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     title: 'wootsbot.dev',
     card: 'summary_large_image',
     creator: 'Jorge Luis Calleja Alvarado',
-    images: ['https://wootsbot.dev/https://wootsbot.dev/avatar.jpg'],
+    images: ['https://wootsbot.dev/avatar.jpg'],
   },
   icons: {
     shortcut: '/favicon.svg',

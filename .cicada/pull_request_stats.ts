@@ -19,12 +19,20 @@ const job = new Job({
 
 const muslJob = new Job({
   name: 'musl_job',
-  image: 'ubuntu:22.04',
+  image: 'node:16',
   steps: [
-    'corepack enable',
-    'corepack prepare pnpm@7.30.5 --activate',
-    'pnpm install --no-frozen-lockfile',
-    'pnpm build',
+    {
+      name: 'Setup PNPM',
+      run: 'corepack enable && corepack prepare pnpm@7.30.5 --activate',
+    },
+    {
+      name: 'Install dep',
+      run: 'pnpm install --no-frozen-lockfile',
+    },
+    {
+      name: 'pnpm build',
+      run: 'pnpm build',
+    },
   ],
 });
 

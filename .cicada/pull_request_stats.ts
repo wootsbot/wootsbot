@@ -17,15 +17,15 @@ const job = new Job({
   ],
 });
 
-const muslJob = new Job({
-  name: 'musl_job',
-  image: 'ubuntu-latest',
-  steps: [
-    'corepack enable',
-    'corepack prepare pnpm@7.30.5 --activate',
-    'pnpm install --no-frozen-lockfile',
-    'pnpm build',
-  ],
-});
+// const muslJob = new Job({
+//   name: 'musl_job',
+//   image: 'ubuntu:22.04',
+//   steps: [
+//     'corepack enable',
+//     'corepack prepare pnpm@7.30.5 --activate',
+//     'pnpm install --no-frozen-lockfile',
+//     'pnpm build',
+//   ],
+// });
 
-export default new Pipeline([job, muslJob]);
+export default new Pipeline([job]);

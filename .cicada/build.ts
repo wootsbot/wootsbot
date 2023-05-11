@@ -6,7 +6,7 @@ const buildJob = new Job({
   steps: [
     {
       name: 'Setup PNPM',
-      run: 'corepack enable && corepack prepare pnpm@7.30.5 --activate',
+      run: 'corepack enable && corepack prepare pnpm@8.5.0 --activate',
     },
     {
       name: 'Install dep',

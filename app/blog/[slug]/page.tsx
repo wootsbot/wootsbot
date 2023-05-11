@@ -27,14 +27,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
     return;
   }
 
-  const {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image,
-    slug,
-    tags,
-  } = post;
+  const { title, publishedAt: publishedTime, summary: description, image, slug, tags } = post;
 
   let ogImage = image ? `https://wootsbot.dev${image}` : `https://wootsbot.dev/api/og?title=${title}`;
   const tagsList = tags?.split(',');
@@ -70,8 +63,6 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
 function BlogPage({ params }) {
   const post = allBlogs.find((post) => post.slug === params.slug);
   const minutesRead = Math.round(post?.readingTime.minutes);
-
-  console.log('post', { post })
 
   if (!post) {
     notFound();

@@ -4,7 +4,7 @@
         <description><![CDATA[Wootsbot]]></description>
         <link>https://www.wootsbot.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 02 Apr 2023 20:06:47 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 May 2023 03:03:13 GMT</lastBuildDate>
         <atom:link href="https://www.wootsbot.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Embellecer importaciones absolutas con alias en nextjs]]></title>
@@ -19,13 +19,6 @@
             <link>https://www.wootsbot.dev/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</guid>
             <pubDate>Thu, 14 Oct 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Importando React En Una Aplicación React: ¿cuál Es La Mejor Opción?]]></title>
-            <description><![CDATA[Explorando las diferencias entre import * as React y import React en proyectos React]]></description>
-            <link>https://www.wootsbot.dev/blog/importando-react-en-una-aplicacion-react-cual-es-la-mejor-opcion</link>
-            <guid isPermaLink="true">https://www.wootsbot.dev/blog/importando-react-en-una-aplicacion-react-cual-es-la-mejor-opcion</guid>
-            <pubDate>Sun, 02 Apr 2023 06:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Mi Experiencia Con Starlink Tras 4 Meses De Uso desde México]]></title>
@@ -54,6 +47,13 @@
             <link>https://www.wootsbot.dev/blog/una-guia-para-mejorar-la-experiencia-con-la-terminal-como-desarrollador-front-end</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/una-guia-para-mejorar-la-experiencia-con-la-terminal-como-desarrollador-front-end</guid>
             <pubDate>Sat, 01 Apr 2023 06:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Una pequeña guía para importar con mejores prácticas React en tu proyecto]]></title>
+            <description><![CDATA[Cómo elegir la mejor forma de importar React según el tipo de proyecto.]]></description>
+            <link>https://www.wootsbot.dev/blog/una-pequena-guia-para-importar-con-mejores-practicas-react-en-tu-proyecto</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/una-pequena-guia-para-importar-con-mejores-practicas-react-en-tu-proyecto</guid>
+            <pubDate>Sun, 02 Apr 2023 06:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Uso de la funcion gen_random_uuid() nativa de Postgresql en Supabase + Prismajs]]></title>

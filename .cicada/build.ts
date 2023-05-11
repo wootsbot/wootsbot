@@ -1,23 +1,6 @@
 import { Job, Pipeline } from 'https://deno.land/x/cicada@v0.1.34/lib.ts';
 
-const job = new Job({
-  name: 'Build app',
-  image: 'ubuntu:22.04',
-  steps: [
-    {
-      name: 'Print a message',
-      run: 'echo Hello, world!',
-    },
-    {
-      name: 'Run a js function',
-      run: () => {
-        console.log('Hello from js');
-      },
-    },
-  ],
-});
-
-const muslJob = new Job({
+const buildJob = new Job({
   name: 'musl_job',
   image: 'node:16',
   steps: [
@@ -36,4 +19,4 @@ const muslJob = new Job({
   ],
 });
 
-export default new Pipeline([job, muslJob]);
+export default new Pipeline([buildJob]);

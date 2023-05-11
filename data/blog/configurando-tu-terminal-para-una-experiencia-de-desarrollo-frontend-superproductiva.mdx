@@ -1,0 +1,298 @@
+---
+title: 'Configurando tu Terminal para una Experiencia de Desarrollo Frontend Superproductiva 🚀'
+publishedAt: '2023-5-11'
+summary: 'Aprende cómo configurar Hyper, Fig, Exa, Starship, Zsh y Oh My Zsh para optimizar tu terminal y maximizar la productividad en el desarrollo frontend.'
+image: '/static/images/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva/preview.jpeg'
+tags: 'hyper,Zsh,Oh My Zsh,exa,fig,dx,terminal'
+publish: true
+creditImage: 'DALL·E'
+---
+
+Como desarrolladores frontend, en los últimos años nuestra interacción con la terminal ha aumentado significativamente. 
+
+Esto se debe a que ejecutamos numerosas tareas con frameworks y bibliotecas como [react](https://react.dev/), [react-native](https://reactnative.dev/), [Nextjs](https://nextjs.org/), [remix](https://remix.run/), [svelte](https://svelte.dev/) , [vuejs](https://vuejs.org/), entre otros, tanto para desarrollo web como móvil. Ante esta realidad, se hace evidente la necesidad de buscar una experiencia de terminal más amigable y productiva.
+
+> Esta guía solo funciona para Linux y macOS, ya que exa aún no tiene soporte para Windows 🫣. pero podria omitir [exa](https://the.exa.website/)
+
+## Lista de herramnetas 
+
+- [hyper](https://hyper.is/):
+  El objetivo del proyecto es crear una experiencia hermosa y extensible para los usuarios de la interfaz de línea de comandos, basada en tecnologías web.
+
+- [Zsh](https://www.zsh.org/): Es un shell diseñado para uso interactivo, aunque también es un poderoso lenguaje de scripting.
+
+- [Oh My Zsh](https://ohmyz.sh/): Oh My Zsh es un framework encantador, de código abierto e impulsado por la comunidad para administrar su configuración de Zsh.
+
+- [starship](https://starship.rs/): ¡El indicador mínimo, ultrarrápido e infinitamente personalizable para cualquier shell!.
+
+- [exa](https://the.exa.website/):
+  Un reemplazo moderno para el comando `ls`.
+
+- [fig](https://fig.io/): La línea de comando de próxima generación. La fuente de la verdad para los secretos, scripts y credenciales SSH de su equipo.
+
+
+## Instalar hyper
+
+Hyper me ha acompañado mucho tiempo, aunque su primer commit fue en [06 Oct 2016](https://github.com/vercel/hyper/releases?page=9), no fue que lo consi en la fecha 10 Mar 2017 por un compañero de trabajo.
+
+Con Homebrew ejecute el siguinte comando para realizar la instalacion:
+
+```sh
+brew install --cask hyper
+```
+
+si prefieres bajar `.app`, te dejo el [link de descarga oficial de hyper](https://hyper.is/#installation)
+
+> Para más detalles sobre su configuración e instalación, consulta su documentación oficial. https://hyper.is/#installation
+
+## Instalar Zsh
+
+Zsh mejora la experiencia de terminal con funciones avanzadas y personalización. Es esencial para [Oh My Zsh](https://ohmyz.sh/), permitiéndote gestionar tu configuración de Zsh y aumentar tu productividad.
+
+Es bastante simple de instalar, ¡porque ahora tenemos Homebrew! Solo ejecutaremos un comando y estaremos listos.
+
+```sh
+brew install zsh
+```
+
+Notarás que después de que finalice la instalación, realmente no sucede nada. Tendremos que cambiar nuestro shell a Zsh, y lo hacemos con un comando bastante simple:
+
+```sh
+chsh -s $(which zsh)
+```
+
+Lo que hemos hecho es cambiar nuestro shell para utilizar Zsh cada vez que iniciamos sesión en nuestra terminal. Ahora, simplemente cierra tu terminal y vuélvela a abrir, y estarás listo para usar Zsh.
+
+> Instala en otros sistemas operativos con solo seguir la guia oficial [desde el repositorio oficial](https://github.com/vercel/hyper#usage)
+
+Puedes hacer uso de la configuración que te dejo a continuación:
+
+```diff
+"use strict";
+module.exports = {
+    config: {
+        // default font size in pixels for all tabs
+-        fontSize: 13,
++        fontSize: 12,
+        // font family with optional fallbacks
++       fontFamily: "DroidSansMono Nerd Font",
++       cursorColor: 'rgba(248,28,229,0.8)',
+        // terminal text color under BLOCK cursor
++       cursorAccentColor: '#000',
+        // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
+        cursorShape: 'BLOCK',
++       foregroundColor: '#fff',
+        // opacity is only supported on macOS
++       backgroundColor: '#000',
+        // terminal selection color
++       selectionColor: 'rgba(248,28,229,0.3)',
+        // border color (window, tabs)
++       borderColor: '#333',
+      ...
+    },
++   plugins: ["hyper-one-dark", "hyper-snazzy", "hyper-active-tab", "hyper-pane", "hyper-search", "hyper-aura-theme"],
+};
+//# sourceMappingURL=config-default.js.map
+```
+
+## Instalar oh-my-zsh
+
+Ahora que Zsh está instalado, queremos comenzar a configurarlo para que funcione bien para nosotros. 
+
+Una de las formas más fáciles de comenzar es instalando Oh My Zsh. 
+
+Oh My Zsh viene con una tonelada de temas y complementos de Zsh que le ahorran mucho tiempo configurando cómo desea que se vea y funcione su shell.
+
+Instalarlo es bastante simple, solo hazlo con:
+
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Una vez que finalice esta instalación, hará una referencia para verificar su nuevo archivo `~/.zshrc` .
+
+Este es un archivo de configuración oculto, y aquí es donde comenzará a agregar su configuración para hacer que Zsh sea como lo desea.
+
+> Puedes visitar la documentación oficial si tienes problemas https://ohmyz.sh/#install
+
+## Instalar y Configuar starship
+Starship realmente me brinda una experiencia con la terminal muy agradable, desde manejar los entornos en los que estoy trabajando, hasta ejecutar comandos de manera más rápida.
+
+Ejecute el siguinte comando para realizar la instalacion:
+
+```sh
+brew install starship
+``` 
+
+Agregue lo siguiente en su archivo de configuración de `~/.zshrc`:
+
+```sh
+# s t a r s h i p
+eval "$(starship init zsh)"
+```
+
+Ahora solo cierra y vuelve a abrir tu terminal Hyper y pasarás de esto:
+
+<Image
+  alt="starship before"
+  src="/static/images/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva/starship_before.png"
+  width={250}
+  height={190}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+A esto:
+
+<Image
+  alt="starship after"
+  src="/static/images/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva/starship_after.png"
+  width={250}
+  height={190}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+> Para más detalles sobre su configuración e instalación, consulta su documentación oficial. https://starship.rs/guide/#%F0%9F%9A%80-installation
+
+## Instalar y Configuar Exa
+
+Exa no es un reemplazo directo para el comando `ls`, pero ofrece valores predeterminados mucho más intuitivos que el comando nativo. Aunque las opciones de línea de comandos disponibles son similares,  no son exactamente iguales.
+
+Sin embargo, la mayoría de las opciones comunes funcionarán de manera consistente.
+
+Ejecute el siguinte comando para realizar la instalacion:
+
+```sh
+brew install exa
+``` 
+
+cuando finalize la intslacon simplemnte cierre y abra nuevamnete su terminal `hypper` y ejecute `exa --long --header --git` y obtendra un resultado como el sigunete:
+
+<Image
+  alt="exa ls"
+  src="/static/images/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva/ls-git.png"
+  width={250}
+  height={190}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+Exa puede mostrar íconos junto a los nombres de los archivos para que sean más fáciles de distinguir. 
+
+Los iconos son símbolos Unicode especiales y, como tales, requieren que la fuente que se utilice tenga los glifos correctos.
+
+Una buena solución para usar iconos en la terminal es el proyecto [Nerd Fonts](https://www.nerdfonts.com/), que parchea las fuentes de ancho fijo existentes con los íconos necesario.
+
+Personalmente uso la fuente `DroidSansMono Nerd Font`, mi archivo de configuracion de `.hypper.js` se ve asi:
+
+```js
+"use strict";
+module.exports = {
+    config: {
+        // default font size in pixels for all tabs
+        fontSize: 12,
+        // font family with optional fallbacks
+        fontFamily: "DroidSansMono Nerd Font",
+        ...
+```
+
+Es necesario también agregar alias de Exa a tu archivo de configuración `.zshrc`.
+
+```sh
+# E X A => M A N A G E R
+alias ls='exa --icons'
+alias lsa='exa --all'
+alias l='exa -lbF --git --icons'
+alias ll='exa -lbGF --git --icons'
+alias llm='exa -lbGd --git --sort=modified'
+alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale'
+```
+
+Al ejecutar los alias en Exa, se puede percibir notablemente la diferencia. Nos proporciona una salida más elegante, enriquecida con íconos, con el siguiente comando:
+
+```sh
+ll
+```
+
+<Image
+  alt="exa ls icons"
+  src="/static/images/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva/ls-icons.png"
+  width={250}
+  height={190}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+> Para más detalles sobre su configuración e instalación, consulta su documentación oficial. https://the.exa.website/#installation
+
+## Instalar y Configuar Fig
+
+La línea de comando de próxima generación. La fuente de la verdad para los secretos, scripts y credenciales SSH de su equipo.
+
+Ejecute el siguinte comando para realizar la instalacion:
+
+```sh
+brew install --cask fig
+```
+
+Para poder usarlo debemos crear una cuanta, puedo hacerlo desde la terminal
+
+```sh
+fig login
+```
+
+Fig no solo ofrece una funcionalidad de autocompletado al estilo de un IDE, sino que también presenta un tablero interactivo para explorar todas sus características. En este espacio, podrás supervisar la integración con tus editores de texto y terminal de manera efectiva y visual.
+
+<Image
+  alt="fig dashboard"
+  src="/static/images/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva/fig-dashboard.png"
+  width={250}
+  height={190}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+Para integrarlo con Hyper, realiza lo siguiente:
+
+- Abre el panel de control de Fig.
+- En la sección de integraciones, activa Hyper.
+
+<Image
+  alt="Fig"
+  src="/static/images/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva/fig_das.gif"
+  width={250}
+  height={190}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+¡Prepárate para una demostración sorprendente! A continuación, te muestro todo el proceso de integración y configuración que hemos realizado:
+
+<Image
+  alt="Fig Demo"
+  src="/static/images/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva/fig_demo.gif"
+  width={250}
+  height={190}
+  layout="responsive"
+  quality="100"
+  priority
+/>
+
+
+## Conclusión:
+
+La configuración de tu terminal con Hyper, Fig, Exa, Starship y Oh My Zsh puede llevar tu productividad de desarrollo frontend al siguiente nivel. 
+
+Cada una de estas herramientas aporta su propio conjunto de características y beneficios que, cuando se utilizan juntas, crean un entorno de trabajo eficiente y agradable. 
+
+Ya sea que estés buscando una interfaz más atractiva, una mayor facilidad de uso, o una forma más efectiva de gestionar tus scripts y credenciales, estos poderosos complementos tienen lo que necesitas. 
+
+En resumen, una terminal bien configurada no es solo un lujo, sino una necesidad para cualquier desarrollador frontend moderno.

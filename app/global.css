@@ -12,7 +12,7 @@
 html {
   font-family: var(--font-inter);
   color: #fff;
-  min-width: 360px;
+  //min-width: 360px;
   background: radial-gradient(100% 50% at 0% 50%, rgba(230, 60, 77, 0.4) 0%, rgba(230, 60, 77, 0.05) 100%);
 }
 
@@ -93,12 +93,9 @@ time {
 }
 
 .prose .anchor {
-  @apply absolute invisible no-underline;
-
+  @apply invisible no-underline;
   margin-left: -1em;
   padding-right: 0.5em;
-  width: 1280px;
-  max-width: 1280px;
   cursor: pointer;
 }
 

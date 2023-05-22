@@ -24,8 +24,7 @@ export default function ViewCounter({ slug, isDetails = false }: ViewCounterProp
     if (process.env.NEXT_PUBLIC_RECORD_VIEWS === 'enabled' && isDetails) {
       registerView();
     }
-
   }, [slug, isDetails]);
 
-  return <p className="text-sm text-gray-400">{`${views > 0 ? views : '–––'} vistas`}</p>;
+  return <p className="text-sm text-[#E63C4D]">{`${views > 0 ? views : '–––'} vistas`}</p>;
 }

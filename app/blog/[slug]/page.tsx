@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
 import PhotoIcon from '@heroicons/react/24/outline/PhotoIcon';
+import ArrowLeftIcon from '@heroicons/react/24/outline/ArrowLeftIcon';
 
 import { intlFormat } from 'date-fns';
 
@@ -72,31 +74,34 @@ function BlogPage({ params }) {
     <section>
       <script type="application/ld+json">{JSON.stringify(post.structuredData)}</script>
 
-      <div className="mb-12 lg:mb-20">
-        <h1 className="font-black text-3xl lg:text-6xl uppercase mb-5">
+      <div className="mb-16">
+        <Link
+          aria-label="Link to Articulos"
+          className="cursor-pointer flex items-center gap-4"
+          rel="noopener noreferrer"
+          href="/blog"
+        >
+          <div className="px-3 py-1 text-sm font-black border-2 border-white rounded-full gap-x-1 hover-scale">
+            <ArrowLeftIcon className="w-5" />
+          </div>
+
+          <span className="text-base font-normal">Blog</span>
+        </Link>
+      </div>
+
+      <div className="mb-8 lg:mb-16">
+        <h1 className="text-2xl lg:text-3xl">
           <Balancer>{post.title}</Balancer>
         </h1>
+      </div>
 
-        <div className="grid grid-cols-[auto_1fr_auto] items-center mt-4 mb-8 font-mono text-sm max-w-[650px]">
-          <div className="flex flex-row space-x-3">
-            <div className="bg-neutral-800 rounded-md px-2 py-1 tracking-tighter">
-              {intlFormat(
-                new Date(post?.publishedAt),
-                {
-                  year: 'numeric',
-                  month: 'short',
-                  day: 'numeric',
-                },
-                {
-                  locale: 'es-MX',
-                },
-              )}
-            </div>
-
-            {post?.updatedAt && (
-              <div className="bg-green-800 rounded-md px-2 py-1 tracking-tighter">
+      <div className="mb-8 lg:mb-16">
+        <div>
+          <div className="grid grid-cols-[auto_1fr_auto] items-center mt-4 mb-4 font-mono text-sm max-w-[650px]">
+            <div className="flex flex-row space-x-3">
+              <div className="bg-neutral-950 rounded-md border border-white px-2 py-1 tracking-tighter">
                 {intlFormat(
-                  new Date(post?.updatedAt),
+                  new Date(post?.publishedAt),
                   {
                     year: 'numeric',
                     month: 'short',
@@ -107,22 +112,34 @@ function BlogPage({ params }) {
                   },
                 )}
               </div>
-            )}
-          </div>
-          <div className="h-[0.2em] bg-neutral-800 mx-2" />
 
-          <div className="flex flex-row items-center">
-            <p className="mr-2">{minutesRead} min de lectura</p>
-            <span className="mr-2">{` • `}</span>
-            <div>
-              <ViewCounter slug={post.slug} isDetails />
+              {post?.updatedAt && (
+                <div className="bg-green-800 rounded-md px-2 py-1 tracking-tighter">
+                  {intlFormat(
+                    new Date(post?.updatedAt),
+                    {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric',
+                    },
+                    {
+                      locale: 'es-MX',
+                    },
+                  )}
+                </div>
+              )}
+            </div>
+            <div className="h-[0.15em] bg-white/20 mx-2" />
+
+            <div className="flex flex-row items-center">
+              <p className="mr-2">{minutesRead} min de lectura</p>
+              <span className="mr-2">{` • `}</span>
+              <div>
+                <ViewCounter slug={post.slug} isDetails />
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="mb-12 lg:mb-20">
-        <div>
           {post.image && (
             <Image
               className="rounded-lg"
@@ -130,7 +147,7 @@ function BlogPage({ params }) {
               alt={`Picture of ${post.title}`}
               width={1024}
               height={686}
-              quality={100}
+              quality={85}
             />
           )}
           <figcaption className="flex flex-row items-center space-x-2 mt-2 justify-end">

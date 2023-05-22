@@ -1,7 +1,6 @@
 import './global.css';
 
 import clsx from 'clsx';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 
 import { format } from 'date-fns';
@@ -12,34 +11,29 @@ import BriefcaseIcon from '@heroicons/react/24/outline/BriefcaseIcon';
 import PencilSquareIcon from '@heroicons/react/24/outline/PencilSquareIcon';
 import InformationCircleIcon from '@heroicons/react/24/outline/InformationCircleIcon';
 
-import { Inter, JetBrains_Mono, Outfit, Paytone_One } from 'next/font/google';
+import { Inter, JetBrains_Mono, Outfit } from 'next/font/google';
 
 import AnalyticsWrapper from '@/components/analytics';
-import Tooltip from '@/components/Tooltip';
+
+import NavLink from '@/design-system/NavLink';
 
 import WootsbotM from '@/design-system/icons/wootsbotM';
 
 const inter = Inter({
   variable: '--font-inter',
-  weight: '400',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
 });
 
 const jetBrainsMono = JetBrains_Mono({
   variable: '--font-jetBrains-mono',
-  weight: '400',
+  weight: ['400', '300', '200', '100'],
   subsets: ['latin'],
 });
 
 const outfit = Outfit({
   variable: '--font-outfit',
-  weight: '400',
-  subsets: ['latin'],
-});
-
-const paytoneOne = Paytone_One({
-  variable: '--font-paytone-one',
-  weight: '400',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
 });
 
@@ -102,94 +96,51 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         inter.variable,
         jetBrainsMono.variable,
         outfit.variable,
-        paytoneOne.variable,
       )}
     >
-      <body className="antialiased max-w-7xl flex flex-col sm:flex-row mx-auto">
-        <aside className="z-10 w-full sm:h-screen bg-[#050505] md:w-[150px] md:flex-shrink-0 p-4 sm:px-0 sm:-mx-4 md:mx-0 md:px-0 sm:border-r sm:border-gray-700 sm:py-10 sticky top-0">
-          <nav aria-label="Navigation" className="sm:h-full">
-            <div className="flex flex-row sm:flex-col justify-between items-center sm:h-full">
-              <Link
-                aria-label="Logotipo de Wootsbot que redirige a la página de inicio"
-                className="underline cursor-pointer hidden sm:block"
-                rel="noopener noreferrer"
-                href="/"
-              >
-                <WootsbotM size={50} strokeWidth={6} />
-              </Link>
-
-              <ul className="flex flex-row sm:flex-col items-center justify-center space-x-12 sm:space-x-0 space-y-0 sm:space-y-12">
-                <li>
-                  <Tooltip label="Inicio">
-                    <Link
-                      aria-label="Logotipo de Wootsbot que redirige a la página de inicio"
-                      className="underline cursor-pointer"
-                      rel="noopener noreferrer"
-                      href="/"
-                    >
-                      <HomeIcon className="w-6" />
-                    </Link>
-                  </Tooltip>
-                </li>
-                <li>
-                  <Tooltip label="Mi misión">
-                    <Link
-                      aria-label="Link to Mi misión"
-                      className="underline cursor-pointer"
-                      rel="noopener noreferrer"
-                      href="/transparency"
-                    >
-                      <InformationCircleIcon className="w-6" />
-                    </Link>
-                  </Tooltip>
-                </li>
-                <li>
-                  <Tooltip label="Articulos">
-                    <Link
-                      aria-label="Link to Articulos"
-                      className="underline cursor-pointer"
-                      rel="noopener noreferrer"
-                      href="/blog"
-                    >
-                      <PencilSquareIcon className="w-6" />
-                    </Link>
-                  </Tooltip>
-                </li>
-                <li>
-                  <Tooltip label="Uses">
-                    <Link
-                      aria-label="Link to Uses"
-                      className="underline cursor-pointer"
-                      rel="noopener noreferrer"
-                      href="/uses"
-                    >
-                      <BriefcaseIcon className="w-6" />
-                    </Link>
-                  </Tooltip>
-                </li>
-                <li>
-                  <Tooltip label="Rss">
-                    <Link
-                      aria-label="Link to Rss"
-                      className="underline cursor-pointer"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="/feed.xml"
-                    >
-                      <RssIcon className="w-6" />
-                    </Link>
-                  </Tooltip>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </aside>
-
-        <main className="max-w-[65ch] sm:mx-auto px-8 pt-10 pb-10">
+      <body>
+        {/* <div className="background-wootsbot" /> */}
+        <main className="max-w-xl flex flex-col sm:mx-auto mx-8 mt-6 mb-32">
           {children}
           <AnalyticsWrapper />
           <p className="mt-32"> All rights reserved © wootsbot.dev {format(new Date(), 'yyyy')}</p>
         </main>
+
+        <div className="pointer-events-none fixed bottom-4 z-30 grid w-full grid-cols-[1fr,min(36rem,100%),1fr] px-4">
+          <nav className="pointer-events-auto col-start-2 -mx-px rounded-full px-4 py-3 backdrop-blur-md bg-white [@supports(backdrop-filter:blur(0px))]:bg-white/[8%] will-change-transform scale-100">
+            <ul className="flex flex-row items-center justify-between">
+              <li>
+                <NavLink
+                  aria-label="Logotipo de Wootsbot que redirige a la página de inicio"
+                  icon={<HomeIcon className="w-6" />}
+                  href="/"
+                />
+              </li>
+              <li>
+                <NavLink
+                  aria-label="Link to Mi misión"
+                  icon={<InformationCircleIcon className="w-6" />}
+                  href="/transparency"
+                />
+              </li>
+              <li>
+                <NavLink aria-label="Link to Articulos" icon={<PencilSquareIcon className="w-6" />} href="/blog" />
+              </li>
+              <li>
+                <NavLink aria-label="Link to Uses" icon={<BriefcaseIcon className="w-6" />} href="/uses" />
+              </li>
+              <li>
+                <NavLink
+                  aria-label="Link to Rss"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  icon={<RssIcon className="w-6" />}
+                  href="/feed.xml"
+                />
+              </li>
+            </ul>
+          </nav>
+        </div>
       </body>
     </html>
   );

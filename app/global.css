@@ -89,7 +89,7 @@ time {
 .prose {
   @apply text-white;
   /* color: var(--tw-prose-body); */
-  max-width: 36rem;
+  max-width: 1280px;
 }
 
 .prose .anchor {
@@ -97,8 +97,8 @@ time {
 
   margin-left: -1em;
   padding-right: 0.5em;
-  width: 36rem;
-  max-width: 36rem;
+  width: 1280px;
+  max-width: 1280px;
   cursor: pointer;
 }
 

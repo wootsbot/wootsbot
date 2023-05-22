@@ -45,26 +45,6 @@ si prefieres bajar `.app`, te dejo el [link de descarga oficial de hyper](https:
 
 > Para más detalles sobre su configuración e instalación, consulta su documentación oficial. https://hyper.is/#installation
 
-## Instalar Zsh
-
-Zsh mejora la experiencia de terminal con funciones avanzadas y personalización. Es esencial para [Oh My Zsh](https://ohmyz.sh/), permitiéndote gestionar tu configuración de Zsh y aumentar tu productividad.
-
-Es bastante simple de instalar, ¡porque ahora tenemos Homebrew! Solo ejecutaremos un comando y estaremos listos.
-
-```sh
-brew install zsh
-```
-
-Notarás que después de que finalice la instalación, realmente no sucede nada. Tendremos que cambiar nuestro shell a Zsh, y lo hacemos con un comando bastante simple:
-
-```sh
-chsh -s $(which zsh)
-```
-
-Lo que hemos hecho es cambiar nuestro shell para utilizar Zsh cada vez que iniciamos sesión en nuestra terminal. Ahora, simplemente cierra tu terminal y vuélvela a abrir, y estarás listo para usar Zsh.
-
-> Instala en otros sistemas operativos con solo seguir la guía oficial [desde el repositorio oficial](https://github.com/vercel/hyper#usage)
-
 Puedes hacer uso de la configuración que te dejo a continuación:
 
 ```diff
@@ -94,6 +74,26 @@ module.exports = {
 };
 //# sourceMappingURL=config-default.js.map
 ```
+
+## Instalar Zsh
+
+Zsh mejora la experiencia de terminal con funciones avanzadas y personalización. Es esencial para [Oh My Zsh](https://ohmyz.sh/), permitiéndote gestionar tu configuración de Zsh y aumentar tu productividad.
+
+Es bastante simple de instalar, ¡porque ahora tenemos Homebrew! Solo ejecutaremos un comando y estaremos listos.
+
+```sh
+brew install zsh
+```
+
+Notarás que después de que finalice la instalación, realmente no sucede nada. Tendremos que cambiar nuestro shell a Zsh, y lo hacemos con un comando bastante simple:
+
+```sh
+chsh -s $(which zsh)
+```
+
+Lo que hemos hecho es cambiar nuestro shell para utilizar Zsh cada vez que iniciamos sesión en nuestra terminal. Ahora, simplemente cierra tu terminal y vuélvela a abrir, y estarás listo para usar Zsh.
+
+> Instala en otros sistemas operativos con solo seguir la guía oficial [desde el repositorio oficial](https://github.com/vercel/hyper#usage)
 
 ## Instalar oh-my-zsh
 

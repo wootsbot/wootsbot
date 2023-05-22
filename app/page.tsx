@@ -25,14 +25,17 @@ export default async function HomePage() {
         <div>
           <div className="text-lg grid gap-12">
             <div className="flex items-center gap-4">
-              <Image
-                className="rounded-full h-12"
-                src="/avatar.jpg"
-                alt="avatar wootsbot"
-                width={48}
-                height={48}
-                quality={100}
-              />
+              <Link aria-label="Link to transparency" rel="noopener noreferrer" href="/transparency">
+                <Image
+                  className="rounded-full h-12"
+                  src="/avatar.jpg"
+                  alt="avatar wootsbot"
+                  width={48}
+                  height={48}
+                  quality={100}
+                />
+              </Link>
+
               <div className="flex gap-1 flex-col">
                 <h1 className="text-xl">Jorge</h1>
                 <p>{`${nowInMexicoTimezone} minutos como desarrollador.`}</p>

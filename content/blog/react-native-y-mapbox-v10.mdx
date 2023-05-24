@@ -1,15 +1,16 @@
 ---
-title: 'React Native Y Mapbox V10'
-publishedAt: '2023-5-13'
+title: 'React Native Y Mapbox V10 (Mapas de alto rendimiento)'
+publishedAt: '2023-5-25'
 summary: 'La versión 10 de mapbox trae nuevas capacidades, un rendimiento increíble y una experiencia de desarrollador moderna.'
-image: '/static/images/blog/react-native-y-mapbox-v10/preview.jpg'
+image: '/static/images/blog/react-native-y-mapbox-v10/preview_2.jpeg'
 tags: 'react-native,mapbox,react,DX'
-publish: false
+publish: true
 creditImage: 'Adobe Firefly'
 ---
 
-Hace tiempo que vengo revisando el proyecto de la comunidad de [React Native Mapbox (Un proyecto de código abierto sobre react-native y enlaces nativos a Mapbox SDK)](https://github.com/rnmapbox), 
-la version estable se lanzo [5 de mayo del 2023](https://github.com/rnmapbox/maps/releases/tag/v10.0.5) y rapidamente me dia al atarea de crear un [template](https://github.com/wootsbot/react-native-mapbox-template) y este articulo.
+Hace algún tiempo que he estado siguiendo el proyecto de la comunidad de [React Native Mapbox](https://github.com/rnmapbox), específicamente su migración a [Mapbox SDK V10](https://www.mapbox.com/blog/maps-sdk-v10). Recientemente, se lanzó la versión estable el 5 de mayo de 2023 ([mira el commit](https://github.com/rnmapbox/maps/releases/tag/v10.0.5)), y rápidamente me puse manos a la obra para crear un [template](https://github.com/wootsbot/react-native-mapbox-template) y este artículo.
+
+> React Native Mapbox es un proyecto de código abierto sobre react-native y enlaces nativos a Mapbox SDK.
 
 Que nos ofrece el nuevo motor de mapbox con su v10
 
@@ -24,4 +25,501 @@ Que nos ofrece el nuevo motor de mapbox con su v10
   ]}
 />
 
-v10 es la última versión de Mapbox Maps SDK para iOS y Android. Sucede a la línea 6.x en iOS y a la línea 9.x en Android. v10 trae mejoras sustanciales en el rendimiento; nuevas funciones como terreno 3D y una cámara más potente; fundamentos técnicos modernos; y una mejor experiencia de desarrollador.
+El **SDK V10** es la última versión de Mapbox Maps SDK para iOS y Android. Sucede a la línea 6.x en iOS y a la línea 9.x en Android. 
+
+La v10 trae mejoras sustanciales en el rendimiento; nuevas funciones como terreno 3D y una cámara más potente; fundamentos técnicos modernos; y una mejor experiencia de desarrollador.
+
+Los mapas de Mapbox se cargan en poco más de medio segundo en Android y 1 segundo en iOS, superando a las alternativas en ambas plataformas: 
+
+<Image
+  alt="xstate"
+  src="/static/images/blog/react-native-y-mapbox-v10/performance-maps-v10.png"
+  width={1024}
+  height={500}
+  quality="100"
+/>
+
+## 1. Inicializar tu proyecto react-native
+
+Para lograr esta integración, primero debemos asegurarnos de tener un proyecto de React Native.
+
+> Este paso asume que tienes configurado tu entorno de desarrollo de acuerdo a la siguiente documentación de React Native: [enlace a la documentación.](https://reactnative.dev/docs/environment-setup)
+
+<h3>
+  <b>
+    Como conmienzo entonces?
+  </b>
+</h3>
+
+Perfecto, vamos a crear nuestro proyecto de React Native. Lo nombraré 'RNMapbox' y con el siguiente comando comenzaremos a inicializarlo:
+
+```sh /RNMapbox/#s title="Con typescript"
+npx react-native init RNMapbox --template react-native-template-typescript
+```
+
+```sh /RNMapbox/#s title="Con javascript"
+npx react-native init RNMapbox
+```
+
+Una vez que hayamos logrado una salida similar a esta, estaremos preparados para avanzar con los siguientes pasos
+
+```text
+...
+            ##           ##    ##           ##
+            ##             ####             ##
+            ##             ####             ##
+            ##          ###    ###          ##
+             ###     ####        ####     ###
+               ######                ######
+
+
+                  Welcome to React Native!
+                 Learn once, write anywhere
+
+✔ Downloading template
+✔ Copying template
+✔ Processing template
+✔ Installing Bundler
+✔ Installing CocoaPods dependencies (this may take a few minutes)
+
+
+  Run instructions for Android:
+    • Have an Android emulator running (quickest way to get started), or a device connected.
+    • cd "/Users/wootsbot/wootsbot-dev/RNMapbox" && npx react-native run-android
+
+  Run instructions for iOS:
+    • cd "/Users/wootsbot/wootsbot-dev/RNMapbox" && npx react-native run-ios
+    - or -
+    • Open RNMapbox/ios/RNMapbox.xcworkspace in Xcode or run "xed -b ios"
+    • Hit the Run button
+
+  Run instructions for macOS:
+    • See https://aka.ms/ReactNativeGuideMacOS for the latest up-to-date instructions.
+
+```
+
+Además, se a creado una estructura de carpetas y archivos similar a esta:
+
+<Files
+  data={[
+    {
+      name: "RNMapbox",
+      children: [
+        {
+          name: ".bundle",
+          children: [],
+        },
+        {
+          name: "android",
+          children: [],
+        },
+        {
+          name: "ios",
+          children: []
+        },
+        {
+          name: "node_modules",
+          children: []
+        },
+        {
+          name: "vendor",
+          children: []
+        },
+        {name: ".gitignore"},
+        {name: ".node-version"},
+        {name: ".watchmanconfig"},
+        {name: "app.json"},
+        {name: "App.tsx"},
+        {name: "babel.config.js"},
+        {name: "Gemfile"},
+        {name: "Gemfile.lock"},
+        {name: "index.js"},
+        {name: "metro.config.js"},
+        {name: "package.json"},
+        {name: "tsconfig.json"},
+        {name: "README.md"},
+      ],
+    },
+]}
+/>
+
+## 2. Inatlar y configurar Mapbox
+
+Como mencioné previamente, llevaremos a cabo esta tarea con el apoyo de la librería para React Native Mapbox, `@rnmapbox/maps`
+
+<h3>
+  <b>
+   Entonces, ¿cómo lo configuramos?
+  </b>
+</h3>
+
+Perfecto, ahora que nuestro proyecto está adecuadamente configurado y listo para avanzar.
+
+### Autorizar la descarga del SDK de Maps
+
+Antes de instalar el SDK, deberá recopilar las credenciales adecuadas. El SDK requiere dos piezas de información confidencial de su cuenta de Mapbox. Si no tiene una cuenta de Mapbox: [regístrese](https://account.mapbox.com/auth/signup/) y vaya a la página de [su cuenta](https://account.mapbox.com/). Necesitarás:
+
+- Un token de acceso público: desde la [página de tokens](https://account.mapbox.com/access-tokens/) de su cuenta, puede copiar su token público predeterminado o hacer clic en el botón Crear un token para crear un nuevo token público.
+- Un token de acceso secreto con el alcance Downloads:Read.
+  - Desde la [página de tokens](https://account.mapbox.com/access-tokens/) de su cuenta, haga clic en el botón Crear un token.
+  - Desde la página de creación de tokens, asigne un nombre a su token y asegúrese de que la casilla junto al alcance de Descargas: Lectura esté marcada.
+  - Haga clic en el botón **Crear token** en la parte inferior de la página para crear su token.
+  - El token que ha creado es un token secreto, lo que significa que solo tendrá una oportunidad de copiarlo en un lugar seguro.
+
+#### Configura tu token secreto
+Tu token secreto te permite descargar el SDK de Mapbox directamente y debe ser guardado en un archivo .netrc en tu directorio de inicio, no en la carpeta del proyecto, para evitar exposiciones accidentales. Verifica si ya tienes este archivo antes de crear uno nuevo.
+
+<Callout> Asegúrese de que .netrc tenga los permisos correctos del sistema de archivos. El archivo `.netrc` necesita permisos 0600 para funcionar correctamente. </Callout>
+
+En el campo `TU_SECRET_MAPBOX_ACCESS_TOKEN`, debes ingresar tu 'access token' personal, el cual debe haber sido configurado previamente
+
+```netrc /TU_SECRET_MAPBOX_ACCESS_TOKEN/#v
+machine api.mapbox.com
+login mapbox
+password TU_SECRET_MAPBOX_ACCESS_TOKEN
+```
+
+
+El próximo paso será instalar la dependencia necesaria. Esto lo haremos con el comando a continuación:
+
+```sh title="Con npm"
+npm install --save @rnmapbox/maps
+```
+
+```sh title="Con yarn"
+yarn add @rnmapbox/maps
+```
+
+### ¿Cómo realizar una instalación exitosa en iOS
+
+Incluya el siguiente código en su archivo `ios/Podfile`:
+
+```ruby
+  pre_install do |installer|
+    $RNMapboxMaps.pre_install(installer)
+    ... other pre install hooks
+  end
+```
+
+```ruby
+  post_install do |installer|
+    $RNMapboxMaps.post_install(installer)
+    ... other post install hooks
+  end
+```
+
+<Files
+  data={[
+    {
+      name: "RNMapbox",
+      children: [
+        {
+          name: ".bundle",
+          children: [],
+        },
+        {
+          name: "android",
+          children: [],
+        },
+        {
+          name: "ios",
+          children: [
+            {
+              name: "build",
+                children: [],
+            },
+            {
+              name: "Pods",
+                children: [],
+            },
+            {
+              name: "RNMapbox",
+                children: [],
+            },
+            {
+              name: "RNMapbox.xcodeproj",
+                children: [],
+            },
+            {
+              name: "project.xcworkspace",
+                children: [],
+            },
+            {
+              name: "xcshareddata",
+                children: [],
+            },
+            {
+              name: "project.pbxproj",
+            },
+            {
+              name: "RNMapbox.xcworkspace",
+                children: [],
+            },
+            {
+              name: "RNMapboxTests",
+                children: [],
+            },
+            {
+              name: ".xcode.env",
+            },
+            {
+              name: "Podfile", 
+              isHighlighted: true
+            },
+            {
+              name: "Podfile.lock",
+            },
+          ],
+        },
+        {
+          name: "...",
+        },
+      ],
+    },
+]}
+/>
+
+Tu archivo debería lucir similar a este:
+
+```diff
+
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
++ $RNMapboxMapsImpl = 'mapbox'
+
+platform :ios, min_ios_version_supported
+prepare_react_native_project!
+
+...
+
+target 'RNMapbox' do
+  config = use_native_modules!
+
+...
+
++  pre_install do |installer|
++    $RNMapboxMaps.pre_install(installer)
++  end
+
+  post_install do |installer|
++    $RNMapboxMaps.post_install(installer)
+
+    react_native_post_install(
+      installer,
+      # Set `mac_catalyst_enabled` to `true` in order to apply patches
+      # necessary for Mac Catalyst builds
+      :mac_catalyst_enabled => false
+    )
+    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+  end
+end
+
+```
+
+Ahora sólo queda instalar las dependencias necesarias para Mapbox. Podemos proceder a instalar los 'pods' de la siguiente manera:
+
+```sh
+# Ir a la carpeta ios
+cd ios
+
+# Correr Pod Install
+pod install
+```
+
+### ¿Cómo realizar una instalación exitosa en Android
+
+Deberás realizar algunos cambios en el archivo `build.gradle`. Entre estos, en el campo `TU_SECRET_MAPBOX_ACCESS_TOKEN`, introduce tu 'access token' personal previamente configurado.
+
+<Files
+  data={[
+    {
+      name: "RNMapbox",
+      children: [
+        {
+          name: ".bundle",
+          children: [],
+        },
+        {
+          name: "android",
+          children: [
+            {
+              name: "app",
+              children: []
+            },
+            {
+              name: "gradle",
+              children: []
+            },
+            {name: "build.gradle", isHighlighted: true},
+            {name: "gradle.properties"},
+            {name: "gradlew"},
+            {name: "settings.gradle"},
+          ],
+        },
+        {
+          name: "ios",
+          children: [],
+        },
+        {
+          name: "...",
+        },
+      ],
+    },
+]}
+/>
+
+Tu archivo debería lucir similar a este:
+
+```diff /TU_SECRET_MAPBOX_ACCESS_TOKEN/#v
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        buildToolsVersion = "33.0.0"
+        minSdkVersion = 21
+        compileSdkVersion = 33
+        targetSdkVersion = 33
+
+        ndkVersion = "23.1.7779620"
+
++       RNMapboxMapsImpl = "mapbox"
+    }
+...
+}
+
++ allprojects {
++    repositories {
++        // ...other repos
++        maven {
++            url 'https://api.mapbox.com/downloads/v2/releases/maven'
++            authentication {
++                basic(BasicAuthentication)
++            }
++            credentials {
++                // Do not change the username below.
++                // This should always be `mapbox` (not your username).
++                username = 'mapbox'
++                // Use the secret token you stored in gradle.properties as the password
++                password = project.properties['TU_SECRET_MAPBOX_ACCESS_TOKEN'] ?: ""
++            }
++        }
++        // ...even more repos?
++    }
++ }
+```
+
+Excelente, ya hemos configurado Mapbox para ambas plataformas. Ahora podemos proceder con los siguientes pasos.
+
+
+### Creando el primer `MapView` de Mapbox 
+
+Para continuar, incluiremos las siguientes líneas de código en el archivo `App.tsx`:
+
+<Files
+  data={[
+    {
+      name: "RNMapbox",
+      children: [
+        {
+          name: ".bundle",
+          children: [],
+        },
+        {
+          name: "android",
+          children: [],
+        },
+        {
+          name: "ios",
+          children: [],
+        },
+        {name: "App.tsx", isHighlighted: true},,
+        {
+          name: "...",
+        },
+      ],
+    },
+]}
+/>
+
+<br />
+
+```tsx title="./App.tsx" /TU_SECRET_MAPBOX_ACCESS_TOKEN/#v
+import React from 'react';
+import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
+
+import Mapbox from '@rnmapbox/maps';
+
+const MAPBOX_ACCESS_TOKEN = TU_SECRET_MAPBOX_ACCESS_TOKEN;
+
+Mapbox.setAccessToken(MAPBOX_ACCESS_TOKEN);
+
+const centerCoord = [-99.00000, 12.0000]; // Reemplaza con las coordenadas que desees visualizar.
+
+function App(): JSX.Element {
+  return (
+    <SafeAreaView style={{flex: 1}}>
+      <StatusBar />
+      <View style={styles.page}>
+        <View style={styles.container}>
+          <Mapbox.MapView style={styles.map}>
+            <Mapbox.Camera
+              defaultSettings={{centerCoordinate: centerCoord, zoomLevel: 14}}
+              centerCoordinate={centerCoord}
+              zoomLevel={14}
+            />
+          </Mapbox.MapView>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  container: {
+    height: '100%',
+    width: '100%',
+  },
+  map: {
+    flex: 1,
+  },
+});
+
+export default App;
+
+```
+
+Finalmente, procederemos a ejecutar la aplicación:
+
+```sh title="Para ios"
+yarn ios
+```
+
+```sh title="Para android"
+yarn android
+```
+
+Y como resultado, obtendremos una visualización de los mapas.
+
+<Image
+  alt="xstate"
+  src="/static/images/blog/react-native-y-mapbox-v10/screenshot.png"
+  width={585}
+  height={1266}
+  quality="80"
+/>
+
+> aqui una guia para instalarlo con expo https://github.com/rnmapbox/maps/blob/main/plugin/install.md
+
+## Conclusión
+
+He probado el rendimiento en más de un caso y la verdad, me ha impresionado. Esto abre muchas posibilidades para mejorar la experiencia del usuario (UX). Nuestros usuarios realmente valoran la rapidez con la que pueden navegar en nuestra aplicación.
+
+Esto contribuye a que tu aplicación sea bien recibida, pero no debemos olvidar que, como desarrolladores, también es gratificante integrar herramientas que brinden una buena experiencia de desarrollo.
+
+Honestamente, he elegido a Mapbox como mi principal motor de mapas, aunque no descarto a los demás competidores porque cada proyecto tiene sus propias limitaciones y requisitos.

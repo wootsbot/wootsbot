@@ -13,7 +13,7 @@ html {
   font-family: var(--font-inter);
   color: #fff;
   //min-width: 360px;
-  background: radial-gradient(100% 50% at 0% 50%, rgba(230, 60, 77, 0.4) 0%, rgba(230, 60, 77, 0.05) 100%);
+  //background: radial-gradient(100% 50% at 0% 50%, rgba(230, 60, 77, 0.4) 0%, rgba(230, 60, 77, 0.05) 100%);
 }
 
 p {

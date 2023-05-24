@@ -23,32 +23,32 @@ export default async function HomePage() {
     <div>
       <section className="flex flex-col justify-center mb-32">
         <div>
-          <div className="text-lg grid gap-12">
+          <div className="grid gap-12">
             <div className="flex items-center gap-4">
               <Link aria-label="Link to transparency" rel="noopener noreferrer" href="/transparency">
                 <Image
                   className="rounded-full h-12"
                   src="/avatar.jpg"
                   alt="avatar wootsbot"
-                  width={48}
-                  height={48}
+                  width={50}
+                  height={50}
                   quality={100}
                 />
               </Link>
 
               <div className="flex gap-1 flex-col">
-                <h1 className="text-xl">Jorge</h1>
-                <p>{`${nowInMexicoTimezone} minutos como desarrollador.`}</p>
+                <h1 className="text-xl">Jorge Calleja</h1>
+                <p className="font-extralight text-neutral-200">{`${nowInMexicoTimezone} minutos como desarrollador.`}</p>
               </div>
             </div>
 
             <div className="flex flex-col gap-4">
-              <p className="text-2xl font-extralight">
+              <p className="text-xl font-extralight text-neutral-200">
                 Arquitecto Frontend + Developer Experience + Entusiasta del código abierto + JS/TS + Teclados mecánicos
-                + Máquinas de estado + aprendiendo Rust. Un fotógrafo apasionado y Constructor de cosas
+                + Máquinas de estado + aprendiendo Rust. Un fotógrafo apasionado y Constructor de cosas.
               </p>
 
-              <p className="text-2xl font-extralight">
+              <p className="text-xl font-extralight text-neutral-200">
                 En mi tiempo libre, enseño a estudiantes de secundaria de las zonas rurales de Guerrero los conceptos
                 básicos de programación.
               </p>
@@ -85,12 +85,14 @@ export default async function HomePage() {
             })
             ?.slice(0, 3)
             .map((post) => (
-              <div className="" key={post.slug}>
-                <div className="h-px bg-white/20 w-full mb-4" />
-                <li className="flex flex-col items-start gap-3">
+              <li key={post.slug} className="flex flex-col items-start gap-3">
+                <Link href={`/blog/${post.slug}`}>
                   <article className="flex flex-col space-y-1">
-                    <div className="flex flex-row items-center space-x-4 mb-3">
-                      <time className="text-md">
+                    <h2 className="text-md no-underline">{post.title}</h2>
+                    <p className="text-sm text-neutral-500">{post.summary}</p>
+
+                    <div className="flex flex-row items-center space-x-4">
+                      <time className="text-sm text-neutral-500">
                         {intlFormat(
                           new Date(post?.publishedAt),
                           {
@@ -105,34 +107,9 @@ export default async function HomePage() {
                       </time>
                       <ViewCounter slug={post.slug} />
                     </div>
-
-                    <div className="grid grid-cols-12 sm:gap-8 gap-0 sm:space-y-0 space-x-8">
-                      <Image
-                        className="rounded-lg col-span-12 sm:col-span-5"
-                        alt={post.title}
-                        src={post?.image as string}
-                        width={576}
-                        height={400}
-                        quality={75}
-                      />
-
-                      <div className="col-span-12 sm:col-span-7">
-                        <h2 className="text-md no-underline mb-3">{post.title}</h2>
-                        <p className="text-sm">{post.summary}</p>
-                      </div>
-                    </div>
                   </article>
-
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    rel="noreferrer"
-                    className="flex flex-row items-center px-3 py-1 mt-4 text-sm border-2 border-white rounded-full gap-x-1"
-                  >
-                    <p className="sm:max-w-md max-w-[200px] truncate text-clip">Leer más sobre {post.title}</p>{' '}
-                    <ArrowRightIcon className="w-4" />
-                  </Link>
-                </li>
-              </div>
+                </Link>
+              </li>
             ))}
         </ul>
       </section>
@@ -141,7 +118,7 @@ export default async function HomePage() {
         <div className="flex items-center justify-between mb-10">
           <div>
             <h2 className="text-lg">Open-Source.</h2>
-            <p>"Haciendo esto y aquello"</p>
+            <p className="font-extralight">"Haciendo esto y aquello"</p>
           </div>
         </div>
 

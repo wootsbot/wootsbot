@@ -11,27 +11,16 @@
 */
 html {
   font-family: var(--font-inter);
-  color: #fff;
-  //min-width: 360px;
-  //background: radial-gradient(100% 50% at 0% 50%, rgba(230, 60, 77, 0.4) 0%, rgba(230, 60, 77, 0.05) 100%);
+  min-width: 360px;
 }
 
 p {
-  color: #fff;
   font-family: var(--font-outfit);
 }
 
 time {
   font-family: var(--font-outfit);
 }
-
-/* .background-wootsbot {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(100% 50% at 0% 50%, rgba(230, 60, 77, 0.4) 0%, rgba(230, 60, 77, 0.05) 100%);
-} */
 
 .nav-border {
   --tw-border-opacity: 1;
@@ -87,7 +76,6 @@ time {
 }
 
 .prose {
-  @apply text-white;
   /* color: var(--tw-prose-body); */
   max-width: 1280px;
 }
@@ -104,7 +92,7 @@ time {
 }
 
 .prose a {
-  @apply transition-all decoration-white underline-offset-2 decoration-[0.1em];
+  @apply transition-all decoration-neutral-500 underline-offset-2 decoration-[0.1em];
 }
 
 .prose .anchor:after {

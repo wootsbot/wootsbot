@@ -99,7 +99,7 @@ function BlogPage({ params }) {
         <div>
           <div className="grid grid-cols-[auto_1fr_auto] items-center mt-4 mb-4 font-mono text-sm max-w-[650px]">
             <div className="flex flex-row space-x-3">
-              <div className="bg-neutral-950 rounded-md border border-white px-2 py-1 tracking-tighter">
+              <div className="rounded-md border border-white px-2 py-1 tracking-tighter">
                 {intlFormat(
                   new Date(post?.publishedAt),
                   {
@@ -132,7 +132,7 @@ function BlogPage({ params }) {
             <div className="h-[0.15em] bg-white/20 mx-2" />
 
             <div className="flex flex-row items-center">
-              <p className="mr-2">{minutesRead} min de lectura</p>
+              <p className="mr-2 text-sm text-neutral-500">{minutesRead} min de lectura</p>
               <span className="mr-2">{` • `}</span>
               <div>
                 <ViewCounter slug={post.slug} isDetails />

@@ -31,7 +31,7 @@ async function BlogPage() {
     <section>
       <HeaderPage
         title="Escribiendo"
-        summary="   Bienvenido a este lugar digital donde comparto lo que estoy aprendiendo sobre el desarrollo frontend,
+        summary="Bienvenido a este lugar digital donde comparto lo que estoy aprendiendo sobre el desarrollo frontend,
           Experiencia del desarrollador, rust, código abierto, JS/TS, Teclados mecánicos, Máquinas de estado y mucho
           más."
       />
@@ -43,7 +43,7 @@ async function BlogPage() {
               <article className="blog-item mb-32">
                 <Link className="flex flex-col space-y-1 mb-6 blog-item-link" href={`/blog/${post.slug}`}>
                   <div className="flex flex-row items-center justify-between mb-3">
-                    <time className="text-md">
+                    <time className="text-sm text-neutral-500">
                       {intlFormat(
                         new Date(post?.publishedAt),
                         {
@@ -71,8 +71,8 @@ async function BlogPage() {
                     />
 
                     <div>
-                      <h2 className="text-md no-underline mb-3">{post.title}</h2>
-                      <p className="text-sm">{post.summary}</p>
+                      <h2 className="text-md no-underline mb-1">{post.title}</h2>
+                      <p className="text-sm text-neutral-500">{post.summary}</p>
                     </div>
                   </div>
                 </Link>
@@ -86,7 +86,7 @@ async function BlogPage() {
                 <article className="blog-item">
                   <Link className="flex flex-col space-y-1 mb-6 blog-item-link" href={`/blog/${post.slug}`}>
                     <div className="flex flex-row items-center space-x-4 mb-3">
-                      <time className="text-md">
+                      <time className="text-sm text-neutral-500">
                         {intlFormat(
                           new Date(post?.publishedAt),
                           {
@@ -113,8 +113,8 @@ async function BlogPage() {
                       />
 
                       <div className="col-span-12 sm:col-span-7">
-                        <h2 className="text-md no-underline mb-3">{post.title}</h2>
-                        <p className="text-sm">{post.summary}</p>
+                        <h2 className="text-md no-underline mb-1">{post.title}</h2>
+                        <p className="text-sm text-neutral-500">{post.summary}</p>
                       </div>
                     </div>
                   </Link>

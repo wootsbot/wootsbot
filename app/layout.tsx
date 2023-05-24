@@ -92,7 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="es-MX"
       className={clsx(
         // 'text-white bg-[#0f0d0e]',
-        'text-white bg-[#050505]',
+        'text-white bg-[#111010]',
         inter.variable,
         jetBrainsMono.variable,
         outfit.variable,

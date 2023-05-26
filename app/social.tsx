@@ -14,7 +14,7 @@ import {
 
 function Social() {
   return (
-    <ul className="list-unstyled flex justify-between flex-wrap gap-4 text-sm mt-10">
+    <ul className="list-unstyled flex flex-wrap gap-8 items-center text-sm mt-10">
       <li>
         <Link
           aria-label="Link to Github"

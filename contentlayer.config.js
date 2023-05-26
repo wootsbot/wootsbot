@@ -125,7 +125,7 @@ const OtherPage = defineDocumentType(() => ({
 }));
 
 const contentLayerConfig = makeSource({
-  contentDirPath: 'data',
+  contentDirPath: './content',
   documentTypes: [Blog, OtherPage],
   mdx: {
     remarkPlugins: [remarkGfm],
@@ -134,7 +134,7 @@ const contentLayerConfig = makeSource({
       [
         rehypePrettyCode,
         {
-          theme: 'one-dark-pro',
+          theme: 'dark-plus',
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
@@ -148,6 +148,8 @@ const contentLayerConfig = makeSource({
           // onVisitHighlightedWord(node) {
           //   node.properties.className = ['word--highlighted'];
           // },
+
+          filterMetaString: (string) => string.replace(/filename="[^"]*"/, ''),
 
           onVisitHighlightedWord(node, id) {
             node.properties.className = ['word'];

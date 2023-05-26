@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 
 import { notFound } from 'next/navigation';
 
-import Balancer from 'react-wrap-balancer';
-
 import { Mdx } from '@/components/mdx';
+import HeaderPage from '@/components/headerPage';
 
 import { allOtherPages } from '@/contentlayer/generated';
 
@@ -50,12 +49,7 @@ function TransparencyPage() {
 
   return (
     <section>
-      <div className="mb-12 lg:mb-24">
-        <h1 className="font-black text-3xl lg:text-6xl uppercase">
-          <Balancer>{transparency.title}</Balancer>
-        </h1>
-      </div>
-
+      <HeaderPage title={transparency.title} summary={transparency.summary as string} />
       <Mdx code={transparency.body.code} />
     </section>
   );

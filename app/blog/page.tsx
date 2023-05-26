@@ -102,7 +102,7 @@ async function BlogPage() {
                       <ViewCounter slug={post.slug} />
                     </div>
 
-                    <div className="grid grid-cols-12 sm:gap-8 gap-0 sm:space-y-0 space-x-8">
+                    <div className="grid grid-cols-12 sm:gap-8 gap-0 sm:space-y-0 space-y-8">
                       <Image
                         className="rounded-lg col-span-12 sm:col-span-5"
                         alt={post.title}

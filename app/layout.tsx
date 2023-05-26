@@ -10,6 +10,7 @@ import RssIcon from '@heroicons/react/24/outline/RssIcon';
 import BriefcaseIcon from '@heroicons/react/24/outline/BriefcaseIcon';
 import PencilSquareIcon from '@heroicons/react/24/outline/PencilSquareIcon';
 import InformationCircleIcon from '@heroicons/react/24/outline/InformationCircleIcon';
+import BookOpenIcon from '@heroicons/react/24/outline/BookOpenIcon';
 
 import { Inter, JetBrains_Mono, Outfit } from 'next/font/google';
 
@@ -129,6 +130,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <li>
                 <NavLink aria-label="Link to Uses" icon={<BriefcaseIcon className="w-6" />} href="/uses" />
               </li>
+
+              <li>
+                <NavLink aria-label="Link to guestbook" icon={<BookOpenIcon className="w-6" />} href="/guestbook" />
+              </li>
+
               <li>
                 <NavLink
                   aria-label="Link to Rss"

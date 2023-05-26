@@ -25,7 +25,8 @@
       "@/contentlayer/*": ["contentlayer.config.js"],
       "@/contentlayer/generated": ["./.contentlayer/generated"],
       "@/data/*": ["./data/*"],
-      "~/api/*": ["./app/api/*"]
+      "~/api/*": ["./app/api/*"],
+      "~/providers/*": ["./providers/*"]
     },
     "plugins": [
       {

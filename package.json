@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "prisma generate && NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs",
+    "rss": "NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs",
+    "postinstall": "prisma generate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

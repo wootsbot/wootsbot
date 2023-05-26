@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth/next';
 import { getProviders } from 'next-auth/react';
 
@@ -15,6 +16,13 @@ async function getGuestbooks() {
   return guestbooks;
 }
 
+export const metadata: Metadata = {
+  title: 'Guestbook',
+  description: 'Firma mi libro de visitas y deja tu huella',
+};
+
+export const dynamic = 'force-dynamic';
+
 async function GuestbookPage() {
   const session = await getServerSession(authOptions);
   const providers = (await getProviders()) ?? [];
@@ -22,7 +30,7 @@ async function GuestbookPage() {
 
   return (
     <section>
-      <HeaderPage title="Visitas" summary="" />
+      <HeaderPage title="Libro de visitas" summary="Firma mi libro de visitas y deja tu huella" />
 
       {!session?.user &&
         Object.values(providers).map((provider) => (

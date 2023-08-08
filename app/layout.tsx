@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     template: '%s | wootsbot.dev',
   },
   description:
-    'desarrollador frontend, constructor de cosas y un fotógrafo apasionado. Actualmente trabajo como Líder técnico Frontend en openbank.',
+    'Desarrollador frontend, constructor de cosas y un fotógrafo apasionado. Actualmente trabajo como Líder técnico Frontend en openbank.',
   keywords: [
     'desarrollador',
     'frontend',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'wootsbot.dev',
     description:
-      'desarrollador frontend, constructor de cosas y un fotógrafo apasionado. Actualmente trabajo como Líder técnico Frontend en openbank.',
+      'Desarrollador frontend, constructor de cosas y un fotógrafo apasionado. Actualmente trabajo como Líder técnico Frontend en openbank.',
     url: 'https://wootsbot.dev',
     siteName: 'Wootsbot',
     images: [

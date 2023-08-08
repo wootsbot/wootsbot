@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 import { intlFormat, differenceInMinutes } from 'date-fns';
 
+//import { Tweet } from 'react-tweet';
+
 import ArrowRightIcon from '@heroicons/react/24/outline/ArrowRightIcon';
 
 import { allBlogs } from '@/contentlayer/generated';
@@ -22,6 +24,7 @@ export default async function HomePage() {
   return (
     <div>
       <section className="flex flex-col justify-center mb-32">
+        {/* <Tweet id="1681747562070417410" /> */}
         <div>
           <div className="grid gap-12">
             <div className="flex items-center gap-4">
@@ -37,20 +40,28 @@ export default async function HomePage() {
               </Link>
 
               <div className="flex gap-1 flex-col">
-                <h1 className="text-xl">Jorge Calleja</h1>
-                <p className="font-extralight text-neutral-200">{`${nowInMexicoTimezone} minutos como desarrollador.`}</p>
+                <h1 className="text-xl">hola, soy Jorge</h1>
+                <p className="font-extralight text-neutral-200">
+                  <time className="text-lg font-thin text-yellow-100">{nowInMexicoTimezone}</time>
+                  {` `}minutos como desarrollador.
+                </p>
               </div>
             </div>
 
             <div className="flex flex-col gap-4">
               <p className="text-xl font-extralight text-neutral-200">
-                Arquitecto Frontend + Developer Experience + Entusiasta del código abierto + JS/TS + Teclados mecánicos
-                + Máquinas de estado + aprendiendo Rust. Un fotógrafo apasionado y Constructor de cosas.
+                Soy desarrollador frontend, constructor de cosas y un fotógrafo apasionado. Actualmente trabajo como
+                Líder técnico Frontend en{' '}
+                <a className="text-pink-500" href="https://www.openbank.es/">
+                  openbank
+                </a>{' '}
+                .
               </p>
 
               <p className="text-xl font-extralight text-neutral-200">
                 En mi tiempo libre, enseño a estudiantes de secundaria de las zonas rurales de Guerrero los conceptos
-                básicos de programación.
+                básicos de programación. Dedico tiempo al open-source + Developer Experience + Entusiasta del código
+                abierto + JS/TS + Teclados mecánicos + Máquinas de estado + aprendiendo Rust.
               </p>
             </div>
           </div>

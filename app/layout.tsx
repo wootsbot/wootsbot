@@ -9,14 +9,11 @@ import HomeIcon from '@heroicons/react/24/outline/HomeIcon';
 import RssIcon from '@heroicons/react/24/outline/RssIcon';
 import BriefcaseIcon from '@heroicons/react/24/outline/BriefcaseIcon';
 import PencilSquareIcon from '@heroicons/react/24/outline/PencilSquareIcon';
-import InformationCircleIcon from '@heroicons/react/24/outline/InformationCircleIcon';
 import BookOpenIcon from '@heroicons/react/24/outline/BookOpenIcon';
 
 import Tooltip from './tooltip';
 
 import { Inter, JetBrains_Mono, Outfit } from 'next/font/google';
-
-import AnalyticsWrapper from '@/components/analytics';
 
 import NavLink from '@/design-system/NavLink';
 
@@ -45,13 +42,26 @@ export const metadata: Metadata = {
     default: 'wootsbot.dev',
     template: '%s | wootsbot.dev',
   },
-  description: 'Arquitecto Front-End + Developer Experience at Digital@FEMSA - Spin By Oxxo.',
-  keywords: ['Next.js', 'React', 'JavaScript', 'TypeScript', 'Web', 'FrontEnd', 'serverless'],
-  bookmarks: ['wootsbot.dev/blog'],
+  description:
+    'desarrollador frontend, constructor de cosas y un fotógrafo apasionado. Actualmente trabajo como Líder técnico Frontend en openbank.',
+  keywords: [
+    'desarrollador',
+    'frontend',
+    'openbank',
+    'Next.js',
+    'React',
+    'JavaScript',
+    'TypeScript',
+    'Web',
+    'FrontEnd',
+    'serverless',
+  ],
+  bookmarks: ['wootsbot.dev'],
   creator: 'Jorge Luis Calleja Alvarado',
   openGraph: {
     title: 'wootsbot.dev',
-    description: 'Arquitecto Front-End + Developer Experience at Digital@FEMSA - Spin By Oxxo.',
+    description:
+      'desarrollador frontend, constructor de cosas y un fotógrafo apasionado. Actualmente trabajo como Líder técnico Frontend en openbank.',
     url: 'https://wootsbot.dev',
     siteName: 'Wootsbot.dev',
     images: [
@@ -93,19 +103,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="es-MX"
-      className={clsx(
-        // 'text-white bg-[#0f0d0e]',
-        'text-white bg-[#111010]',
-        inter.variable,
-        jetBrainsMono.variable,
-        outfit.variable,
-      )}
+      className={clsx('text-white bg-[#111010]', inter.variable, jetBrainsMono.variable, outfit.variable)}
     >
       <body>
-        {/* <div className="background-wootsbot" /> */}
         <main className="max-w-xl flex flex-col sm:mx-auto mx-8 mt-6 mb-32">
           {children}
-          <AnalyticsWrapper />
           <p className="mt-32"> All rights reserved © wootsbot.dev {format(new Date(), 'yyyy')}</p>
         </main>
         <RootProvider>
@@ -122,15 +124,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </li>
                 </Tooltip>
 
-                <Tooltip content="Mi misión">
-                  <li>
-                    <NavLink
-                      aria-label="Link to Mi misión"
-                      icon={<InformationCircleIcon className="w-6" />}
-                      href="/transparency"
-                    />
-                  </li>
-                </Tooltip>
                 <Tooltip content="Blog">
                   <li>
                     <NavLink aria-label="Link to Articulos" icon={<PencilSquareIcon className="w-6" />} href="/blog" />

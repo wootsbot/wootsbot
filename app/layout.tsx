@@ -38,6 +38,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://wootsbot.dev'),
   title: {
     default: 'wootsbot.dev',
     template: '%s | wootsbot.dev',
@@ -63,12 +64,12 @@ export const metadata: Metadata = {
     description:
       'desarrollador frontend, constructor de cosas y un fotógrafo apasionado. Actualmente trabajo como Líder técnico Frontend en openbank.',
     url: 'https://wootsbot.dev',
-    siteName: 'Wootsbot.dev',
+    siteName: 'Wootsbot',
     images: [
       {
         url: 'https://wootsbot.dev/avatar.jpg',
-        width: 1920,
-        height: 1080,
+        width: 2048,
+        height: 1365,
       },
     ],
     locale: 'es-MX',

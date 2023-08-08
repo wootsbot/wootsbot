@@ -4,6 +4,13 @@ const { withContentlayer } = require('next-contentlayer');
 const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'wootsbot.dev',
+        pathname: '/**',
+      },
+    ],
   },
   headers() {
     return [

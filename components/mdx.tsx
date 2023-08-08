@@ -4,6 +4,7 @@ import Image from 'next/image';
 import DisplayListInfoCard from '@/components/DisplayListInfoCard';
 import { Files } from '@/components/Files';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import { Tweet } from 'react-tweet';
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -42,6 +43,7 @@ const components = {
   Callout,
   DisplayListInfoCard,
   Files,
+  Tweet,
 };
 
 interface MdxProps {

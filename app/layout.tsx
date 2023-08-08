@@ -113,7 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <RootProvider>
           <div className="pointer-events-none fixed bottom-4 z-30 grid w-full grid-cols-[1fr,min(36rem,100%),1fr] px-4">
-            <nav className="pointer-events-auto col-start-2 -mx-px rounded-full px-4 py-3 backdrop-blur-md bg-white [@supports(backdrop-filter:blur(0px))]:bg-white/[8%] will-change-transform scale-100">
+            <nav className="pointer-events-auto col-start-2 -mx-px rounded-full px-4 py-3 backdrop-blur-md bg-white supports-[backdrop-filter:blur(0px)]:bg-white/[8%] will-change-transform scale-100">
               <ul className="flex flex-row items-center justify-between">
                 <Tooltip content="Inicio">
                   <li>

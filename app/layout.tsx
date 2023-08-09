@@ -16,6 +16,7 @@ import Tooltip from './tooltip';
 import { Inter, JetBrains_Mono, Outfit } from 'next/font/google';
 
 import NavLink from '@/design-system/NavLink';
+import GoogleAnalytics from '@/components/googleAnalytics';
 
 import RootProvider from '~/providers/rootProvider';
 
@@ -106,6 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="es-MX"
       className={clsx('text-white bg-[#111010]', inter.variable, jetBrainsMono.variable, outfit.variable)}
     >
+      <GoogleAnalytics GA_MEASUREMENT_ID="G-2MQQXLF7P6" />
       <body>
         <main className="max-w-xl flex flex-col sm:mx-auto mx-8 mt-12 mb-32">
           {children}

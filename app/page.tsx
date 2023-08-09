@@ -33,8 +33,8 @@ export default async function HomePage() {
                   className="rounded-full h-12 w-12"
                   src="/avatar.jpg"
                   alt="avatar wootsbot"
-                  width={50}
-                  height={50}
+                  width={48}
+                  height={48}
                   quality={100}
                 />
               </Link>

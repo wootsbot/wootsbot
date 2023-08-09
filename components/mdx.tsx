@@ -11,17 +11,24 @@ const CustomLink = (props) => {
 
   if (href.startsWith('/')) {
     return (
-      <Link className="text-neutral-100" href={href} {...props}>
+      <Link className="text-neutral-100 font-light decoration-neutral-600" href={href} {...props}>
         {props.children}
       </Link>
     );
   }
 
   if (href.startsWith('#')) {
-    return <a className="text-neutral-100" {...props} />;
+    return <a className="text-neutral-100 font-light decoration-neutral-600" {...props} />;
   }
 
-  return <a className="text-neutral-100" target="_blank" rel="noopener noreferrer" {...props} />;
+  return (
+    <a
+      className="text-neutral-100 font-light decoration-neutral-600"
+      target="_blank"
+      rel="noopener noreferrer"
+      {...props}
+    />
+  );
 };
 
 function RoundedImage(props) {

@@ -107,7 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={clsx('text-white bg-[#111010]', inter.variable, jetBrainsMono.variable, outfit.variable)}
     >
       <body>
-        <main className="max-w-xl flex flex-col sm:mx-auto mx-8 mt-6 mb-32">
+        <main className="max-w-xl flex flex-col sm:mx-auto mx-8 mt-12 mb-32">
           {children}
           <p className="mt-32"> All rights reserved © wootsbot.dev {format(new Date(), 'yyyy')}</p>
         </main>

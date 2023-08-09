@@ -30,7 +30,6 @@ function Form() {
   });
 
   async function handleSubmitValues(data: FormValues) {
-    console.log('data', data);
     setIsFetching(true);
 
     await fetch('/api/guestbook', {

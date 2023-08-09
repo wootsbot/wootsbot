@@ -23,14 +23,14 @@ const nowInMexicoTimezone = new Intl.NumberFormat(FORMAT_LOCALE_ES_MX).format(di
 export default async function HomePage() {
   return (
     <div>
-      <section className="flex flex-col justify-center mb-32">
+      <section className="flex flex-col justify-center mb-16">
         {/* <Tweet id="1681747562070417410" /> */}
         <div>
           <div className="grid gap-12">
             <div className="flex items-center gap-4">
               <Link aria-label="Link to transparency" rel="noopener noreferrer" href="/transparency">
                 <Image
-                  className="rounded-full h-12"
+                  className="rounded-full h-12 w-12"
                   src="/avatar.jpg"
                   alt="avatar wootsbot"
                   width={50}
@@ -70,7 +70,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="mb-32">
+      <section className="mb-16">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-lg">Escribiendo.</h2>
 

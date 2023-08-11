@@ -8,6 +8,7 @@ export default {
     './@design-system/**/*.{ts,tsx}',
     './content/**/*.mdx',
   ],
+  // darkMode: ["class"],
   theme: {
     extend: {
       fontFamily: {

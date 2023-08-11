@@ -3,23 +3,14 @@
 @tailwind utilities;
 @tailwind screens;
 
-/*
+
 ::selection {
-  background-color: #eab308;
-  color: #000;
+  @apply bg-yellow-200 dark:bg-neutral-700 text-neutral-950 dark:text-neutral-100;
 }
-*/
+
 html {
   font-family: var(--font-inter);
   min-width: 360px;
-}
-
-p {
-  font-family: var(--font-outfit);
-}
-
-time {
-  font-family: var(--font-outfit);
 }
 
 .nav-border {
@@ -76,14 +67,17 @@ time {
 }
 
 .prose {
-  /* color: var(--tw-prose-body); */
+  @apply text-black/70 dark:text-gray-400 prose-headings:text-black prose-headings:dark:text-white prose-blockquote:text-neutral-600 dark:prose-blockquote:text-neutral-300 prose-strong:text-neutral-600 dark:prose-strong:text-neutral-300;
   max-width: 1280px;
 }
 
 .prose .anchor {
-  @apply invisible no-underline;
+  @apply absolute invisible no-underline;
+
   margin-left: -1em;
   padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
   cursor: pointer;
 }
 
@@ -96,7 +90,7 @@ time {
 }
 
 .prose .anchor:after {
-  @apply text-white;
+  @apply text-black/70 dark:text-white/70;
   content: '#';
 }
 
@@ -105,15 +99,15 @@ time {
 }
 
 .prose pre {
-  @apply border border-white/10 bg-white/5;
+  @apply border border-neutral-800 dark:border-white/10 bg-neutral-900 dark:bg-white/5;
 }
 
 .prose code {
-  @apply text-white px-1 py-1 rounded-lg bg-white/10;
+  @apply text-neutral-800 dark:text-neutral-200 px-1 py-0.5 border border-neutral-100 dark:border-neutral-800 rounded-lg bg-neutral-100 dark:bg-neutral-900;
 }
 
 .prose pre code {
-  @apply text-neutral-200 p-0;
+  @apply text-neutral-800 dark:text-neutral-200 p-0;
   border: initial;
 }
 
@@ -128,13 +122,9 @@ time {
   margin-bottom: 1.25em !important;
 }
 
-pre > code {
-  display: grid;
-}
-
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply text-white;
+  @apply text-neutral-50;
 }
 
 pre::-webkit-scrollbar {
@@ -175,10 +165,12 @@ table {
   counter-reset: line;
   box-decoration-break: clone;
 }
+
 [data-rehype-pretty-code-fragment] .line {
   @apply py-1;
 }
-[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+
+[data-rehype-pretty-code-fragment] [data-line-numbers]>.line::before {
   counter-increment: line;
   content: counter(line);
   display: inline-block;
@@ -187,19 +179,23 @@ table {
   text-align: right;
   color: gray;
 }
+
 [data-rehype-pretty-code-fragment] .line--highlighted {
-  /* @apply bg-neutral-950 bg-opacity-20; */
-  @apply bg-white/5;
+  @apply bg-slate-500 bg-opacity-10;
 }
+
 [data-rehype-pretty-code-fragment] .line-highlighted span {
   @apply relative;
 }
+
 [data-rehype-pretty-code-fragment] .word--highlighted {
   @apply rounded-md bg-slate-500 bg-opacity-10 p-1;
 }
+
 [data-rehype-pretty-code-title] {
-  @apply px-4 py-3 font-mono text-xs font-medium border rounded-t-lg text-white border-white/20 bg-white/10;
+  @apply px-4 py-3 font-mono text-xs font-medium border rounded-t-lg text-neutral-200 border-[#333333] bg-[#1c1c1c];
 }
-[data-rehype-pretty-code-title] + pre {
+
+[data-rehype-pretty-code-title]+pre {
   @apply mt-0 rounded-t-none border-t-0;
 }

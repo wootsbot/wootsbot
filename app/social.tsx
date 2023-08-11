@@ -23,7 +23,7 @@ function Social() {
           rel="noopener noreferrer"
           href="https://github.com/wootsbot"
         >
-          <SiGithub size={20} />
+          <SiGithub size={20} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
         </Link>
       </li>
       <li>
@@ -34,7 +34,7 @@ function Social() {
           rel="noopener noreferrer"
           href="https://twitter.com/wootsbot"
         >
-          <SiTwitter size={20} />
+          <SiTwitter size={20} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
         </Link>
       </li>
       <li>
@@ -45,7 +45,7 @@ function Social() {
           rel="noopener noreferrer"
           href="https://stackoverflow.com/users/4089384/wootsbot"
         >
-          <SiStackoverflow size={20} />
+          <SiStackoverflow size={20} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
         </Link>
       </li>
       <li>
@@ -56,7 +56,7 @@ function Social() {
           rel="noopener noreferrer"
           href="https://dev.to/wootsbot"
         >
-          <SiDevdotto size={20} />
+          <SiDevdotto size={20} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
         </Link>
       </li>
       <li>
@@ -67,7 +67,7 @@ function Social() {
           rel="noopener noreferrer"
           href="https://www.instagram.com/wootsbot/"
         >
-          <SiInstagram size={20} />
+          <SiInstagram size={20} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
         </Link>
       </li>
       <li>
@@ -78,7 +78,7 @@ function Social() {
           rel="noopener noreferrer"
           href="https://www.linkedin.com/in/wootsbot"
         >
-          <SiLinkedin size={20} />
+          <SiLinkedin size={20} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
         </Link>
       </li>
 
@@ -90,7 +90,7 @@ function Social() {
           rel="noopener noreferrer"
           href="https://www.polywork.com/wootsbot"
         >
-          <SiPolywork size={20} />
+          <SiPolywork size={20} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
         </Link>
       </li>
     </ul>

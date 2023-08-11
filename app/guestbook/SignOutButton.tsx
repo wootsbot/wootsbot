@@ -5,7 +5,7 @@ import ArrowRightOnRectangleIcon from '@heroicons/react/24/outline/ArrowRightOnR
 
 function SignOutButton() {
   return (
-    <button className="flex flex-row items-center gap-3 text-white" onClick={() => signOut()}>
+    <button className="flex flex-row items-center gap-3 text-black dark:text-white" onClick={() => signOut()}>
       <span>Desconectar</span>
       <ArrowRightOnRectangleIcon className="w-5" />
     </button>

@@ -51,7 +51,7 @@ function Form() {
   return (
     <form className="flex flex-row gap-3" onSubmit={handleSubmit(handleSubmitValues)}>
       <input
-        className="w-full h-11 py-2 px-4 text-white text-md placeholder:text-neutral-400 rounded-md border border-white bg-white/5"
+        className="w-full h-11 py-2 px-4 text-black dark:text-white text-md placeholder:text-neutral-400 dark:placeholder:text-neutral-400 rounded-md border border-neutral-400 dark:border-white bg-gray-100 dark:bg-white/5"
         placeholder="Escribe un mensaje"
         //   isError={Boolean(errors?.nameField)}
         //   errMsg={errors?.nameField?.message}
@@ -59,7 +59,7 @@ function Form() {
       />
 
       <button
-        className="flex flex-row items-center justify-center gap-3 border border-white py-2 px-3 rounded-sm bg-zinc-950 w-56"
+        className="flex flex-row items-center justify-center gap-3 border border-neutral-400 dark:border-white py-2 px-3 rounded-sm bg-gray-100 dark:bg-zinc-950 w-56"
         type="submit"
       >
         {isMutating ? 'Saludando... 🤟' : 'Saludar 👋'}

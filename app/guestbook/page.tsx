@@ -56,8 +56,8 @@ async function GuestbookPage() {
           })
           ?.map((guestbook) => (
             <li key={guestbook.id} className="flex flex-row items-center gap-3">
-              <span className="text-neutral-500">{guestbook.author}:</span>
-              <p className="text-neutral-200">{guestbook.body}</p>
+              <span className="dark:text-neutral-500">{guestbook.author}:</span>
+              <p className="dark:text-neutral-200">{guestbook.body}</p>
             </li>
           ))}
       </ul>

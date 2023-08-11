@@ -16,7 +16,7 @@ export type SignInProviderProps = {
 function SignInProviderButton({ provider }: SignInProviderProps) {
   return (
     <button
-      className="flex flex-row items-center gap-3 border border-white py-2 px-3 rounded-sm bg-zinc-950"
+      className="flex flex-row items-center gap-3 border border-neutral-400 dark:border-white py-2 px-3 rounded-sm bg-gray-100 dark:bg-zinc-950"
       onClick={() => signIn(provider.id)}
     >
       <span>Inicia sesión con {provider.name}</span>

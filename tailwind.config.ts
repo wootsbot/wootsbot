@@ -13,14 +13,21 @@ export default {
       fontFamily: {
         serif: ['var(--font-paytone-one)'],
       },
-      typography: {
-        quoteless: {
+      typography: (theme) => ({
+         quoteless: {
           css: {
             'blockquote p:first-of-type::before': { content: 'none' },
             'blockquote p:first-of-type::after': { content: 'none' },
           },
         },
-      },
+        // DEFAULT: {
+        //   css: {
+        //     'h1, h2, h3, h4, h5, h6': {
+        //       color: theme('colors.red.500'),
+        //     },
+        //   },
+        // },
+      }),
       keyframes: {
         slideDownAndFade: {
           from: { opacity: '0', transform: 'translateY(-2px)' },

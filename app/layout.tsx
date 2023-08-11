@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import type { Metadata } from 'next';
 
 import { format } from 'date-fns';
+import languageCodes from '@openkit/language-codes';
 
 import HomeIcon from '@heroicons/react/24/outline/HomeIcon';
 import RssIcon from '@heroicons/react/24/outline/RssIcon';
@@ -104,8 +105,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="es-MX"
-      className={clsx('text-white bg-[#111010]', inter.variable, jetBrainsMono.variable, outfit.variable)}
+      lang={languageCodes.ES_MX.langCode}
+      className={clsx(
+        'bg-[#fff] dark:bg-[#000] text-black/70 dark:text-gray-400',
+        inter.variable,
+        jetBrainsMono.variable,
+        outfit.variable,
+      )}
     >
       <GoogleAnalytics GA_MEASUREMENT_ID="G-2MQQXLF7P6" />
       <body>

@@ -12,9 +12,9 @@ type Node = {
 
 export const Files = (props: { data: Node[]; title?: string }) => {
   return (
-    <div className="overflow-hidden rounded-lg bg-neutral-900 border border-neutral-800 font-mono">
+    <div className="overflow-hidden rounded-lg bg-neutral-900 dark:bg-neutral-900 border border-neutral-900 dark:border-neutral-800 font-mono">
       {props.title ? (
-        <div className="mb-0.5 bg-neutral-200/10 px-3 py-3 text-sm text-white-100/70 border border-neutral-800">
+        <div className="mb-0.5 bg-neutral-200/10 px-3 py-3 text-sm text-white dark:text-white-100/70 border border-neutral-800">
           {props.title}
         </div>
       ) : null}
@@ -36,13 +36,13 @@ const Inner = ({ data, lvl }: { data: Node[]; lvl: number }) => {
               className={cx(
                 'flex items-center space-x-2 border-l-4 border-l-transparent pr-4 before:mr-4 before:ml-2 before:inline-block before:w-4 before:text-right before:[counter-increment:line] before:[content:counter(line)]',
                 {
-                  'border-neutral-800 bg-neutral-200/10 before:text-white/70': node.isHighlighted,
+                  'border-neutral-800 bg-neutral-50/10 dark:bg-neutral-200/10 before:text-white/70': node.isHighlighted,
                   'before:text-white/20': !node.isHighlighted,
                 },
               )}
             >
               <div
-                className={cx('text-white-100/40', {
+                className={cx('text-white/80 dark:text-white-100/40', {
                   'pl-[20px]': lvl === 1,
                   'pl-[40px]': lvl === 2,
                   'pl-[60px]': lvl === 3,
@@ -51,7 +51,9 @@ const Inner = ({ data, lvl }: { data: Node[]; lvl: number }) => {
               >
                 {!node.children ? <DocumentTextIcon className="w-4" /> : <FolderIcon className="w-4" />}
               </div>
-              <div className={cx(node.isHighlighted ? 'text-white' : 'text-white-100/90')}>{node.name}</div>
+              <div className={cx(node.isHighlighted ? 'text-white' : 'text-white/80 dark:text-white-100/90')}>
+                {node.name}
+              </div>
             </div>
 
             {node.children ? <Inner data={node.children} lvl={lvl + 1} /> : null}

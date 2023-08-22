@@ -10,6 +10,7 @@ import {
   SiPolywork,
   SiLinkedin,
   SiDevdotto,
+  SiX,
 } from '@icons-pack/react-simple-icons';
 
 function Social() {
@@ -34,7 +35,7 @@ function Social() {
           rel="noopener noreferrer"
           href="https://twitter.com/wootsbot"
         >
-          <SiTwitter size={20} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
+          <SiX size={20} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
         </Link>
       </li>
       <li>

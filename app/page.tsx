@@ -26,13 +26,17 @@ export default async function HomePage() {
           <div className="grid gap-12">
             <div className="flex items-center gap-4">
               <Link aria-label="Link to transparency" rel="noopener noreferrer" href="/transparency">
-                <Image
-                  className="rounded-full h-12 w-12"
-                  src="/avatar.jpg"
-                  alt="avatar wootsbot"
+                <img
+                  className="inline-block h-12 w-12 rounded-full object-cover"
                   width={48}
                   height={48}
-                  quality={100}
+                  src="/avatar.jpg"
+                  srcSet="/avatar.jpg"
+                  alt="Avatar of face wootsbot"
+                  decoding="async"
+                  data-nimg="1"
+                  title="avatar wootsbot"
+                  loading="lazy"
                 />
               </Link>
 

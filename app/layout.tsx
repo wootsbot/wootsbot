@@ -116,7 +116,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body>
         <ThemeProvider defaultTheme="system" enableSystem>
-          <main className="max-w-xl flex flex-col sm:mx-auto mx-8 mt-12 mb-32">
+          <main className="max-w-xl flex flex-col sm:mx-auto mx-4 mt-12 mb-32">
             {children}
             <p className="mt-32"> All rights reserved © wootsbot.dev {format(new Date(), 'yyyy')}</p>
           </main>

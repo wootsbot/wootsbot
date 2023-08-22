@@ -12,8 +12,8 @@ dependencies:
     specifier: 3.1.0
     version: 3.1.0(react-hook-form@7.45.4)
   '@icons-pack/react-simple-icons':
-    specifier: 9.0.0-beta.0
-    version: 9.0.0-beta.0(react@18.2.0)
+    specifier: 9.0.0
+    version: 9.0.0(react@18.2.0)
   '@openkit/language-codes':
     specifier: 0.1.0-beta.3
     version: 0.1.0-beta.3
@@ -80,6 +80,9 @@ dependencies:
   react-live:
     specifier: 4.1.2
     version: 4.1.2(react-dom@18.2.0)(react@18.2.0)
+  react-simple-icons@9.0.0:
+    specifier: link:@@icons-pack/react-simple-icons@9.0.0
+    version: link:@@icons-pack/react-simple-icons@9.0.0
   react-tweet:
     specifier: 3.0.4
     version: 3.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -696,8 +699,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@icons-pack/react-simple-icons@9.0.0-beta.0(react@18.2.0):
-    resolution: {integrity: sha512-O311nMlQrZ3WfxWKqyFDtGg4AyhToulUKB9VTl2sajpcC7vLlu75QkzAzNfzTkCm0MWq+p9WL7tkT5WI5CX5eg==}
+  /@icons-pack/react-simple-icons@9.0.0(react@18.2.0):
+    resolution: {integrity: sha512-2ZLcJKCmz0VESaKbuiJ8ks4Qd8fldTdK63JkO3bLgD0GVXQi994jy7/1Kd+mIrMmrSMGPe23+DGGx5g9aAsc2w==}
     peerDependencies:
       react: ^16.13 || ^17 || ^18
     dependencies:

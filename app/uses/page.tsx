@@ -49,7 +49,10 @@ function UsesPage() {
 
   return (
     <section>
-      <HeaderPage title={usesData.title} summary={usesData.summary as string} />
+      <HeaderPage
+        title={usesData.title}
+        //summary={usesData.summary as string}
+      />
 
       <Mdx code={usesData.body.code} />
     </section>

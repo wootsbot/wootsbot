@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { intlFormat, differenceInMinutes } from 'date-fns';
@@ -25,20 +24,18 @@ export default async function HomePage() {
         <div>
           <div className="grid gap-12">
             <div className="flex items-center gap-4">
-              <Link aria-label="Link to transparency" rel="noopener noreferrer" href="/transparency">
-                <img
-                  className="inline-block h-12 w-12 rounded-full object-cover"
-                  width={48}
-                  height={48}
-                  src="/avatar.jpg"
-                  srcSet="/avatar.jpg"
-                  alt="Avatar of face wootsbot"
-                  decoding="async"
-                  data-nimg="1"
-                  title="avatar wootsbot"
-                  loading="lazy"
-                />
-              </Link>
+              <img
+                className="inline-block h-12 w-12 rounded-full object-cover"
+                width={48}
+                height={48}
+                src="/avatar.jpg"
+                srcSet="/avatar.jpg"
+                alt="Avatar of face wootsbot"
+                decoding="async"
+                data-nimg="1"
+                title="avatar wootsbot"
+                loading="lazy"
+              />
 
               <div className="flex gap-1 flex-col">
                 <h1 className="text-xl text-black dark:text-white">hola, soy Jorge</h1>
@@ -61,8 +58,8 @@ export default async function HomePage() {
 
               <p className="text-xl font-extralight">
                 En mi tiempo libre, enseño a estudiantes de secundaria de las zonas rurales de Guerrero los conceptos
-                básicos de programación. Dedico tiempo al open-source + Developer Experience + Entusiasta del código
-                abierto + JS/TS + Teclados mecánicos + Máquinas de estado + aprendiendo Rust.
+                básicos de programación. Entusiasta del código abierto + Developer Experience
+                + JS/TS + Teclados mecánicos + Máquinas de estado + aprendiendo Rust.
               </p>
             </div>
           </div>

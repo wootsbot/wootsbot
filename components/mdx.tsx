@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+
+import { Tweet } from 'react-tweet';
+import { useMDXComponent } from 'next-contentlayer/hooks';
+
 import DisplayListInfoCard from '@/components/DisplayListInfoCard';
 import { Files } from '@/components/Files';
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import { Tweet } from 'react-tweet';
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -31,8 +32,8 @@ const CustomLink = (props) => {
   );
 };
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+function ImageBlog(props) {
+  return <img alt={props.alt} fetchPriority={props.priority ? 'high' : 'auto'} className="rounded-lg" src={props.src} srcSet={props.src} decoding="async" loading="lazy" {...props} />;
 }
 
 function Callout(props) {
@@ -45,7 +46,7 @@ function Callout(props) {
 }
 
 const components = {
-  Image: RoundedImage,
+  Image: ImageBlog,
   a: CustomLink,
   Callout,
   DisplayListInfoCard,

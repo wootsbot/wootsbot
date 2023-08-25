@@ -6,7 +6,7 @@ export default async function sitemap() {
     lastModified: post.publishedAt,
   }));
 
-  const routes = ['', '/blog', '/uses'].map((route) => ({
+  const routes = ['', '/blog', '/uses', '/guestbook'].map((route) => ({
     url: `https://wootsbot.dev/${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }));

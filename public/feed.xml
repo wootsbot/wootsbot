@@ -4,7 +4,7 @@
         <description><![CDATA[Wootsbot]]></description>
         <link>https://www.wootsbot.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 26 May 2023 01:29:19 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 21 Sep 2023 20:48:19 GMT</lastBuildDate>
         <atom:link href="https://www.wootsbot.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Configurando tu Terminal para una Experiencia de Desarrollo Frontend Superproductiva 🚀]]></title>
@@ -12,6 +12,13 @@
             <link>https://www.wootsbot.dev/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva</guid>
             <pubDate>Thu, 11 May 2023 06:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Document.DesignMode]]></title>
+            <description><![CDATA[Diseñadores: permite a los diseñadores experimentar con cambios de diseño en tiempo real, Desarrolladores: Es particularmente útil para la depuración]]></description>
+            <link>https://www.wootsbot.dev/blog/document-design-mode</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/document-design-mode</guid>
+            <pubDate>Tue, 06 Jun 2023 06:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Embellecer importaciones absolutas con alias en nextjs]]></title>

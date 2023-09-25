@@ -30,10 +30,9 @@ async function BlogPage() {
   return (
     <section>
       <HeaderPage
-        title="Escribiendo"
-        // summary="Bienvenido a este lugar digital donde comparto lo que estoy aprendiendo sobre el desarrollo frontend,
-        //   Experiencia del desarrollador, rust, código abierto, JS/TS, Teclados mecánicos, Máquinas de estado y mucho
-        //   más."
+      // summary="Bienvenido a este lugar digital donde comparto lo que estoy aprendiendo sobre el desarrollo frontend,
+      //   Experiencia del desarrollador, rust, código abierto, JS/TS, Teclados mecánicos, Máquinas de estado y mucho
+      //   más."
       />
 
       <div>

@@ -4,7 +4,7 @@
         <description><![CDATA[Wootsbot]]></description>
         <link>https://www.wootsbot.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 21 Sep 2023 20:48:19 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 26 Sep 2023 02:46:58 GMT</lastBuildDate>
         <atom:link href="https://www.wootsbot.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Configurando tu Terminal para una Experiencia de Desarrollo Frontend Superproductiva 🚀]]></title>
@@ -82,6 +82,13 @@
             <link>https://www.wootsbot.dev/blog/zed-el-mejor-editor-de-texto-del-mundo</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/zed-el-mejor-editor-de-texto-del-mundo</guid>
             <pubDate>Fri, 31 Mar 2023 06:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Cómo Enfrentar y Superar la Sensación de No Aportar en una Nueva Etapa]]></title>
+            <description><![CDATA[Si estás leyendo esto y sientes que no aportas lo suficiente, quiero que sepas que tu valor no se mide por cuánto sabes el primer día, sino por tu disposición para aprender, crecer y aportar.]]></description>
+            <link>https://www.wootsbot.dev/blog/como-enfrentar-y-superar-la-sensacion-de-no-aportar-en-una-nueva-etapa</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/como-enfrentar-y-superar-la-sensacion-de-no-aportar-en-una-nueva-etapa</guid>
+            <pubDate>Mon, 25 Sep 2023 06:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

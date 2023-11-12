@@ -1,3 +1,3 @@
 # Doing this 'n' that
 
-Architect + DX + Open source enthusiast + JS/TS + Mechanical Keyboard + Prisma + State Machines + Nextjs ▲ + UX/UI fan + Learn Rust
+Open source Frontend. "Altruist in education and culture". DX + ReactJs/React Native + JS/TS + CLI + Mechanical Keyboard + Prisma + State Machines + Learn Rust

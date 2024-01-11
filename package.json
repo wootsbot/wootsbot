@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "rss": "bun ./scripts/generate-rss.mjs",
+    "rss": "NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs",
     "postinstall": "prisma generate",
     "dev": "next dev",
-    "build:next": "next build",
+    "build": "next build",
     "start": "next start",
-    "prettier": "prettier --config .prettierrc.js \"./**/*.+(js|json|ts|tsx)\" --write"
+    "biome:check": "biome check ./**/*.{tsx,ts}",
+    "biome:format": "biome format ./**/*.{tsx,ts} --write"
   },
   "dependencies": {
     "@heroicons/react": "2.0.18",
@@ -43,6 +44,7 @@
     "zod": "3.22.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.5.1",
     "@tailwindcss/typography": "0.5.9",
     "@types/node": "20.4.9",
     "@types/parse-numeric-range": "0.0.1",
@@ -52,7 +54,6 @@
     "eslint": "8.41.0",
     "globby": "13.1.4",
     "postcss": "8.4.23",
-    "prettier": "^2.6.2",
     "prisma": "5.3.1",
     "reading-time": "1.5.0",
     "rehype": "12.0.1",

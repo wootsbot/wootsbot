@@ -4,21 +4,28 @@
         <description><![CDATA[Wootsbot]]></description>
         <link>https://www.wootsbot.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 26 Sep 2023 02:46:58 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 Jan 2024 01:39:13 GMT</lastBuildDate>
         <atom:link href="https://www.wootsbot.dev/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Cómo Enfrentar y Superar la Sensación de No Aportar en una Nueva Etapa]]></title>
+            <description><![CDATA[Si estás leyendo esto y sientes que no aportas lo suficiente, quiero que sepas que tu valor no se mide por cuánto sabes el primer día, sino por tu disposición para aprender, crecer y aportar.]]></description>
+            <link>https://www.wootsbot.dev/blog/como-enfrentar-y-superar-la-sensacion-de-no-aportar-en-una-nueva-etapa</link>
+            <guid isPermaLink="true">https://www.wootsbot.dev/blog/como-enfrentar-y-superar-la-sensacion-de-no-aportar-en-una-nueva-etapa</guid>
+            <pubDate>Mon, 25 Sep 2023 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Configurando tu Terminal para una Experiencia de Desarrollo Frontend Superproductiva 🚀]]></title>
             <description><![CDATA[Aprende cómo configurar Hyper, Fig, Exa, Starship, Zsh y Oh My Zsh para optimizar tu terminal y maximizar la productividad en el desarrollo frontend.]]></description>
             <link>https://www.wootsbot.dev/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva</guid>
-            <pubDate>Thu, 11 May 2023 06:00:00 GMT</pubDate>
+            <pubDate>Thu, 11 May 2023 05:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Document.DesignMode]]></title>
             <description><![CDATA[Diseñadores: permite a los diseñadores experimentar con cambios de diseño en tiempo real, Desarrolladores: Es particularmente útil para la depuración]]></description>
             <link>https://www.wootsbot.dev/blog/document-design-mode</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/document-design-mode</guid>
-            <pubDate>Tue, 06 Jun 2023 06:00:00 GMT</pubDate>
+            <pubDate>Tue, 06 Jun 2023 05:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Embellecer importaciones absolutas con alias en nextjs]]></title>
@@ -53,7 +60,7 @@
             <description><![CDATA[La versión 10 de mapbox trae nuevas capacidades, un rendimiento increíble y una experiencia de desarrollador moderna.]]></description>
             <link>https://www.wootsbot.dev/blog/react-native-y-mapbox-v10</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/react-native-y-mapbox-v10</guid>
-            <pubDate>Thu, 25 May 2023 06:00:00 GMT</pubDate>
+            <pubDate>Thu, 25 May 2023 05:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Turborepo Mejorando La Experiencia De Desarrollo En Monorepos]]></title>
@@ -67,7 +74,7 @@
             <description><![CDATA[Cómo elegir la mejor forma de importar React según el tipo de proyecto.]]></description>
             <link>https://www.wootsbot.dev/blog/una-pequena-guia-para-importar-con-mejores-practicas-react-en-tu-proyecto</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/una-pequena-guia-para-importar-con-mejores-practicas-react-en-tu-proyecto</guid>
-            <pubDate>Sun, 02 Apr 2023 06:00:00 GMT</pubDate>
+            <pubDate>Sun, 02 Apr 2023 05:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Uso de la funcion gen_random_uuid() nativa de Postgresql en Supabase + Prismajs]]></title>
@@ -81,14 +88,7 @@
             <description><![CDATA[Codifica a la velocidad del pensamiento, Zed el mejor editor de texto del mundo para usted y su equipo, un editor de código multijugador de alto rendimiento de los creadores de Atom y Tree-sitter]]></description>
             <link>https://www.wootsbot.dev/blog/zed-el-mejor-editor-de-texto-del-mundo</link>
             <guid isPermaLink="true">https://www.wootsbot.dev/blog/zed-el-mejor-editor-de-texto-del-mundo</guid>
-            <pubDate>Fri, 31 Mar 2023 06:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Cómo Enfrentar y Superar la Sensación de No Aportar en una Nueva Etapa]]></title>
-            <description><![CDATA[Si estás leyendo esto y sientes que no aportas lo suficiente, quiero que sepas que tu valor no se mide por cuánto sabes el primer día, sino por tu disposición para aprender, crecer y aportar.]]></description>
-            <link>https://www.wootsbot.dev/blog/como-enfrentar-y-superar-la-sensacion-de-no-aportar-en-una-nueva-etapa</link>
-            <guid isPermaLink="true">https://www.wootsbot.dev/blog/como-enfrentar-y-superar-la-sensacion-de-no-aportar-en-una-nueva-etapa</guid>
-            <pubDate>Mon, 25 Sep 2023 06:00:00 GMT</pubDate>
+            <pubDate>Fri, 31 Mar 2023 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

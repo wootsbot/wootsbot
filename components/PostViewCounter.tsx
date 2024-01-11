@@ -26,5 +26,5 @@ export default function ViewCounter({ slug, isDetails = false }: ViewCounterProp
     }
   }, [slug, isDetails]);
 
-  return <p className="text-sm text-neutral-500 font-serif">{`${views > 0 ? views : '–––'} vistas`}</p>;
+  return <p className='text-sm text-neutral-500 font-serif'>{`${views > 0 ? views : '–––'} vistas`}</p>;
 }

@@ -5,9 +5,9 @@ type HeaderPageProps = {
 
 function HeaderPage({ title, summary }: HeaderPageProps) {
   return (
-    <header className="flex flex-col gap-16 mb-16">
-      {title && <h1 className="text-xl text-black dark:text-white">{title}</h1>}
-      {summary && <p className="text-xl font-extralight">{summary}</p>}
+    <header className='flex flex-col gap-16 mb-16'>
+      {title && <h1 className='text-xl text-black dark:text-white'>{title}</h1>}
+      {summary && <p className='text-xl font-extralight'>{summary}</p>}
     </header>
   );
 }

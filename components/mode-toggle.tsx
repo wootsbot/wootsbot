@@ -1,16 +1,22 @@
 'use client';
 
-import * as React from 'react';
 import { useTheme } from 'next-themes';
+import * as React from 'react';
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
 
   return (
     <div>
-      <button onClick={() => setTheme('light')}>Light</button>
-      <button onClick={() => setTheme('dark')}>Dark</button>
-      <button onClick={() => setTheme('system')}>System</button>
+      <button type='button' onClick={() => setTheme('light')}>
+        Light
+      </button>
+      <button type='button' onClick={() => setTheme('dark')}>
+        Dark
+      </button>
+      <button type='button' onClick={() => setTheme('system')}>
+        System
+      </button>
     </div>
   );
 }

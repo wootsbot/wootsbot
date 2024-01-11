@@ -12,14 +12,14 @@ type Node = {
 
 export const Files = (props: { data: Node[]; title?: string }) => {
   return (
-    <div className="overflow-hidden rounded-lg bg-neutral-900 dark:bg-neutral-900 border border-neutral-900 dark:border-neutral-800 font-mono">
+    <div className='overflow-hidden rounded-lg bg-neutral-900 dark:bg-neutral-900 border border-neutral-900 dark:border-neutral-800 font-mono'>
       {props.title ? (
-        <div className="mb-0.5 bg-neutral-200/10 px-3 py-3 text-sm text-white dark:text-white-100/70 border border-neutral-800">
+        <div className='mb-0.5 bg-neutral-200/10 px-3 py-3 text-sm text-white dark:text-white-100/70 border border-neutral-800'>
           {props.title}
         </div>
       ) : null}
 
-      <div className="py-3 text-[13px] leading-6 [counter-reset:line]">
+      <div className='py-3 text-[13px] leading-6 [counter-reset:line]'>
         <Inner {...props} lvl={0} />
       </div>
     </div>
@@ -49,7 +49,7 @@ const Inner = ({ data, lvl }: { data: Node[]; lvl: number }) => {
                   'pl-[80px]': lvl === 4,
                 })}
               >
-                {!node.children ? <DocumentTextIcon className="w-4" /> : <FolderIcon className="w-4" />}
+                {!node.children ? <DocumentTextIcon className='w-4' /> : <FolderIcon className='w-4' />}
               </div>
               <div className={cx(node.isHighlighted ? 'text-white' : 'text-white/80 dark:text-white-100/90')}>
                 {node.name}

@@ -5,8 +5,8 @@ import { useMemo } from 'react';
 
 import clsx from 'clsx';
 
-import { usePathname } from 'next/navigation';
 import Link, { LinkProps } from 'next/link';
+import { usePathname } from 'next/navigation';
 
 type NavLink = {
   icon: ReactNode;
@@ -23,7 +23,7 @@ function NavLink({ icon, target, rel, href, ...props }: NavLink) {
 
   const isActive = useMemo(() => {
     return pathname === href;
-  }, [pathname]);
+  }, [pathname, href]);
 
   return (
     <Link

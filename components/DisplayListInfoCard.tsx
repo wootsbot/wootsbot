@@ -16,12 +16,12 @@ export default function DisplayListInfoCard({ title, items = [], color = 'defaul
         'border-emerald-900': color === 'success',
       })}
     >
-      <span className="text-lg my-1 mb-4 dark:text-white">{title}</span>
+      <span className='text-lg my-1 mb-4 dark:text-white'>{title}</span>
 
-      <ul className="flex flex-col p-0 m-0">
+      <ul className='flex flex-col p-0 m-0'>
         {items?.map((item) => (
-          <li key={item} className="flex flex-row items-baseline mb-2">
-            <div className="mr-4">
+          <li key={item} className='flex flex-row items-baseline mb-2'>
+            <div className='mr-4'>
               <CheckCircle
                 size={18}
                 className={clsx({
@@ -31,7 +31,7 @@ export default function DisplayListInfoCard({ title, items = [], color = 'defaul
                 })}
               />
             </div>
-            <p className="m-0 text-white">{item}</p>
+            <p className='m-0 text-white'>{item}</p>
           </li>
         ))}
       </ul>

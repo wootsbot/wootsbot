@@ -50,7 +50,7 @@ export default async function HomePage() {
               <p className='text-xl font-extralight'>
                 Soy desarrollador frontend, constructor de cosas y un fotógrafo apasionado. Actualmente trabajo como
                 Líder técnico Frontend en{' '}
-                <a className='text-pink-400 dark:text-pink-500' href='https://www.openbank.es/'>
+                <a className='text-pink-400 dark:text-pink-500 underline decoration-1' href='https://www.openbank.es/'>
                   openbank
                 </a>{' '}
                 .

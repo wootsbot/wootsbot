@@ -49,9 +49,12 @@ export default async function HomePage() {
             <div className='flex flex-col gap-4'>
               <p className='text-xl font-extralight'>
                 Soy desarrollador frontend, constructor de cosas y un fotógrafo apasionado. Actualmente trabajo como
-                Líder técnico Frontend en{' '}
-                <a className='text-pink-400 dark:text-pink-500 underline decoration-1' href='https://www.openbank.es/'>
-                  openbank
+                Líder técnico en{' '}
+                <a
+                  className='text-blue-300 dark:text-blue-400 underline decoration-1 font-medium'
+                  href='https://dd360.mx/'
+                >
+                  DD360
                 </a>{' '}
                 .
               </p>

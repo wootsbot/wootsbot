@@ -36,7 +36,32 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
   const page = getPageBySlug(params.slug);
 
   if (page) {
-    return { title: page.title, description: page.description };
+    return {
+      title: page.title,
+      description: page.description,
+      creator: "Jorge Luis Calleja Alvarado",
+      keywords: page.tags,
+      bookmarks: [`https://wootsbot.dev/posts/${params.slug}`],
+      openGraph: {
+        title: page.title,
+        description: page.description,
+        type: "article",
+        publishedTime: page.publishedAt,
+        url: `https://wootsbot.dev/blog/${params.slug}`,
+        // images: [
+        //   {
+        //     url: ogImage,
+        //   },
+        // ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: page.title,
+        description: page.description,
+        // images: [ogImage],
+        creator: "Jorge Luis Calleja Alvarado",
+      },
+    };
   }
   return {};
 };

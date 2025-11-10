@@ -1,5 +1,26 @@
 import { DocsPageHeader } from "#/components/markdown/layout/page-header";
 
+export const metadata = {
+  title: 'Mi escritorio',
+  description: 'Cosas que estoy usando',
+  openGraph: {
+    title: 'Mi escritorio',
+    description: 'Cosas que estoy usando',
+    type: 'article',
+    url: 'https://wootsbot.dev/use',
+    images: [
+    {
+      url: 'https://wootsbot.dev/images/use/setup.webp',
+    },
+  ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mi escritorio',
+    description: 'Cosas que estoy usando',
+  },
+};
+
 <div>
   <DocsPageHeader
     heading="use"

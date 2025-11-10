@@ -1,4 +1,4 @@
-import { SiDevdotto, SiGithub, SiInstagram, SiStackoverflow, SiX } from "@icons-pack/react-simple-icons";
+import { SiBluesky, SiDevdotto, SiGithub, SiInstagram, SiStackoverflow, SiX } from "@icons-pack/react-simple-icons";
 
 import Link from "next/link";
 
@@ -16,6 +16,19 @@ export function Social() {
           >
             <SiGithub size={16} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
             Github
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            aria-label="Link to Github"
+            className="hover:underline flex items-center gap-2"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://bsky.app/profile/wootsbot.dev"
+          >
+            <SiBluesky size={16} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
+            Bluesky
           </Link>
         </li>
 

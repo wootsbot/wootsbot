@@ -1,8 +1,8 @@
 import "./global.css";
 
-import { format } from "date-fns";
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "#/components/layout/theme-provider";
 import { cn } from "#/lib/utils";
 
 const inter = Inter({
@@ -82,19 +82,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="es-MX"
-      className={cn(
-        "bg-[#FFF] dark:bg-[#050505] text-black/70 dark:text-[#BBB]",
-        inter.variable,
-        jetBrainsMono.variable,
-      )}
-    >
-      <body>
-        <main className="max-w-xl flex flex-col sm:mx-auto mx-4 mt-12 mb-32">
-          {children}
-          <p className="mt-32"> All rights reserved © wootsbot.dev {format(new Date(), "yyyy")}</p>
-        </main>
+    <html lang="es-MX" suppressHydrationWarning>
+      <body
+        className={cn(
+          "bg-[#FFF] dark:bg-[#050505] text-black/70 dark:text-white/70",
+          inter.variable,
+          jetBrainsMono.variable,
+        )}
+      >
+        <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
       </body>
     </html>
   );

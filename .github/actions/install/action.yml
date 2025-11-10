@@ -1,0 +1,17 @@
+name: "Install"
+description: "Sets up Node.js and runs pnpm install"
+
+runs:
+  using: composite
+  steps:
+    - name: Install Dependencies 📦
+      uses: pnpm/action-setup@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v5
+      with:
+        node-version-file: package.json
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --no-frozen-lockfile

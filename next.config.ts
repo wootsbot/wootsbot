@@ -1,13 +1,13 @@
 import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
-const isDev = process.argv.indexOf("dev") !== -1;
-const isBuild = process.argv.indexOf("build") !== -1;
+// const isDev = process.argv.indexOf("dev") !== -1;
+// const isBuild = process.argv.indexOf("build") !== -1;
 
-if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
-  process.env.VELITE_STARTED = "1";
-  import("velite").then((m) => m.build({ watch: isDev, clean: !isDev }));
-}
+// if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
+//   process.env.VELITE_STARTED = "1";
+//   import("velite").then((m) => m.build({ watch: isDev, clean: !isDev }));
+// }
 
 const nextConfig: NextConfig = {
   pageExtensions: ["mdx", "ts", "tsx"],
@@ -35,6 +35,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
     ];
+  },
+  images: {
+    qualities: [75, 90],
   },
   experimental: {
     mdxRs: {

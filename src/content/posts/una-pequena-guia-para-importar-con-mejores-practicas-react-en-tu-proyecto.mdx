@@ -1,0 +1,88 @@
+---
+title: import React from 'react';
+publishedAt: 2023-04-02T00:00:00Z
+summary: Cómo elegir la mejor forma de importar React según el tipo de proyecto.
+tags: ['react', 'reactjs', 'import', 'typeScript', 'javaScript']
+author: wootsbot
+---
+
+A simple vista no podrias elegir entre una o la otra `import * as React from 'react';` o `import React from 'react';`, ambas formas de importar `React` en una aplicación React son válidas y funcionan correctamente.
+
+Sin embargo, hay algunas diferencias sutiles en cómo funcionan y en cuándo puede ser preferible utilizar una u otra forma.
+
+Por ejemplo si usamos la sigunte forma `import * as React from 'react';`, de esta manera estamos importando todo el módulo de `React` en un objeto llamado __React__.
+
+Lo que significa es que, para acceder a cualquier componente o función específica de React, necesitamos hacer referencia al objeto __React__, seguido del nombre del componente o función.
+
+Entonces, el funcionamiento sucederá de la siguiente manera al usar el objeto __React__:
+
+```tsx /React/#s title="MyComponent.tsx"
+import * as React from 'react'
+
+function MyComponent() {
+  const [state, setState] = React.useState();
+  const [isPending, startTransition] = React.useTransition();
+  const deferredQuery = React.useDeferredValue(state);
+  const cachedValue = React.useMemo(calculateValue, dependencies);
+  const myRef = React.useRef(null);
+  const cachedFn = React.useCallback(fn, dependencies);
+  const value = React.useContext(SomeContext);
+  const [state, dispatch] = React.useReducer(reducer, initialArg, init?);
+  const id = React.useId();
+  const snapshot = React.useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?);
+
+  React.useEffect(setup, dependencies?)
+  React.useLayoutEffect(setup, dependencies?)
+  React.useImperativeHandle(ref, createHandle, dependencies?)
+  React.useDebugValue();
+  React.useInsertionEffect(setup, dependencies?)
+
+  return null;
+}
+
+```
+
+> Esta forma de importación es comúnmente utilizada en proyectos TypeScript, ya que puede proporcionar información de tipo adicional al compilador.
+
+Si usamos la segunda forma de importación, `import React from 'react';`, importa el objeto React directamente, lo que significa que cualquier componente o función específica de React se puede utilizar directamente sin necesidad de referirse al objeto __React__.
+
+Entonces, la magia sucederá de la siguiente manera:
+
+```tsx /React/#s title="MyComponent.tsx"
+import { useState, useTransition, useDeferredValue, useMemo, useRef, useCallback, useContext, useReducer, useId, useSyncExternalStore, useEffect, useLayoutEffect, useImperativeHandle, useDebugValue, useInsertionEffect  } from 'react'
+
+function MyComponent() {
+  const [state, setState] = useState();
+  const [isPending, startTransition] = useTransition();
+  const deferredQuery = useDeferredValue(state);
+  const cachedValue = useMemo(calculateValue, dependencies);
+  const myRef = useRef(null);
+  const cachedFn = useCallback(fn, dependencies);
+  const value = useContext(SomeContext);
+  const [state, dispatch] = useReducer(reducer, initialArg, init?);
+  const id = useId();
+  const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?);
+
+  useEffect(setup, dependencies?)
+  useLayoutEffect(setup, dependencies?)
+  useImperativeHandle(ref, createHandle, dependencies?)
+  useDebugValue();
+  useInsertionEffect(setup, dependencies?)
+
+  return null;
+}
+```
+
+## Conclusión
+
+Ambas formas de importación son válidas y funcionan correctamente.
+
+Si se está utilizando `TypeScript`, la forma `import * as React from 'react';`; puede proporcionar información de tipo adicional al compilador y en su editor de texto brinda una mejor experiencia de desarrollo.
+
+Mientras que si se está utilizando `JavaScript`, la forma `import React from 'react';`; es la recomendada por la documentación oficial de React.
+
+Recuerda que la elección entre ambas formas dependerá del tipo de proyecto y de las preferencias personales del desarrollador.
+
+Sin embargo, existen proyectos como [Netx.js](https://nextjs.org/), [Remix](https://remix.run/) y otros, que ya no requieren la importación de React en cada archivo, sino que utilizan una técnica llamada tree shaking para optimizar la importación y el rendimiento de la aplicación.
+
+> Tree shake es el término que usa la comunidad de JavaScript para la eliminación de código muerto, una optimización común del compilador que elimina automáticamente el código inalcanzable.

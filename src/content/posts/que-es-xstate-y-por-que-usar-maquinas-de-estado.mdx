@@ -1,0 +1,114 @@
+---
+title: ¿Por qué usar máquinas de estado?
+publishedAt: 2022-06-08T00:00:00Z
+summary: Una de las bibliotecas clave que utilizo actualmente en mis desarrollos es XState. Es uno de los descubrimientos más importantes que he hecho recientemente sobre programación.
+tags: ['xstate','javaScript','typescript']
+author: wootsbot
+---
+
+Una de las bibliotecas clave que utilizo actualmente en mis desarrollos es XState. En esta pequeña publicación, Quiero mostrarte por qué, sinceramente, es uno de los descubrimientos más importantes que he hecho recientemente sobre programación y por qué te recomiendo que lo implementes.
+
+## ¿Qué es XState?
+
+> XState es una biblioteca para crear, interpretar y ejecutar máquinas de estado finito y diagramas de estado, así como para administrar las invocaciones de esas máquinas como actores.
+
+Sinceramente tomé esta definición del [sitio oficial](https://xstate.js.org/), pero no se preocupe si no esta familiarizado con los conceptos de máquinas de estado y estados finitos, parecen complejos pero en realidad no lo son 😜.
+
+Si crees que necesitas ampliar tus conocimientos al respecto, en la documentación puedes encontrar los conceptos, pero en resumen, xstate te ayuda a definir de forma declarativa toda tu lógica de negocio de tus aplicaciones, facilitando su interceptación, interacción y respuesta con una gran confianza.
+
+## ¿Por qué máquinas de estado?
+
+> Máquinas de estado: Una máquina de estados finitos es un modelo matemático de computación que describe el comportamiento de un sistema que puede estar en un solo estado en un momento dado. Por ejemplo, supongamos que puede estar representado por una máquina de estado con un número finito (2) de estados: dormido o despierto. En un momento dado, estás dormido o despierto. Es imposible que estés dormido y despierto al mismo tiempo, y es imposible que no estés ni dormido ni despierto.
+
+En realidad, una máquina de estado es un modelo explícito a lo largo del tiempo de su estado, por lo que le ayuda a definir su lógica de negocio de una manera más concisa, también le ayuda a comunicarse mejor con UI/UX y otros compañeros de equipo que no son desarrolladores, lo que hace que su producto sea más robusto y preparado para el futuro. Creo que lo hace atractivo para mí y darle una oportunidad.
+
+## Visualizador y un ejemplo
+
+Una gran ventaja de xstate es que tiene un visor fantástico en línea y en editores de texto, lo que le permite ver su gráfico de estado en su totalidad.
+
+así que digamos que tenemos una solicitud para recuperar datos de una API, que representaríamos de la siguiente manera.
+
+Los estados que asignamos a nuestra máquina son:
+
+- `idle`: Es el inicio y es por defecto cuando arrancamos nuestra máquina.
+- `loading`: Este estado nos ayudara a saber que la llamada a la api ha iniciado y esta en proceso de ser resuelta.
+- `failure`: Nos ayudará a saber si la llamada no tuvo éxito.
+- `loaded`: Si la llamada es exitosa, pasaremos a este estado y nuestra máquina terminará, ya que es un estado de tipo `final`.
+
+Los eventos que tendrá nuestra máquina son:
+
+- `FETCH`: Nos ayudará a pasar del estado de `idle` al `loading`
+- `FETCH_CANCEL`: Nos llevará de vuelta al estado `idle`
+- `FETCH_RETRY`: Nos ayudará a volver al estado `loading` cuando estamos en un estado `failure`, un modo de reintento al llamar a la API.
+- `FETCH_SUCCESS`: Pasar del estado de `loading` al estado `loaded`, como una forma de terminar la máquina con éxito.
+- `FETCH_ERROR`: Pasar del estado de `loading` al estado `failure`, esto sucede si hay un error en la llamada a la API.
+
+<Image
+  alt="xstate"
+  src="/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_0.webp"
+  width={1024}
+  height={500}
+  quality="75"
+  priority
+/>
+
+En la próxima iteración, verá cómo pasó del estado `idle`, con el evento `FETCH` al estado `loading`
+
+<Image
+  alt="xstate"
+  src="/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_1.gif"
+  width={1024}
+  height={500}
+  quality="75"
+  unoptimized
+/>
+
+En el estado en que se encuentra la máquina `loading`, entonces nos habilita 3 eventos que son `FETCH_CANCEL`, `FETCH_SUCCESS`, `FETCH_ERROR`
+
+En este ejemplo simularemos que nuestro usuario quiere cancelar la llamada lo cual nos apoyará desde el evento `FETCH_CANCEL`, lo que el evento nos va a llevar del estado `loading` al estado `idle` y habilitará el evento nuevamente `FETCH`, esto para que pueda realizar el flujo de nuevo.
+
+<Image
+  alt="xstate"
+  src="/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_3.gif"
+  width={1024}
+  height={500}
+  quality="75"
+  unoptimized
+/>
+
+Para simular una llamada a la api no es exitosa nos ayudará el evento `FETCH_ERROR`, nos va a llevar del estado `loading` al estado `failure`, con ayuda del evento `FETCH_ERROR`. y nos habilitará el evento `FETCH_RETRY` para poder hacer un reintento.
+
+<Image
+  alt="xstate"
+  src="/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_4.gif"
+  width={1024}
+  height={500}
+  quality="75"
+  unoptimized
+/>
+
+Así que ahora estamos en un estado de `failure` y con el evento `FETCH_RETRY` vamos a regresar al estado `loading` para poder hacer un reintento.
+
+<Image
+  alt="xstate"
+  src="/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_5.gif"
+  width={1024}
+  height={500}
+  quality="75"
+  unoptimized
+/>
+
+Con todos los estados expuestos en este momento, es hora de ver cómo llegamos al estado de `loaded`, nos apoyamos el evento `FETCH_SUCCESS`, y esto termina el flujo del estado de la máquina.
+
+<Image
+  alt="xstate"
+  src="/images/blog/que-es-xstate-y-por-que-usar-maquinas-de-estado/example_2.gif"
+  width={1024}
+  height={500}
+  quality="75"
+  unoptimized
+/>
+
+## Conclusión
+
+Realmente creo que una de las razones por las que las máquinas de estados finitos se han vuelto tan populares es porque tener que escribir explícitamente todo tu estado te ayuda a pensar en un caos más extremo y probablemente a descubrir algunos errores que te perdiste en alguna parte. 🤗

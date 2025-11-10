@@ -1,6 +1,11 @@
 import type { MDXComponents } from "mdx/types";
-
+import type { ImageProps } from "next/image";
 import Image from "next/image";
+
+import { Tweet } from "react-tweet";
+import { Callout } from "#/components/markdown/callout";
+import { DisplayListInfoCard } from "#/components/markdown/display-list-info-card";
+import { Files } from "#/components/markdown/files";
 
 import { cn } from "#/lib/utils";
 
@@ -18,7 +23,7 @@ export const mdxComponents = {
   h2: ({ className, ...props }: MDXItemComponent) => (
     <h2
       className={cn(
-        "group relative mb-2 mt-12 scroll-mt-20 font-semibold text-2xl first-of-type:mt-0 text-white/85",
+        "group relative mb-4 mt-8 scroll-mt-8 font-semibold text-2xl first-of-type:mt-0 text-white/85",
         className,
       )}
       {...props}
@@ -46,15 +51,19 @@ export const mdxComponents = {
     <strong className={cn("font-extrabold text-slate-50", className)} {...props} />
   ),
   ul: ({ className, ...props }: MDXItemComponent) => (
-    <ul className={cn("my-6 ml-6 list-disc text-white/70", className)} {...props} />
+    <ul className={cn("ml-3.5 list-disc text-white/70", className)} {...props} />
   ),
   ol: ({ className, ...props }: MDXItemComponent) => (
     <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
   ),
-  li: ({ className, ...props }: MDXItemComponent) => <li className={cn("mt-2", className)} {...props} />,
+  li: ({ className, ...props }: MDXItemComponent) => <li className={cn("my-4", className)} {...props} />,
   img: ({ className, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // biome-ignore lint/performance/noImgElement: <>
-    <img className={cn("rounded-md", className)} alt={alt} {...props} />
+    <img
+      className={cn("w-full h-96 object-cover rounded-lg my-8 outline outline-offset-2 outline-lime-950/50", className)}
+      alt={alt}
+      {...props}
+    />
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8 w-[50px]" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
@@ -68,7 +77,7 @@ export const mdxComponents = {
   th: ({ className, ...props }: MDXItemComponent) => (
     <th
       className={cn(
-        "border border-zinc-700 px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-zinc-700 px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right",
         className,
       )}
       {...props}
@@ -77,7 +86,7 @@ export const mdxComponents = {
   td: ({ className, ...props }: MDXItemComponent) => (
     <td
       className={cn(
-        "border border-zinc-700 px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-zinc-700 px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right",
         className,
       )}
       {...props}
@@ -92,7 +101,7 @@ export const mdxComponents = {
 
         <pre
           className={cn(
-            "p-6 [color-scheme:dark] [&_code]:bg-transparent [&_code]:border-0 [&_code]:rounded-none [&_code]:p-0 [&_code]:font-inherit [&_code]:text-inherit",
+            "p-6 scheme-dark [&_code]:bg-transparent [&_code]:border-0 [&_code]:rounded-none [&_code]:p-0 [&_code]:font-inherit [&_code]:text-inherit",
             className,
           )}
           {...props}
@@ -109,7 +118,13 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  Image,
+  Image: ({ className, ...props }: ImageProps) => (
+    <Image className={cn("rounded-lg my-8 outline outline-offset-2 outline-lime-950/50", className)} {...props} />
+  ),
+  Files,
+  DisplayListInfoCard,
+  Tweet,
+  Callout,
 };
 
 export function useMDXComponents(): MDXComponents {

@@ -1,0 +1,157 @@
+---
+title: 'Embellecer importaciones absolutas'
+publishedAt: 2021-10-14T00:00:00Z
+summary: 'Estas trabajando en un proyecto grande o pequeño y algunas de sus declaraciones de importación se ven algo asi import Component from "../../../Component"'
+tags: ['react','nextjs','nextjsV9.4','javaScript']
+author: wootsbot
+---
+
+{/* <Files
+  title="Folder structure after generation"
+  data={[
+    {
+      name: ".contentlayer",
+      children: [
+        {
+          name: "generated",
+          children: [
+            {
+              name: "Post",
+              children: [
+                { name: "posts__hello-world.mdx.json", isHighlighted: true },
+              ],
+            },
+          ],
+
+        },
+        {name: "index.js"},
+        {name: "types.d.ts"},
+      ],
+    },
+    {
+      name: "content",
+      children: [
+        {
+          name: "posts",
+          children: [
+            { name: "hello-world.mdx", isHighlighted: true },
+          ],
+        },
+      ],
+    },
+    {
+      name:"contentlayer.config.js"
+    },
+    {
+      name: "next.config.js"
+    }
+
+]}
+/> */}
+
+Desde Next.js `v9.4.x` y posteriores, hace que la configuración de importaciones absolutas sea muy simple para proyectos de JavaScript y TypeScript.
+Todo lo que necesita hacer es agregar la configuración `baseUrl` a `jsconfig.json` [(proyectos JS)](https://code.visualstudio.com/docs/languages/jsconfig#_jsconfig-options) o `tsconfig.json` [(proyectos TS)](https://www.typescriptlang.org/docs/handbook/module-resolution.html#base-url).
+
+<Files
+  data={[
+    {
+      name: ".next",
+      children: [],
+    },
+    {
+      name: "app",
+      children: [],
+    },
+    {
+      name: "pages",
+      children: [],
+    },
+    {
+      name: "package.json",
+    },
+    {
+      name: ".gitignore",
+    },
+    {
+      name: "next.config.js",
+    },
+    { name: "tsconfig.json", isHighlighted: true },
+    {
+      name: "...",
+    },
+]}
+/>
+
+```js
+// tsconfig.json or jsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": "."
+  }
+}
+```
+
+Esto permitirá importaciones absolutas desde `"."` (el directorio raíz).
+
+Los editores como VSCode admiten automáticamente la configuración en jsconfig.json, por lo que `Command + Click` para saltar al origen de un archivo funcionará como de costumbre.
+[Atom e IntelliJ](https://github.com/tleunen/babel-plugin-module-resolver#editors-autocompletion) también tienen soporte para reescrituras.
+
+## Embellecer con Alias
+
+Además, Next.js `v9.4.x` también admite la opción de rutas, que le permite crear alias de módulos personalizados.
+Por ejemplo:
+
+
+<Files
+  data={[
+    {
+      name: ".next",
+      children: [],
+    },
+    {
+      name: "app",
+      children: [],
+    },
+    {
+      name: "pages",
+      children: [],
+    },
+    {
+      name: "package.json",
+    },
+    {
+      name: ".gitignore",
+    },
+    {
+      name: "next.config.js",
+    },
+    { name: "tsconfig.json", isHighlighted: true },
+    {
+      name: "...",
+    },
+]}
+/>
+
+```js
+// tsconfig.json or jsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"]
+    }
+  }
+}
+```
+
+Luego puede usar su alias así:
+
+```jsx
+// importacion absoluta 'components/button'
+import Button from '@/components/Button';
+```
+
+## Conclusión
+
+Entonces las importaciones absolutas en Next.js son muy fáciles de configurar, pueden ser muy útiles para proyectos grandes.
+Pero por que no simplemente tener una mejor **DX** (Experiencia de Desarrollador).

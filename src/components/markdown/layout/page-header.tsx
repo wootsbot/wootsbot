@@ -12,7 +12,7 @@ export function DocsPageHeader({ heading, text, publishedAt, readingTime, classN
     <div className="flex flex-col gap-4 prose m-auto mb-8">
       <div className={cn("gap-4", className)} {...props}>
         <h1 className="inline-block font-extrabold text-3xl lg:text-4xl text-white">{heading}</h1>
-        {text && <p className="text-md">{text}</p>}
+        {text && <p className="italic text-white/70">{text}</p>}
       </div>
 
       {(publishedAt || readingTime) && (

@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=22",
-    "pnpm": ">=10"
+    "node": "22.x",
+    "pnpm": "10.x"
   },
   "scripts": {
     "// dev": "next dev",
@@ -69,5 +69,5 @@
     "typescript": "5.9.3",
     "velite": "0.3.0"
   },
-  "packageManager": "pnpm@10.21.0"
+  "packageManager": "pnpm@10.21.0+sha512.da3337267e400fdd3d479a6c68079ac6db01d8ca4f67572083e722775a796788a7a9956613749e000fac20d424b594f7a791a5f4e2e13581c5ef947f26968a40"
 }

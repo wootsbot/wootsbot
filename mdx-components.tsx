@@ -30,16 +30,19 @@ export const mdxComponents = {
     />
   ),
   h3: ({ className, ...props }: MDXItemComponent) => (
-    <h3 className={cn("mt-8 scroll-m-20 text-xl font-bold tracking-tight", className)} {...props} />
+    <h3 className={cn("group relative mt-8 scroll-m-20 text-xl font-bold tracking-tight", className)} {...props} />
   ),
   h4: ({ className, ...props }: MDXItemComponent) => (
-    <h4 className={cn("mt-8 scroll-m-20 text-lg font-semibold tracking-tight", className)} {...props} />
+    <h4 className={cn("group relative mt-8 scroll-m-20 text-lg font-semibold tracking-tight", className)} {...props} />
   ),
   h5: ({ className, ...props }: MDXItemComponent) => (
-    <h5 className={cn("mt-8 scroll-m-20 text-lg font-semibold tracking-tight", className)} {...props} />
+    <h5 className={cn("group relative mt-8 scroll-m-20 text-lg font-semibold tracking-tight", className)} {...props} />
   ),
   h6: ({ className, ...props }: MDXItemComponent) => (
-    <h6 className={cn("mt-8 scroll-m-20 text-base font-semibold tracking-tight", className)} {...props} />
+    <h6
+      className={cn("group relative mt-8 scroll-m-20 text-base font-semibold tracking-tight", className)}
+      {...props}
+    />
   ),
   a: ({ className, ...props }: MDXItemComponent) => (
     <a className={cn("font-normal hover:underline underline-offset-4 text-white", className)} {...props} />

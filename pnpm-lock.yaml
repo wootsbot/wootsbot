@@ -102,6 +102,9 @@ importers:
       fast-glob:
         specifier: 3.3.3
         version: 3.3.3
+      hastscript:
+        specifier: 9.0.1
+        version: 9.0.1
       npm-run-all:
         specifier: 4.1.5
         version: 4.1.5

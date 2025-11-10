@@ -4,3 +4,14 @@
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetBrains-mono);
 }
+
+.anchor-button {
+  float: left;
+  opacity: 0;
+  transition-property: opacity;
+  text-decoration: none;
+}
+
+.group:hover .anchor-button {
+  @apply opacity-100;
+}

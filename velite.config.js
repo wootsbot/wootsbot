@@ -8,8 +8,10 @@ import {
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
+import { h } from "hastscript"; // Helper for creating HAST elements
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
+
 import { defineCollection, defineConfig, s } from "velite";
 
 const posts = defineCollection({
@@ -58,10 +60,13 @@ export default defineConfig({
       [
         rehypeAutolinkHeadings,
         {
+          behavior: "prepend",
           properties: {
-            className: ["subheading-anchor"],
+            className: ["anchor-button text-with/75 -ml-6"],
             ariaLabel: "Link to section",
+            ariaHidden: true,
           },
+          content: [h("span", { className: "text-2xl" }, "#")],
         },
       ],
     ],

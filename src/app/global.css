@@ -15,3 +15,15 @@
 .group:hover .anchor-button {
   @apply opacity-100;
 }
+
+.dark .shiki,
+.dark .shiki span {
+  color: var(--s-dark, inherit);
+  --twoslash-popup-bg: #0e0e0e;
+}
+
+html:not(.dark) .shiki,
+html:not(.dark) .shiki span {
+  color: var(--s-light, inherit);
+  --twoslash-popup-bg: #191919;
+}

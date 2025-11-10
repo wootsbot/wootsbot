@@ -8,6 +8,7 @@ import {
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
+import { rendererRich, transformerTwoslash } from "@shikijs/twoslash";
 import { h } from "hastscript"; // Helper for creating HAST elements
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
@@ -47,6 +48,10 @@ export default defineConfig({
         rehypeShiki,
         {
           transformers: [
+            transformerTwoslash({
+              explicitTrigger: true,
+              renderer: rendererRich(),
+            }),
             transformerNotationDiff(),
             transformerNotationFocus(),
             transformerNotationHighlight(),

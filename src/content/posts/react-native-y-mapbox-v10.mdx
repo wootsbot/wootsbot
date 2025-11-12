@@ -51,11 +51,11 @@ Para lograr esta integración, primero debemos asegurarnos de tener un proyecto 
 
 Perfecto, vamos a crear nuestro proyecto de React Native. Lo nombraré 'RNMapbox' y con el siguiente comando comenzaremos a inicializarlo:
 
-```sh /RNMapbox/#s title="Con typescript"
+```sh /RNMapbox/#s
 npx react-native init RNMapbox --template react-native-template-typescript
 ```
 
-```sh /RNMapbox/#s title="Con javascript"
+```sh /RNMapbox/#s
 npx react-native init RNMapbox
 ```
 
@@ -180,11 +180,11 @@ password TU_SECRET_MAPBOX_ACCESS_TOKEN
 
 El próximo paso será instalar la dependencia necesaria. Esto lo haremos con el comando a continuación:
 
-```sh title="Con npm"
+```sh
 npm install --save @rnmapbox/maps
 ```
 
-```sh title="Con yarn"
+```sh
 yarn add @rnmapbox/maps
 ```
 
@@ -442,7 +442,7 @@ Para continuar, incluiremos las siguientes líneas de código en el archivo `App
 
 <br />
 
-```tsx title="./App.tsx" /TU_SECRET_MAPBOX_ACCESS_TOKEN/#v
+```tsx /TU_SECRET_MAPBOX_ACCESS_TOKEN/#v
 import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
 
@@ -494,11 +494,11 @@ export default App;
 
 Finalmente, procederemos a ejecutar la aplicación:
 
-```sh title="Para ios"
+```sh
 yarn ios
 ```
 
-```sh title="Para android"
+```sh
 yarn android
 ```
 

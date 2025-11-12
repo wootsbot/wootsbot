@@ -97,29 +97,17 @@ export const mdxComponents = {
   ),
   pre: ({ className, ...props }: MDXItemComponent) => {
     return (
-      <div className="mb-4 mt-6 overflow-x-auto rounded-lg bg-zinc-600/20 py-4">
-        <div className="mb-1 flex flex-row justify-end px-4">
-          <span className="text-xs font-semibold text-zinc-500">{props["data-language"]}</span>
-        </div>
-
-        <pre
-          className={cn(
-            "p-6 scheme-dark [&_code]:bg-transparent [&_code]:border-0 [&_code]:rounded-none [&_code]:p-0 [&_code]:font-inherit [&_code]:text-inherit",
-            className,
-          )}
-          {...props}
-        />
-      </div>
+      <pre
+        className={cn(
+          "p-6 scheme-dark [&_code]:bg-transparent [&_code]:border-0 [&_code]:rounded-none [&_code]:p-0 [&_code]:font-mono [&_code]:text-inherit mb-4 mt-6 overflow-x-auto rounded-lg",
+          className,
+        )}
+        {...props}
+      />
     );
   },
   code: ({ className, ...props }: MDXItemComponent) => (
-    <code
-      className={cn(
-        "relative rounded border border-zinc-700 bg-zinc-800 px-[0.3rem] py-[0.2rem] font-mono text-sm",
-        className,
-      )}
-      {...props}
-    />
+    <code className={cn("relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm", className)} {...props} />
   ),
   Image: ({ className, ...props }: ImageProps) => (
     <Image className={cn("rounded-lg my-8 outline outline-offset-2 outline-lime-950/50", className)} {...props} />

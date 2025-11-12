@@ -30,9 +30,9 @@ export function Header() {
               aria-label="Link to Github"
               className="hover:underline hover:text-white"
               rel="noopener noreferrer"
-              href="/posts"
+              href="/writing"
             >
-              Posts
+              Writing
             </Link>
 
             <Link

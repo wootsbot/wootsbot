@@ -4,12 +4,12 @@ import { formatDateShort } from "#/lib/date";
 import { groupPostsByYear } from "#/lib/posts/util";
 import { posts } from "#/velite";
 
-export default function PostsPage() {
+export default function WritingPage() {
   const postsByYear = groupPostsByYear(posts);
 
   return (
     <div>
-      <DocsPageHeader heading="Posts" />
+      <DocsPageHeader heading="Escribiendo" />
 
       <div className="mt-24 flex flex-col gap-16">
         {postsByYear.map(([year, yearPosts]) => (
@@ -22,7 +22,7 @@ export default function PostsPage() {
               {yearPosts.map((post) => (
                 <li key={post.slug}>
                   <Link
-                    href={`/posts/${post.slug}`}
+                    href={`/${post.slug}`}
                     className="text-white/70 transition-colors hover:text-white text-lg flex flex-col md:flex-row md:items-center gap-3"
                   >
                     {post.title}

@@ -6,11 +6,7 @@ import { MDXContent } from "#/components/markdown/mdx";
 import { formatDate } from "#/lib/date";
 import { posts } from "#/velite";
 
-interface Props {
-  params: Promise<{ slug: string[] }>;
-}
-
-export default async function Page(props: { params: Promise<{ slug: string[] }> }) {
+export default async function Page(props: PageProps<"/[...slug]">) {
   const { slug } = await props.params;
   const doc = getPageBySlug(slug);
 
@@ -31,7 +27,7 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
   );
 }
 
-export const generateMetadata = async (props: Props): Promise<Metadata> => {
+export const generateMetadata = async (props: PageProps<"/[...slug]">): Promise<Metadata> => {
   const params = await props.params;
   const page = getPageBySlug(params.slug);
 
@@ -48,11 +44,6 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
         type: "article",
         publishedTime: page.publishedAt,
         url: `https://wootsbot.dev/blog/${params.slug}`,
-        // images: [
-        //   {
-        //     url: ogImage,
-        //   },
-        // ],
       },
       twitter: {
         card: "summary_large_image",

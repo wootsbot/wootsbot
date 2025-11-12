@@ -54,10 +54,10 @@ export const mdxComponents = {
     <strong className={cn("font-extrabold text-slate-50", className)} {...props} />
   ),
   ul: ({ className, ...props }: MDXItemComponent) => (
-    <ul className={cn("ml-3.5 list-disc text-white/70", className)} {...props} />
+    <ul className={cn("my-6 ml-4 pl-3 list-disc text-white/70", className)} {...props} />
   ),
   ol: ({ className, ...props }: MDXItemComponent) => (
-    <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
+    <ol className={cn("my-6 ml-4 pl-3 list-decimal", className)} {...props} />
   ),
   li: ({ className, ...props }: MDXItemComponent) => <li className={cn("my-4", className)} {...props} />,
   img: ({ className, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (

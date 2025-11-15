@@ -17,10 +17,12 @@ export default async function Page(props: PageProps<"/[...slug]">) {
   return (
     <div className="mx-auto w-full min-w-0">
       <DocsPageHeader
+        slug={doc.slug}
         heading={doc.title}
         text={doc.description}
         readingTime={doc.metadata?.readingTime}
         publishedAt={formatDate(doc.publishedAt)}
+        hasAnimation
       />
       <MDXContent code={doc.code} />
     </div>

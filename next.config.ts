@@ -32,6 +32,7 @@ const nextConfig: NextConfig = {
     qualities: [75, 90],
   },
   experimental: {
+    viewTransition: true,
     mdxRs: {
       mdxType: "gfm",
     },

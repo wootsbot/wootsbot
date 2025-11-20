@@ -1,5 +1,4 @@
 import { ViewTransition } from "react";
-
 import { cn } from "#/lib/utils";
 
 interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -13,7 +12,7 @@ interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function DocsPageHeader({
   slug,
-  heading,
+  heading: headingProp,
   text,
   publishedAt,
   readingTime,
@@ -27,11 +26,13 @@ export function DocsPageHeader({
         <div className={cn("gap-4", className)} {...props}>
           {hasAnimation && (
             <ViewTransition name={slug ? `post-${slug}-title` : "post-title"}>
-              <h1 className="inline-block font-extrabold text-3xl lg:text-4xl text-white">{heading}</h1>
+              <h1 className="inline-block font-extrabold text-3xl lg:text-4xl text-white">{headingProp}</h1>
             </ViewTransition>
           )}
 
-          {!hasAnimation && <h1 className="inline-block font-extrabold text-3xl lg:text-4xl text-white">{heading}</h1>}
+          {!hasAnimation && (
+            <h1 className="inline-block font-extrabold text-3xl lg:text-4xl text-white">{headingProp}</h1>
+          )}
 
           {text && <p className="italic text-white/70">{text}</p>}
         </div>

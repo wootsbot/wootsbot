@@ -4,78 +4,78 @@
         <description><![CDATA[Wootsbot]]></description>
         <link>https://wootsbot.dev</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 15 Nov 2025 16:07:36 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Nov 2025 18:38:08 GMT</lastBuildDate>
         <atom:link href="https://wootsbot.dev/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Aportar en una Nueva Etapa]]></title>
-            <link>https://wootsbot.dev/posts/como-enfrentar-y-superar-la-sensacion-de-no-aportar-en-una-nueva-etapa</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/como-enfrentar-y-superar-la-sensacion-de-no-aportar-en-una-nueva-etapa</guid>
+            <link>https://wootsbot.dev/como-enfrentar-y-superar-la-sensacion-de-no-aportar-en-una-nueva-etapa</link>
+            <guid isPermaLink="true">https://wootsbot.dev/como-enfrentar-y-superar-la-sensacion-de-no-aportar-en-una-nueva-etapa</guid>
             <pubDate>Mon, 25 Sep 2023 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Tu Terminal / Frontend Superproductiva 🚀]]></title>
-            <link>https://wootsbot.dev/posts/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva</guid>
+            <link>https://wootsbot.dev/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva</link>
+            <guid isPermaLink="true">https://wootsbot.dev/configurando-tu-terminal-para-una-experiencia-de-desarrollo-frontend-superproductiva</guid>
             <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Document.DesignMode]]></title>
-            <link>https://wootsbot.dev/posts/document-design-mode</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/document-design-mode</guid>
+            <link>https://wootsbot.dev/document-design-mode</link>
+            <guid isPermaLink="true">https://wootsbot.dev/document-design-mode</guid>
             <pubDate>Tue, 06 Jun 2023 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Embellecer importaciones absolutas]]></title>
-            <link>https://wootsbot.dev/posts/embellecer-importaciones-absolutas-con-alias-en-nextjs</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/embellecer-importaciones-absolutas-con-alias-en-nextjs</guid>
+            <link>https://wootsbot.dev/embellecer-importaciones-absolutas-con-alias-en-nextjs</link>
+            <guid isPermaLink="true">https://wootsbot.dev/embellecer-importaciones-absolutas-con-alias-en-nextjs</guid>
             <pubDate>Thu, 14 Oct 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Identificar posibles mejoras de CSS]]></title>
-            <link>https://wootsbot.dev/posts/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</guid>
+            <link>https://wootsbot.dev/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</link>
+            <guid isPermaLink="true">https://wootsbot.dev/identificar-posibles-mejoras-de-CSS-en-su-sitio-web</guid>
             <pubDate>Thu, 14 Oct 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Starlink Tras 4 Meses De Uso desde México]]></title>
-            <link>https://wootsbot.dev/posts/mi-experiencia-con-starlink-tras-4-meses-de-uso-en-mexico</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/mi-experiencia-con-starlink-tras-4-meses-de-uso-en-mexico</guid>
+            <link>https://wootsbot.dev/mi-experiencia-con-starlink-tras-4-meses-de-uso-en-mexico</link>
+            <guid isPermaLink="true">https://wootsbot.dev/mi-experiencia-con-starlink-tras-4-meses-de-uso-en-mexico</guid>
             <pubDate>Tue, 14 Jun 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[¿Por qué usar máquinas de estado?]]></title>
-            <link>https://wootsbot.dev/posts/que-es-xstate-y-por-que-usar-maquinas-de-estado</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/que-es-xstate-y-por-que-usar-maquinas-de-estado</guid>
+            <link>https://wootsbot.dev/que-es-xstate-y-por-que-usar-maquinas-de-estado</link>
+            <guid isPermaLink="true">https://wootsbot.dev/que-es-xstate-y-por-que-usar-maquinas-de-estado</guid>
             <pubDate>Wed, 08 Jun 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[React Native Y Mapbox V10]]></title>
-            <link>https://wootsbot.dev/posts/react-native-y-mapbox-v10</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/react-native-y-mapbox-v10</guid>
+            <link>https://wootsbot.dev/react-native-y-mapbox-v10</link>
+            <guid isPermaLink="true">https://wootsbot.dev/react-native-y-mapbox-v10</guid>
             <pubDate>Thu, 25 May 2023 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Turborepo Mejorando DX En Monorepos]]></title>
-            <link>https://wootsbot.dev/posts/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</guid>
+            <link>https://wootsbot.dev/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</link>
+            <guid isPermaLink="true">https://wootsbot.dev/turborepo-mejorando-la-experiencia-de-desarrollo-en-monorepos</guid>
             <pubDate>Sat, 26 Mar 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[import React from 'react';]]></title>
-            <link>https://wootsbot.dev/posts/una-pequena-guia-para-importar-con-mejores-practicas-react-en-tu-proyecto</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/una-pequena-guia-para-importar-con-mejores-practicas-react-en-tu-proyecto</guid>
+            <link>https://wootsbot.dev/una-pequena-guia-para-importar-con-mejores-practicas-react-en-tu-proyecto</link>
+            <guid isPermaLink="true">https://wootsbot.dev/una-pequena-guia-para-importar-con-mejores-practicas-react-en-tu-proyecto</guid>
             <pubDate>Sun, 02 Apr 2023 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[gen_random_uuid() Postgresql + Supabase + Prismajs]]></title>
-            <link>https://wootsbot.dev/posts/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</guid>
+            <link>https://wootsbot.dev/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</link>
+            <guid isPermaLink="true">https://wootsbot.dev/uso-de-la-funcion-gen-random-uuid-nativa-de-postgresql-en-supabase-prismajs</guid>
             <pubDate>Mon, 06 Jun 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Zed El Mejor Editor De Texto Del Mundo]]></title>
-            <link>https://wootsbot.dev/posts/zed-el-mejor-editor-de-texto-del-mundo</link>
-            <guid isPermaLink="true">https://wootsbot.dev/posts/zed-el-mejor-editor-de-texto-del-mundo</guid>
+            <link>https://wootsbot.dev/zed-el-mejor-editor-de-texto-del-mundo</link>
+            <guid isPermaLink="true">https://wootsbot.dev/zed-el-mejor-editor-de-texto-del-mundo</guid>
             <pubDate>Fri, 31 Mar 2023 00:00:00 GMT</pubDate>
         </item>
     </channel>

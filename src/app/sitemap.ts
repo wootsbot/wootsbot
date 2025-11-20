@@ -2,7 +2,7 @@ import { posts as allPosts } from "#/velite";
 
 export default async function sitemap() {
   const posts = allPosts.map((post) => ({
-    url: `https://wootsbot.dev/posts/${post.slug}`,
+    url: `https://wootsbot.dev/${post.slug}`,
     lastModified: post.publishedAt,
   }));
 

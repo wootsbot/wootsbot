@@ -27,3 +27,7 @@ html:not(.dark) .shiki span {
   color: var(--s-light, inherit);
   --twoslash-popup-bg: #191919;
 }
+
+.root {
+  isolation: isolate;
+}

@@ -16,7 +16,7 @@ export function DisplayListInfoCard({ title, items = [], color = "default" }: Di
         "border-emerald-900": color === "success",
       })}
     >
-      <span className="text-lg my-1 mb-4 dark:text-white">{title}</span>
+      <span className="text-lg my-1 mb-4 text-white">{title}</span>
 
       <ul className="flex flex-col p-0 m-0">
         {items?.map((item) => (

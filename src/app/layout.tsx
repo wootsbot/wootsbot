@@ -3,7 +3,6 @@ import "@shikijs/twoslash/style-rich.css";
 
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { ThemeProvider } from "#/components/layout/theme-provider";
 import { cn } from "#/lib/utils";
 
 const inter = Inter({
@@ -86,12 +85,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es-MX" suppressHydrationWarning>
       <body
         className={cn(
-          "bg-[#FFF] dark:bg-[#050505] text-black/70 dark:text-white/70",
+          // "root bg-[#FFF] dark:bg-[#050505] text-black/70 dark:text-white/70",
+          "root bg-[#050505] text-white/70",
           inter.variable,
           jetBrainsMono.variable,
         )}
       >
-        <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
+        {children}
       </body>
     </html>
   );

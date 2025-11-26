@@ -14,7 +14,7 @@ export function Social() {
             rel="noopener noreferrer"
             href="https://github.com/wootsbot"
           >
-            <SiGithub size={16} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
+            <SiGithub size={16} className="fill-[rgba(239,247,255,.616)]" />
             Github
           </Link>
         </li>
@@ -27,7 +27,7 @@ export function Social() {
             rel="noopener noreferrer"
             href="https://bsky.app/profile/wootsbot.dev"
           >
-            <SiBluesky size={16} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
+            <SiBluesky size={16} className="fill-[rgba(239,247,255,.616)]" />
             Bluesky
           </Link>
         </li>
@@ -40,7 +40,7 @@ export function Social() {
             rel="noopener noreferrer"
             href="https://twitter.com/wootsbot"
           >
-            <SiX size={16} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
+            <SiX size={16} className="fill-[rgba(239,247,255,.616)]" />
             Wootsbot
           </Link>
         </li>
@@ -52,7 +52,7 @@ export function Social() {
             rel="noopener noreferrer"
             href="https://stackoverflow.com/users/4089384/wootsbot"
           >
-            <SiStackoverflow size={16} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
+            <SiStackoverflow size={16} className="fill-[rgba(239,247,255,.616)]" />
             stackoverflow
           </Link>
         </li>
@@ -64,7 +64,7 @@ export function Social() {
             rel="noopener noreferrer"
             href="https://dev.to/wootsbot"
           >
-            <SiDevdotto size={16} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
+            <SiDevdotto size={16} className="fill-[rgba(239,247,255,.616)]" />
             dev
           </Link>
         </li>
@@ -76,7 +76,7 @@ export function Social() {
             rel="noopener noreferrer"
             href="https://www.instagram.com/wootsbot/"
           >
-            <SiInstagram size={16} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
+            <SiInstagram size={16} className="fill-[rgba(239,247,255,.616)]" />
             Instagram
           </Link>
         </li>
@@ -89,7 +89,7 @@ export function Social() {
             rel="noopener noreferrer"
             href="https://www.linkedin.com/in/wootsbot"
           >
-            <SiLinkedin size={16} className="fill-black dark:fill-[rgba(239,247,255,.616)]" />
+            <SiLinkedin size={16} className="fill-[rgba(239,247,255,.616)]" />
           </Link>
         </li>*/}
       </ul>
